@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import { FlightService } from "./flightService";
 
 export class FlightController {
-  private flightService;
-  constructor(flightService: FlightService) {
-    this.flightService = flightService;
+  private flightService: FlightService;
+  constructor() {
+    this.flightService = new FlightService();
   }
 
   async getFlights(req: Request, res: Response) {

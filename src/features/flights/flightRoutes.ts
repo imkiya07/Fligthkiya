@@ -1,29 +1,35 @@
-import express from "express";
-import db from "../../config/db";
-import { flightModel } from "./flight.models";
+import { Request, Response, Router } from "express";
 import { FlightController } from "./flightController";
-import { FlightService } from "./flightService";
 
-export const flightRoute = express.Router();
+export class FlightRouter {
+  public router: Router;
+  private flightController: FlightController;
 
-// Initialize flight model, service, and controller
-const flightModels = new flightModel(db);
-const flightServices = new FlightService(flightModels);
-const flightController = new FlightController(flightServices);
+  constructor() {
+    this.router = Router();
+    this.flightController = new FlightController();
+    this.initializeRoutes();
+  }
 
-// Define routes
-flightRoute.get("/flights", (req, res) =>
-  flightController.getFlights(req, res)
-);
-flightRoute.get("/flights/:id", (req, res) =>
-  flightController.getFlightById(req, res)
-);
-flightRoute.post("/flights", (req, res) =>
-  flightController.createFlight(req, res)
-);
-flightRoute.put("/flights/:id", (req, res) =>
-  flightController.updateFlight(req, res)
-);
-flightRoute.delete("/flights/:id", (req, res) =>
-  flightController.deleteFlight(req, res)
-);
+  private initializeRoutes() {
+    this.router.get("/flights", (req: Request, res: Response) =>
+      this.flightController.getFlights(req, res)
+    );
+
+    this.router.get("/flights/:id", (req: Request, res: Response) =>
+      this.flightController.getFlightById(req, res)
+    );
+
+    this.router.post("/flights", (req: Request, res: Response) =>
+      this.flightController.createFlight(req, res)
+    );
+
+    this.router.put("/flights/:id", (req: Request, res: Response) =>
+      this.flightController.updateFlight(req, res)
+    );
+
+    this.router.delete("/flights/:id", (req: Request, res: Response) =>
+      this.flightController.deleteFlight(req, res)
+    );
+  }
+}

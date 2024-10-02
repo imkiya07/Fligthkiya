@@ -1,6 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
-import { flightRoute } from "./features/flights/flightRoutes";
+import { registerRoutes } from "./routes/routes";
 
 export const app = express();
 
@@ -8,4 +8,4 @@ export const app = express();
 app.use(bodyParser.json());
 
 // Routes
-app.use("/api", flightRoute);
+registerRoutes(app);
