@@ -12,6 +12,9 @@ export class FlightRouter {
   }
 
   private initializeRoutes() {
+    this.router.get("/search", (req: Request, res: Response) =>
+      this.flightController.flightSearch(req, res)
+    );
     this.router.get("/flights", (req: Request, res: Response) =>
       this.flightController.getFlights(req, res)
     );

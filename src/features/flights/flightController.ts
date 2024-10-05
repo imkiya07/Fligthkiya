@@ -7,6 +7,15 @@ export class FlightController {
     this.flightService = new FlightService();
   }
 
+  async flightSearch(req: Request, res: Response) {
+    try {
+      const flights = await this.flightService.flightSearch(req);
+      res.json(flights);
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+
   async getFlights(req: Request, res: Response) {
     try {
       const flights = await this.flightService.getAllFlights();
