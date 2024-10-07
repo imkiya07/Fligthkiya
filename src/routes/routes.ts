@@ -1,12 +1,12 @@
 import { Express } from "express";
 import { adminRouter } from "../features/admin/AdminRouter";
 import { b2bRouter } from "../features/B2B/B2BRouter";
-import { commonRouter } from "../features/common/PublicRouter";
+import { CommonRouter } from "../features/common/common.routes";
 import { FlightRouter } from "../features/flights/flightRoutes";
 
 export function registerRoutes(app: Express): void {
   // Public routes
-  app.use("/api/common", commonRouter);
+  app.use("/api/common", new CommonRouter().router);
 
   // Admin routes
   app.use("/api/admin", adminRouter);
