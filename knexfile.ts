@@ -1,5 +1,5 @@
-import { Knex } from "knex";
 import dotenv from "dotenv";
+import { Knex } from "knex";
 
 dotenv.config();
 
@@ -11,13 +11,6 @@ const config: { [key: string]: Knex.Config } = {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-    },
-    migrations: {
-      tableName: "knex_migrations",
-      directory: "./src/migrations",
-    },
-    seeds: {
-      directory: "./src/seeds",
     },
   },
 };
