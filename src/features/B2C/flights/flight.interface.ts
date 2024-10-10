@@ -5,3 +5,10 @@ export interface IFlight {
   price: number;
   seatsAvailable: number;
 }
+
+export type fSearchParams = {
+  airlines: string;
+  flight_numbers: string;
+  stops: string;
+  refundable: string;
+};

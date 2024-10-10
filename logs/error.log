@@ -1,0 +1,29 @@
+[2024-10-10T17:21:47.187Z] Error
+Error: Error
+    at FlightService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\flightService.js:21:15)
+    at D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:11:54
+    at D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:280:10)
+
+[2024-10-10T17:26:16.634Z] PassengerTypeQuantities[0].Code is not valid
+Error: PassengerTypeQuantities[0].Code is not valid
+    at FlightService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:15:15)
+    at FlightService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\flightService.js:41:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:11:29
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
+
+[2024-10-10T17:26:44.147Z] An unexpected error occurred
+Error
+    at FlightService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:15:15)
+    at FlightService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\flightService.js:41:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:11:29
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
+

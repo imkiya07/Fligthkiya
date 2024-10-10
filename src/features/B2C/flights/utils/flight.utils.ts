@@ -1,4 +1,7 @@
-export const FormatFlightSearch = (data: any) => {
+import { flightModel } from "../flight.models";
+
+// FORMAT FLIGHT SEARCH RESPONSE
+export const FormatFlightSearch = async (data: any, conn: flightModel) => {
   // FORMAT & FILTER DATA
   const filter: {
     airlines: any[];
@@ -12,13 +15,18 @@ export const FormatFlightSearch = (data: any) => {
 
   const formatFlightSegments: any[] = [];
 
-  data?.FlightSegmentList?.forEach((item: any) => {
+  for (let item of data?.FlightSegmentList) {
     // airline name
-    const operating_airline = "operating";
-    const marketing_airline = "marketing";
+    const operating_airline = await conn.getAirline(item?.OperatingCarrierCode);
+    const marketing_airline = await conn.getAirline(item?.MarketingCarriercode);
+
     // airport name
-    const departure_airport = "departure";
-    const arrival_airport = "arrival";
+    const departure_airport = await conn.getAirport(
+      item?.DepartureAirportLocationCode
+    );
+    const arrival_airport = await conn.getAirport(
+      item?.ArrivalAirportLocationCode
+    );
 
     if (
       !filter?.airlines?.some(
@@ -45,7 +53,7 @@ export const FormatFlightSearch = (data: any) => {
       arrival_airport,
       ...item,
     });
-  });
+  }
 
   // FORMAT ALL DATA
   const results = data.PricedItineraries.map((pricedItem: any) => {
@@ -91,5 +99,62 @@ export const FormatFlightSearch = (data: any) => {
     };
   });
 
-  return { filter, results };
+  return { count: results.length, filter, results };
+};
+
+// FILTER BY CARRIER CODE / AIRLINES
+export const filterByCarrierCode = (data: any, carrierCode: string) => {
+  if (carrierCode) {
+    return data.filter((flight: any) =>
+      flight.originDestinations.some((destination: any) =>
+        carrierCode
+          .replace(" ", "")
+          .split(",")
+          .includes(destination.OperatingCarrierCode)
+      )
+    );
+  }
+  return data;
+};
+
+// FILTER BY FLIGHT NUMBERS
+export const filterByFlightNumber = (data: any, flightNumber: string) => {
+  if (flightNumber) {
+    return data.filter((flight: any) =>
+      flight.originDestinations.some((destination: any) =>
+        flightNumber
+          .replace(" ", "")
+          .split(",")
+          .includes(destination.OperatingFlightNumber)
+      )
+    );
+  }
+  return data;
+};
+
+// FILTER BY STOPS
+export const filterByStops = (data: any, stops: string) => {
+  if (stops) {
+    return data.filter((flight: any) =>
+      flight.originDestinations.some((destination: any) =>
+        stops
+          .replace(" ", "")
+          .split(",")
+          .includes(destination.stops + "")
+      )
+    );
+  }
+  return data;
+};
+
+// FILTER BY REFUNDABLE
+export const filterByRefundable = (data: any, refundable: string) => {
+  if (refundable && refundable === "true") {
+    return data.filter((flight: any) =>
+      flight.penaltiesData.some(
+        (item: any) => item.RefundAllowed === refundable
+      )
+    );
+  }
+  return data;
 };
