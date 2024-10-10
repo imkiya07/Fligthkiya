@@ -165,3 +165,10 @@
 2024-10-10T17:26:16.064Z [info]: [2024-10-10T17:26:16.063Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
 2024-10-10T17:26:43.672Z [info]: [2024-10-10T17:26:43.672Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
 2024-10-10T17:26:51.728Z [info]: [2024-10-10T17:26:51.728Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:34:41.473Z [info]: [2024-10-10T17:34:41.472Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:35:59.772Z [info]: [2024-10-10T17:35:59.770Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:37:04.862Z [info]: [2024-10-10T17:37:04.862Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:37:08.295Z [info]: [2024-10-10T17:37:08.295Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:37:09.638Z [info]: [2024-10-10T17:37:09.638Z] POST /api/flights/search?airlines=EK&flight_numbers=564,566&stops=1,0&refundable=true
+2024-10-10T17:44:34.295Z [info]: [2024-10-10T17:44:34.293Z] POST /api/flights/revalidated
+2024-10-10T17:45:17.841Z [info]: [2024-10-10T17:45:17.841Z] POST /api/flights/revalidated

@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { FlightController } from "./flightController";
 
 export class FlightRouter {
@@ -13,24 +13,6 @@ export class FlightRouter {
   private initializeRoutes() {
     this.router.post("/search", this.flightController.flightSearch);
 
-    this.router.get("/flights", (req: Request, res: Response) =>
-      this.flightController.getFlights(req, res)
-    );
-
-    this.router.get("/flights/:id", (req: Request, res: Response) =>
-      this.flightController.getFlightById(req, res)
-    );
-
-    this.router.post("/flights", (req: Request, res: Response) =>
-      this.flightController.createFlight(req, res)
-    );
-
-    this.router.put("/flights/:id", (req: Request, res: Response) =>
-      this.flightController.updateFlight(req, res)
-    );
-
-    this.router.delete("/flights/:id", (req: Request, res: Response) =>
-      this.flightController.deleteFlight(req, res)
-    );
+    this.router.post("/revalidated", this.flightController.revalidated);
   }
 }

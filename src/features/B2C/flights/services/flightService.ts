@@ -9,6 +9,7 @@ import {
   filterByStops,
   FormatFlightSearch,
 } from "../utils/flight.utils";
+import { Revalidated } from "./revalidatedFlight";
 
 export class FlightService extends AbstractServices {
   private models = new flightModel(db);
@@ -21,7 +22,7 @@ export class FlightService extends AbstractServices {
     const conn = new flightModel(db);
     const reqBody = req.body;
 
-    const cacheKey = `flight_search`;
+    const cacheKey = JSON.stringify(reqBody);
 
     const cachedData = this.cache.get<any>(cacheKey);
 
@@ -48,7 +49,10 @@ export class FlightService extends AbstractServices {
       };
     }
 
-    const flightsResponse = await this.Req.postRequest(reqBody);
+    const flightsResponse = await this.Req.postRequest(
+      "/v2/Search/Flight",
+      reqBody
+    );
 
     // API RESPONSE ERROR
     if (!flightsResponse?.Success) {
@@ -66,24 +70,6 @@ export class FlightService extends AbstractServices {
     };
   }
 
-  async getAllFlights() {
-    return { success: true, message: "All flights", data: [] };
-    return await this.models.getAllFlights();
-  }
-
-  async getFlightById(id: number) {
-    return await this.models.getFlightById(id);
-  }
-
-  async createFlight(flightData: any) {
-    return await this.models.createFlight(flightData);
-  }
-
-  async updateFlight(id: any, flightData: number) {
-    return await this.models.updateFlight(id, flightData);
-  }
-
-  async deleteFlight(id: number) {
-    return await this.models.deleteFlight(id);
-  }
+  // NARROW SERVICES
+  revalidated = new Revalidated().revalidated;
 }
