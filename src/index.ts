@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
-import { app } from "./app";
 import { Request, Response } from "express";
+import { app } from "./app";
+import config from "./config/config";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 4001;
+const PORT = config.PORT;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("flight kiya server...");

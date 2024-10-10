@@ -1,13 +1,19 @@
 import { Request, Response } from "express";
-import { FlightService } from "./flightService";
+import { AbstractController } from "../../../utils/abstracts/abstractController";
+import { FlightService } from "./services/flightService";
 
-export class FlightController {
-  private flightService: FlightService;
+export class FlightController extends AbstractController {
+  private flightService = new FlightService();
   constructor() {
-    this.flightService = new FlightService();
+    super();
   }
 
-  async flightSearch(req: Request, res: Response) {
+  public flightSearch = this.wrapAsync(async (req: Request, res: Response) => {
+    const flights = await this.flightService.flightSearch(req);
+    res.json(flights);
+  });
+
+  async flightSearch1(req: Request, res: Response) {
     try {
       const flights = await this.flightService.flightSearch(req);
       res.json(flights);

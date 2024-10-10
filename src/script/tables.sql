@@ -1,12 +1,14 @@
-CREATE TABLE countries (
-  c_id int NOT NULL AUTO_INCREMENT,
-  c_iso text,
-  c_name text,
-  c_nice_name text,
-  c_iso3 text,
-  c_num_code int DEFAULT NULL,
-  c_phone_code int DEFAULT NULL
-) ;
+CREATE TABLE flight_booking.countries (
+   c_id int NOT NULL AUTO_INCREMENT,
+   c_iso text,
+   c_name text,
+   c_nice_name text,
+   c_iso3 text,
+   c_num_code int DEFAULT NULL,
+   c_phone_code int DEFAULT NULL,
+   PRIMARY KEY (c_id)
+);
+
 
 
 CREATE TABLE airports (

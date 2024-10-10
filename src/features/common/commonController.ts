@@ -13,7 +13,7 @@ export class CommonController extends AbstractController {
   // Use an arrow function
   public getAllAirports = this.wrapAsync(
     async (req: Request, res: Response) => {
-      const data = await this.services.getAllAirports();
+      const data = await this.services.getAllAirports(req);
       res.json(data);
     }
   );

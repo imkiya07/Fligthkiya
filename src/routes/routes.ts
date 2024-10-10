@@ -2,7 +2,7 @@ import { Express } from "express";
 import { adminRouter } from "../features/admin/AdminRouter";
 import { b2bRouter } from "../features/B2B/B2BRouter";
 import { CommonRouter } from "../features/common/common.routes";
-import { FlightRouter } from "../features/flights/flightRoutes";
+import { FlightRouter } from "../features/B2C/flights/flightRoutes";
 
 export function registerRoutes(app: Express): void {
   // Public routes

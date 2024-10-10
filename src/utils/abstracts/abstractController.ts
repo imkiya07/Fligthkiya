@@ -5,6 +5,6 @@ export abstract class AbstractController {
   protected wrapAsync(
     fn: (req: Request, res: Response, next: NextFunction) => Promise<any>
   ) {
-    return wrapAsync(fn); // Call the wrapAsync function directly
+    return wrapAsync(fn);
   }
 }

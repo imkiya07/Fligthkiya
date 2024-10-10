@@ -3,18 +3,16 @@ import { FlightController } from "./flightController";
 
 export class FlightRouter {
   public router: Router;
-  private flightController: FlightController;
+  private flightController = new FlightController();
 
   constructor() {
     this.router = Router();
-    this.flightController = new FlightController();
     this.initializeRoutes();
   }
 
   private initializeRoutes() {
-    this.router.get("/search", (req: Request, res: Response) =>
-      this.flightController.flightSearch(req, res)
-    );
+    this.router.post("/search", this.flightController.flightSearch);
+
     this.router.get("/flights", (req: Request, res: Response) =>
       this.flightController.getFlights(req, res)
     );
