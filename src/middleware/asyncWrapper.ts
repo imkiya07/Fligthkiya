@@ -36,7 +36,9 @@ export const wrapAsync = (
       const message = error.message || "An unexpected error occurred";
 
       res.status(statusCode).json({
+        success: false,
         error: {
+          statusCode,
           message,
           ...(process.env.NODE_ENV === "development" && {
             stack: error.stack,

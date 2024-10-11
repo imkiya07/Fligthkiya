@@ -158,3 +158,138 @@ export const filterByRefundable = (data: any, refundable: string) => {
   }
   return data;
 };
+
+// FORMAT REVALIDATION RESPONSE
+export const formatRevalidatioin = async (Data: any, conn: flightModel) => {
+  const TraceId = Data.TraceId;
+  const PricedItineraries = Data.PricedItineraries;
+
+  for (const item of PricedItineraries) {
+    const formattedAirItinerary = formatAirItinerary(
+      item.AirItineraryPricingInfo
+    );
+
+    const originDestinations = await formatOriginDestination(
+      item.OriginDestinationOptions,
+      conn
+    );
+
+    const data = {
+      TraceId,
+      originDestinations,
+      ...formattedAirItinerary,
+      PaxNameCharacterLimit: item.PaxNameCharacterLimit,
+      SequenceNumber: item.SequenceNumber,
+      TicketType: item.TicketType,
+      ValidatingAirlineCode: item.ValidatingAirlineCode,
+      VoidWindowTLinMins: item.VoidWindowTLinMins,
+      DirectionInd: item.DirectionInd,
+      HoldAllowed: item.HoldAllowed,
+      IsPassportMandatory: item.IsPassportMandatory,
+    };
+
+    return data;
+  }
+};
+
+const formatAirItinerary = (AirItineraryPricingInfo: any) => {
+  const {
+    DivideInPartyIndicator,
+    FareInfos,
+    FareSourceCode,
+    FareType,
+    IsRefundable,
+    PTC_FareBreakdowns,
+    ItinTotalFare,
+  } = AirItineraryPricingInfo;
+  const { BaseFare, EquivFare, TotalFare, TotalTax } = ItinTotalFare;
+  const {
+    BaggageInfo,
+    CabinBaggageInfo,
+    FareBasisCodes,
+    PassengerTypeQuantity,
+    PenaltiesInfo,
+    PassengerFare,
+  } = PTC_FareBreakdowns[0];
+  const {
+    BaseFare: passengerBaseFare,
+    EquivFare: passengerEquivFare,
+    TotalFare: passengerTotalFare,
+    Surcharges,
+    Taxes,
+  } = PassengerFare;
+
+  const formattedAirItnerary = {
+    FareSourceCode,
+    BaseFare,
+    EquivFare,
+    TotalFare,
+    TotalTax,
+    DivideInPartyIndicator,
+    FareInfos,
+    FareType,
+    IsRefundable,
+    BaggageInfo,
+    CabinBaggageInfo,
+    FareBasisCodes,
+    PassengerTypeQuantity,
+    PenaltiesInfo,
+    Surcharges,
+    Taxes,
+  };
+
+  return formattedAirItnerary;
+};
+
+const formatOriginDestination = async (
+  OriginDestinationOptions: any,
+  conn: flightModel
+) => {
+  const originDestination = [];
+
+  for (const item of OriginDestinationOptions) {
+    const FlightSegments = item?.FlightSegments;
+
+    const flightSegments = [];
+    for (const segItem of FlightSegments) {
+      const {
+        OperatingAirline,
+        SeatsRemaining,
+        StopQuantityInfo,
+        ...resSegment
+      } = segItem;
+
+      const departureAirport = await conn.getAirport(
+        segItem?.DepartureAirportLocationCode
+      );
+      const arrivalAirport = await conn.getAirport(
+        segItem?.ArrivalAirportLocationCode
+      );
+      const operating_airline = await conn.getAirline(OperatingAirline?.Code);
+      const marketing_airline = await conn.getAirline(
+        segItem?.MarketingAirlineCode
+      );
+
+      flightSegments.push({
+        ...resSegment,
+        OperatingAirlineCode: OperatingAirline?.Code,
+        OperatingAirlineEquipment: OperatingAirline?.Equipment,
+        OperatingAirlineFlightNumber: OperatingAirline?.FlightNumber,
+        SeatsRemainingBelowMinimum: SeatsRemaining?.BelowMinimum,
+        SeatsRemaining: SeatsRemaining?.Number,
+        StopArrivalDateTime: StopQuantityInfo?.ArrivalDateTime,
+        StopDepartureDateTime: StopQuantityInfo?.DepartureDateTime,
+        StopDuration: StopQuantityInfo?.Duration,
+        StopLocationCode: StopQuantityInfo?.LocationCode,
+        departureAirport,
+        arrivalAirport,
+        operating_airline,
+        marketing_airline,
+      });
+    }
+
+    originDestination.push({ flightSegments });
+  }
+
+  return originDestination;
+};

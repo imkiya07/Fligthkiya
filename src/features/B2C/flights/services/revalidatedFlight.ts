@@ -2,7 +2,7 @@ import { Request } from "express";
 import db from "../../../../config/db";
 import AbstractServices from "../../../../utils/abstracts/abstract.services";
 import { flightModel } from "../flight.models";
-import { FormatFlightSearch } from "../utils/flight.utils";
+import { formatRevalidatioin } from "../utils/flight.utils";
 
 export class Revalidated extends AbstractServices {
   private models = new flightModel(db);
@@ -20,19 +20,17 @@ export class Revalidated extends AbstractServices {
       reqBody
     );
 
-    return { success: true, response };
-
     // API RESPONSE ERROR
     if (!response?.Success) {
-      this.throwError(response?.error?.Data, response?.status);
+      this.throwError(response?.Message, 400);
     }
 
-    const formatedData = await FormatFlightSearch(response?.Data, conn);
+    const data = await formatRevalidatioin(response?.Data, conn);
 
     return {
       success: true,
       message: "Flight search results",
-      ...formatedData,
+      data,
     };
   }
 }

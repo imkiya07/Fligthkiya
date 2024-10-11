@@ -27,3 +27,27 @@ Error
     at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:11:29
     at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
 
+[2024-10-11T11:55:04.530Z] FareSourceCode is Expired
+Error: FareSourceCode is Expired
+    at FlightService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:15:15)
+    at FlightService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\revalidatedFlight.js:23:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:16:29
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
+
+[2024-10-11T11:56:11.390Z] FareSourceCode is Expired
+Error: FareSourceCode is Expired
+    at FlightService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:15:15)
+    at FlightService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\revalidatedFlight.js:23:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:16:29
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
+
+[2024-10-11T11:56:25.279Z] FareSourceCode is Expired
+Error: FareSourceCode is Expired
+    at FlightService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:15:15)
+    at FlightService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\services\revalidatedFlight.js:23:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\features\B2C\flights\flightController.js:16:29
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middleware\asyncWrapper.js:26:13
+
