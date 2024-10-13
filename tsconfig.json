@@ -3,6 +3,7 @@
     "target": "ES2020",
     "module": "commonjs",
     "outDir": "./dist",
+    "typeRoots": ["src/types/global.d.ts", "./node_modules/@types"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -11,6 +12,6 @@
     "moduleResolution": "node",
     "types": ["node", "express"]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/types/global.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

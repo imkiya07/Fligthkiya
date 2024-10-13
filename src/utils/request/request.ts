@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import config from "../../config/config";
+import config from "../../core/config/config";
 
 export class MakeRequest {
   public postRequest = async (API: string, requestBody: any) => {

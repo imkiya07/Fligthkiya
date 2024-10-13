@@ -1,19 +1,20 @@
 import { Express } from "express";
-import { adminRouter } from "../features/admin/AdminRouter";
-import { b2bRouter } from "../features/B2B/B2BRouter";
-import { CommonRouter } from "../features/common/common.routes";
-import { FlightRouter } from "../features/B2C/flights/flightRoutes";
+import { adminRouter } from "../api/admin/AdminRouter";
+import { b2bRouter } from "../api/B2B/B2BRouter";
+import { PrebookingRoutes } from "../api/B2C/prebooking/routes/prebooking.routes";
+import { CommonRouter } from "../api/common/common.routes";
+import { B2CRoutes } from "../api/B2C/b2c.routes";
 
 export function registerRoutes(app: Express): void {
-  // Public routes
+  // COMMON ROUTES
   app.use("/api/common", new CommonRouter().router);
 
-  // Admin routes
+  // ADMIN ROUTES
   app.use("/api/admin", adminRouter);
 
-  // B2B routes
+  // B2B ROUTES
   app.use("/api/b2b", b2bRouter);
 
-  // Flight routes
-  app.use("/api/flights", new FlightRouter().router);
+  // B2C ROUTES
+  app.use("/api/b2c", new B2CRoutes().router);
 }
