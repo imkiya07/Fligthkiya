@@ -30,4 +30,16 @@ export class PrebookingControllers extends AbstractController {
     const data = await this.services.flightBook(req);
     res.json(data);
   });
+
+  // ORDER TICKET
+  public orderTicket = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.orderTicket(req);
+    res.json(data);
+  });
+
+  // TRIP DETAILS
+  public tripDetails = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.tripDetails(req);
+    res.json(data);
+  });
 }

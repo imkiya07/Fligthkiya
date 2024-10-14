@@ -259,3 +259,72 @@ Error: Host not responding - Unable to end the record.
     at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:26:26
     at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
 
+[2024-10-14T15:47:23.026Z] Pending airline PNR - Booking UnConfirmed.
+Error: Pending airline PNR - Booking UnConfirmed.
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.flightBook (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\flightBook.service.js:56:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:26:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:20:13.097Z] Seat-sold out for the selected class of itinerary
+Error: Seat-sold out for the selected class of itinerary
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\revalidation.service.js:34:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:20:36.380Z] Seat-sold out for the selected class of itinerary
+Error: Seat-sold out for the selected class of itinerary
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\revalidation.service.js:34:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:21:12.107Z] Seat-sold out for the selected class of itinerary
+Error: Seat-sold out for the selected class of itinerary
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\revalidation.service.js:34:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:35:49.207Z] Unique id missing
+Error: Unique id missing
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.orderTicket (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:24:22)
+    at D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:31:46
+    at D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-10-14T16:40:47.495Z] UniqueID cannot be null
+Error: UniqueID cannot be null
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.tripDetails (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:53:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:53:24.261Z] An unexpected error occurred
+Error
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.tripDetails (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:50:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+
+[2024-10-14T16:54:30.114Z] An unexpected error occurred
+Error
+    at PrebookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\src\utils\abstracts\abstract.services.js:19:15)
+    at PrebookingService.tripDetails (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:50:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+

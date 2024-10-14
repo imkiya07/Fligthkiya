@@ -2,19 +2,46 @@ import axios, { AxiosError } from "axios";
 import config from "../../core/config/config";
 
 export class MakeRequest {
-  public postRequest = async (API: string, requestBody: any) => {
+  public request = async (
+    METHOD: "POST" | "GET",
+    API: string,
+    requestBody?: any
+  ) => {
     try {
-      // Making the POST request
-      const response = await axios.post(
-        `${config.MYSTIFLY_API_URL + API}` as string,
-        requestBody,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${config.BEARER_TOKEN}`,
-          },
+      let response;
+
+      // ======== POST ==========
+      if (METHOD === "POST") {
+        if (!requestBody) {
+          return {
+            status: 400,
+            message: "Error in making the request",
+            error: "Body is required for POST method",
+          };
         }
-      );
+
+        response = await axios.post(
+          `${config.MYSTIFLY_API_URL + API}` as string,
+          requestBody,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${config.BEARER_TOKEN}`,
+            },
+          }
+        );
+      } else {
+        // ========= GET ============
+        response = await axios.get(
+          `${config.MYSTIFLY_API_URL + API}` as string,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${config.BEARER_TOKEN}`,
+            },
+          }
+        );
+      }
 
       return response?.data;
     } catch (err) {

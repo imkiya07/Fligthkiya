@@ -32,7 +32,11 @@ export class FareRules extends AbstractServices {
       Target: config.API_TARGET,
       ConversationId: "MY_SECRET",
     };
-    const response = await this.Req.postRequest("/v1/FlightFareRules", reqBody);
+    const response = await this.Req.request(
+      "POST",
+      "/v1/FlightFareRules",
+      reqBody
+    );
 
     // API RESPONSE ERROR
     if (!response?.Success) {

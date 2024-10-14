@@ -17,7 +17,7 @@ export class CommonService extends AbstractServices {
       UserName: "Inc_API",
     };
 
-    const response = await this.Req.postRequest("/CreateSession", reqBody);
+    const response = await this.Req.request("POST", "/CreateSession", reqBody);
 
     if (!response.Success) {
       this.throwError(response.Message, 400);

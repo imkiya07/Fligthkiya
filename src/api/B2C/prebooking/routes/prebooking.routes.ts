@@ -31,5 +31,9 @@ export class PrebookingRoutes {
       checkSessionId,
       this.controllers.flightBook
     );
+
+    this.router.get("/order-ticket", this.controllers.orderTicket);
+
+    this.router.get("/trip-details/:booking_ref", this.controllers.tripDetails);
   }
 }

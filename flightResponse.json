@@ -1,0 +1,4415 @@
+{
+  "success": true,
+  "message": "Flight search results",
+  "sessionId": "49013bca224f1728799949660",
+  "count": 42,
+  "results": [
+    {
+      "flight_id": "26aaf826-826c-40f9-8206-de73f675e4b1",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T18:45:00",
+          "ArrivalDateTime": "2025-02-03T22:15:00",
+          "stops": 0,
+          "JourneyDuration": 330,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "587",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "587",
+          "StopQuantityInfos": [],
+          "SegmentRef": 0,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TAAOPBD1",
+          "ItineraryRef": 0
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T09:05:00",
+          "ArrivalDateTime": "2025-02-04T18:55:00",
+          "stops": 1,
+          "JourneyDuration": 1130,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "205",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "205",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "MXP",
+              "ArrivalDateTime": "2025-02-03T13:10:00",
+              "DepartureDateTime": "2025-02-03T15:40:00",
+              "Duration": 150
+            }
+          ],
+          "SegmentRef": 1,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "LAAOPBD1",
+          "ItineraryRef": 1
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 0,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "616.66",
+        "TotalFare": "772.98"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "TzQ2eEVFdmFMYnZJVVhSS1l5c1VzNWNDVTFHcVJnQUVLS0Z4WmxyWUl0ZVpEZFlMWlFJWHVtS1dQVlVpUlhkRnFpTjZtTE5KdXkwaTRoZzFXRjRqOGR6YVdwRWJLT2Q5VUhLdWxwNFhzZGZybGJSS013OWJzdHZjRG45czE0bGwwYm1pVTFEV0M2QWRpUHBIb0k0VFNLOXZ0S1dwb2xQL3FtMUZ2UEdMbnRVPQ=="
+    },
+    {
+      "flight_id": "68e8a97d-faf9-4ffa-86eb-e0c9000debe7",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Fly Dubai",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T21:40:00",
+          "ArrivalDateTime": "2025-02-04T01:30:00",
+          "stops": 0,
+          "JourneyDuration": 350,
+          "Equipment": "73H",
+          "OperatingCarrierCode": "FZ",
+          "OperatingFlightNumber": "524",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "2287",
+          "StopQuantityInfos": [],
+          "SegmentRef": 2,
+          "CabinClassCode": "Y",
+          "RBD": "Q",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "QJBDP1RO",
+          "ItineraryRef": 2
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T09:05:00",
+          "ArrivalDateTime": "2025-02-04T18:55:00",
+          "stops": 1,
+          "JourneyDuration": 1130,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "205",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "205",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "MXP",
+              "ArrivalDateTime": "2025-02-03T13:10:00",
+              "DepartureDateTime": "2025-02-03T15:40:00",
+              "Duration": 150
+            }
+          ],
+          "SegmentRef": 1,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "LAAOPBD1",
+          "ItineraryRef": 1
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 0,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "616.66",
+        "TotalFare": "772.98"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "clNPZzFMQUNvMld4K3NFakdQVVl4Qm9DY3AySzl1T3dySHhhczNNUzU4ZHJDdGlUS1g4Y1hkODlDdGlJTlpZeEYxd2VoUWZJOSszdHFFL3p3VGJaUGpEemN4VFVGdGhITDhUUXhJWmliSnBRNDkveEpVSGFxWThqL25xRnFqL0ZFMUVUaTU5MjN3RWhob1RmNllvVXQ0d3EwL0tDbDBwaGZRYlZuMmtZa3RZPQ=="
+    },
+    {
+      "flight_id": "32c8879e-8ff9-4191-b38b-6380b4162e01",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T18:45:00",
+          "ArrivalDateTime": "2025-02-03T22:15:00",
+          "stops": 0,
+          "JourneyDuration": 330,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "587",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "587",
+          "StopQuantityInfos": [],
+          "SegmentRef": 0,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TAAOPBD1",
+          "ItineraryRef": 0
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T08:30:00",
+          "ArrivalDateTime": "2025-02-04T13:55:00",
+          "stops": 0,
+          "JourneyDuration": 865,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "201",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "201",
+          "StopQuantityInfos": [],
+          "SegmentRef": 3,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "ECONOMY VALUE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VLN00V6R",
+          "ItineraryRef": 3
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 0,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "616.66",
+        "TotalFare": "772.98"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "eW5QY3RtbGF4OHBySk1FUFVPbWFpeEtlMkUyZzdXWFJHNzNRN29ydUFSTHZvcGVZRWxHU1YzYllQYmlQVkJ2SVdWTUZvSGhWNHhWVWVzVUpFMmtZZnFYQ3RQM1RLYm1WYjVNUXAzM3hsS3FrNmxrOEhqYldJMmFXR2M0T29DYjN4cXNnckVvV29WZUVweFNyVWpFNVBOaXE2UXFPb3RURC9GNXhFSDJTTWR3PQ=="
+    },
+    {
+      "flight_id": "0d36bab2-487c-4315-b847-03c9ff39ffd3",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T18:45:00",
+          "ArrivalDateTime": "2025-02-03T22:15:00",
+          "stops": 0,
+          "JourneyDuration": 330,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "587",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "587",
+          "StopQuantityInfos": [],
+          "SegmentRef": 0,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TAAOPBD1",
+          "ItineraryRef": 0
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T02:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "203",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "203",
+          "StopQuantityInfos": [],
+          "SegmentRef": 4,
+          "CabinClassCode": "Y",
+          "RBD": "V",
+          "FareFamily": "ECONOMY VALUE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VLN00V6R",
+          "ItineraryRef": 4
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 0,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "616.66",
+        "TotalFare": "772.98"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "V0RYWjduWjUvcTdxeUE3enU3VFJRQmFiaWErQ2Yyb3I2aE9TdmZaNEJhQXpaUlBvMUd0T1dPRG1NejZwKzUzS0Z3aG5Kd3ZZZTFaUzZFeEJxeHh0Q1RNTWEvcmZ3YTFuYVpQWkQ2UlhvYnNvWFdFeWxBRGNZK1JDTEx2M2xaSDBUYmM4cjlYS2JzVm5WWHFkd3d2ODRNeFlWL0daRERWMmJiNVRvNTdGamRFPQ=="
+    },
+    {
+      "flight_id": "45a8ecc0-ec10-4596-b741-798de06e3f30",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Fly Dubai",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T21:40:00",
+          "ArrivalDateTime": "2025-02-04T01:30:00",
+          "stops": 0,
+          "JourneyDuration": 350,
+          "Equipment": "73H",
+          "OperatingCarrierCode": "FZ",
+          "OperatingFlightNumber": "524",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "2287",
+          "StopQuantityInfos": [],
+          "SegmentRef": 2,
+          "CabinClassCode": "Y",
+          "RBD": "Q",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "QJBDP1RO",
+          "ItineraryRef": 2
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T08:30:00",
+          "ArrivalDateTime": "2025-02-04T13:55:00",
+          "stops": 0,
+          "JourneyDuration": 865,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "201",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "201",
+          "StopQuantityInfos": [],
+          "SegmentRef": 3,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "ECONOMY VALUE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VLN00V6R",
+          "ItineraryRef": 3
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 0,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "616.66",
+        "TotalFare": "772.98"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "aCtrQ2JqVzNLdm1NTnNIOXNQOTJ1ejZoMC90WWFVeXdGcmN3OFk5UnFsNUpjNlVEWSs4V3dFc3BEVTh3WVBLREJLTXpvYlJHWitpaVFEdnkrTEd2ckFHakNuRFRKZk0rWTBLbk5INUUyT3dQUUx0d0ZDc1pEdmEyZ1RCZ3lsZ0p5TjdBOTB6MmVwTEwwbitVWUZNcHVrZmFsQjIzRXFVQkVVNHNZaTdmTlN3PQ=="
+    },
+    {
+      "flight_id": "61d0d804-9e17-4000-b9c0-81185e3b481e",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T01:00:00",
+          "ArrivalDateTime": "2025-02-03T04:25:00",
+          "stops": 0,
+          "JourneyDuration": 325,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "585",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "585",
+          "StopQuantityInfos": [],
+          "SegmentRef": 5,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "ECONOMY LIGHT",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "OBLITLBD",
+          "ItineraryRef": 5
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-03T08:30:00",
+          "ArrivalDateTime": "2025-02-03T13:55:00",
+          "stops": 0,
+          "JourneyDuration": 865,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "201",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "201",
+          "StopQuantityInfos": [],
+          "SegmentRef": 6,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "ONX3OCN3",
+          "ItineraryRef": 6
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 1,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "677.23",
+        "TotalFare": "833.55"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "RmtzOHRmNE0ybDArYTFrUktzNlBEeVMwYWdJUlpsWHhiVnFGcC81OENHd2Nmam5wc3FPWWZFZlN1Wk03QmtJTTlEMkhCMDFXQ2xUYnJBRlhFZWc2SzA5R29HVU9XTVVIa1NsOTRJS3hQM3JBV0Y5N2dEMG9rY1J3Sll1cFBIeUpOU0tQWngvZ2hFNjhSeGRTNlZzMkg2a2lreWlHU3BoMXB2MDBpV2FaalBnPQ=="
+    },
+    {
+      "flight_id": "bbe18208-a848-446d-8e29-011e8bbe0f02",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T01:00:00",
+          "ArrivalDateTime": "2025-02-03T04:25:00",
+          "stops": 0,
+          "JourneyDuration": 325,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "585",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "585",
+          "StopQuantityInfos": [],
+          "SegmentRef": 5,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "ECONOMY LIGHT",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "OBLITLBD",
+          "ItineraryRef": 5
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-03T09:05:00",
+          "ArrivalDateTime": "2025-02-03T18:55:00",
+          "stops": 1,
+          "JourneyDuration": 1130,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "205",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "205",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "MXP",
+              "ArrivalDateTime": "2025-02-03T13:10:00",
+              "DepartureDateTime": "2025-02-03T15:40:00",
+              "Duration": 150
+            }
+          ],
+          "SegmentRef": 7,
+          "CabinClassCode": "Y",
+          "RBD": "V",
+          "FareFamily": "ECONOMY PLUS",
+          "SeatsRemaining": 1,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VAPPH1",
+          "ItineraryRef": 7
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 1,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "677.23",
+        "TotalFare": "833.55"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15115",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "MytpeGJnODU3dzNDZ3hGaUtBRnkvSzNJTTVtS2FNbGcza3h6bkcySnpOa0haYkFidC95Ym5kWWdxcGRjZFZKYjRFMHVoNjJ2VURYeHhvKzlvekhHMXlGZkpGUUZNM2p3c3JNenIremRyQWk4ck1PZWx4a2Nja2ZsZzV4ekJaRjExQnprSGY1RWVFRWNMaWplTFR3ZzRSZnRDTzQ1eEpzN3hoanlsSitvamZVPQ=="
+    },
+    {
+      "flight_id": "10b4fb7e-f82e-4928-a768-314806b6a528",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:45:00",
+          "ArrivalDateTime": "2025-02-03T13:55:00",
+          "stops": 0,
+          "JourneyDuration": 370,
+          "Equipment": "788",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "641",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "641",
+          "StopQuantityInfos": [],
+          "SegmentRef": 8,
+          "CabinClassCode": "Y",
+          "RBD": "N",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "NNX0OCN1",
+          "ItineraryRef": 8
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "703",
+          "StopQuantityInfos": [],
+          "SegmentRef": 9,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TJBDP1RO",
+          "ItineraryRef": 9
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 2,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "693.66",
+        "TotalFare": "874.92"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "20155",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "YUR0VktGUmJveFlTNFl2RTg2czJLajlveS9NVkhQdm1xZ1l4MXBzLzZnaWdWaERJdzBIWWVRaTJCRXVhRUJHQmxvMkx1RmNWckdlODdZcmFVQ05ENW41eFhyQjZNck5CZ08wSnd0WUFCTHl6dWxlMkc0TzZ0UlhhTlIxWHhnR3FFeGVuQlNteDVyMmZPei81ZkdnREdpeDJwZktxMjlCbEVIK24vYUNqV05VPQ=="
+    },
+    {
+      "flight_id": "3737d39e-f3d5-4f37-94f3-b1a2d9eb86c1",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:05:00",
+          "ArrivalDateTime": "2025-02-03T13:20:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "789",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "643",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "643",
+          "StopQuantityInfos": [],
+          "SegmentRef": 10,
+          "CabinClassCode": "Y",
+          "RBD": "M",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "MNN0S9CM",
+          "ItineraryRef": 10
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "703",
+          "StopQuantityInfos": [],
+          "SegmentRef": 9,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TJBDP1RO",
+          "ItineraryRef": 9
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 3,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "693.69",
+        "TotalFare": "877.57"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "20155",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "QnJKK3I3Y2hzL1VINHlEQlU0UDFxRFBueldKMFJiLzI4TlMxK0RSK3lDNFFWeFNaSkNJaW1jazFCWk0ra2ZTQXMwQ05UaUdqaHVrN3Y5a1E4UE5udzFaQnIvaTEyRG8rZG5KeDNhdWo3RmNQNG9kMS92dzhnN2tFdG16K05ZaXcvRlNwSGxya0pzamNxeEo0ZEljbHpXWjlBYUxWREx4b3dJaExXRFpuOUhJPQ=="
+    },
+    {
+      "flight_id": "878a105a-4a38-4ffb-89dc-13ff7f96341f",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Biman Bangladesh Airlines",
+          "marketing_airline": "Biman Bangladesh Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Abu Dhabi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "AUH",
+          "DepartureDateTime": "2025-02-03T19:55:00",
+          "ArrivalDateTime": "2025-02-04T01:00:00",
+          "stops": 1,
+          "JourneyDuration": 425,
+          "Equipment": "738",
+          "OperatingCarrierCode": "BG",
+          "OperatingFlightNumber": "127",
+          "MarketingCarriercode": "BG",
+          "MarketingFlightNumber": "127",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "CGP",
+              "ArrivalDateTime": "2025-02-03T20:40:00",
+              "DepartureDateTime": "2025-02-03T21:40:00",
+              "Duration": 60
+            }
+          ],
+          "SegmentRef": 11,
+          "CabinClassCode": "Y",
+          "RBD": "S",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "SNX0OCN1",
+          "ItineraryRef": 11
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Etihad Airways",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Abu Dhabi Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "AUH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T02:55:00",
+          "ArrivalDateTime": "2025-02-04T08:55:00",
+          "stops": 0,
+          "JourneyDuration": 900,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EY",
+          "OperatingFlightNumber": "1",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "1",
+          "StopQuantityInfos": [],
+          "SegmentRef": 12,
+          "CabinClassCode": "Y",
+          "RBD": "G",
+          "FareFamily": "",
+          "SeatsRemaining": 1,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "QGS0BBLA",
+          "ItineraryRef": 12
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 4,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "772.22",
+        "TotalFare": "929.90"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "58100",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "49800",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "Q1V1QjNnT3VLN3ZsWWxIM2JJSWwrOUw3VkVSeHJCN0Irb0JtNUluZDUrRUluZ01FZDNSRFhmY3MrWXdvZWxDNFJYaEN0cHg2Tk5FZk95bFBpdmdLVGtmK2IzZW5USytFT01SUlppOG1EaDAvVnJjcWhzZDBBVTh2citxQVVxSnA5ci9yVm0rNjlMdUVzMWFTclAwOVFBNXRxejJlSkNCWUIwME95c2czRjJzPQ=="
+    },
+    {
+      "flight_id": "7cf92ad3-39ac-4f71-b9df-0ccbfae32183",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Bahrain Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "BAH",
+          "DepartureDateTime": "2025-02-03T12:00:00",
+          "ArrivalDateTime": "2025-02-03T15:25:00",
+          "stops": 0,
+          "JourneyDuration": 385,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "251",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "251",
+          "StopQuantityInfos": [],
+          "SegmentRef": 13,
+          "CabinClassCode": "Y",
+          "RBD": "Q",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "QGS0BBLA",
+          "ItineraryRef": 13
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Bahrain Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "BAH",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-04T02:10:00",
+          "ArrivalDateTime": "2025-02-04T06:35:00",
+          "stops": 0,
+          "JourneyDuration": 445,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "7",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "7",
+          "StopQuantityInfos": [],
+          "SegmentRef": 14,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "ECONOMY COMFORT",
+          "SeatsRemaining": 5,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "KNN00C6R",
+          "ItineraryRef": 14
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T17:05:00",
+          "ArrivalDateTime": "2025-02-04T20:10:00",
+          "stops": 0,
+          "JourneyDuration": 485,
+          "Equipment": "772",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "107",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "6607",
+          "StopQuantityInfos": [],
+          "SegmentRef": 15,
+          "CabinClassCode": "C",
+          "RBD": "Z",
+          "FareFamily": "BUSINESS BASIC",
+          "SeatsRemaining": 5,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "ZBT1BD",
+          "ItineraryRef": 15
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 5,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "772.60",
+        "TotalFare": "967.65"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "26030",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "26030",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "SThSckIzR05GRFRnQVVVdml5blZVRmNTSEtPSDdTaXB2SFREbmNRSGFnbXFCM3VpTjZobXFmRktCcnVvc0ZJSzIrbjdadFhTN20rVkhMejh5Tm1yZCtZa29xdDVpeEUwUG9pVVJZUWlHclJmMVNyWDlQWll4T3BtazBrOHRsVWdaTFlVVG80dnI3SG1QcVozTnhsb3Y1M3B2L3RVQU5XMURGM0NSTlk1emhRPQ=="
+    },
+    {
+      "flight_id": "c9dce838-a7d1-4186-b5af-607a3587e026",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Bahrain Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "BAH",
+          "DepartureDateTime": "2025-02-03T12:00:00",
+          "ArrivalDateTime": "2025-02-03T15:25:00",
+          "stops": 0,
+          "JourneyDuration": 385,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "251",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "251",
+          "StopQuantityInfos": [],
+          "SegmentRef": 13,
+          "CabinClassCode": "Y",
+          "RBD": "Q",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "QGS0BBLA",
+          "ItineraryRef": 13
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Bahrain Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "BAH",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-04T02:10:00",
+          "ArrivalDateTime": "2025-02-04T06:35:00",
+          "stops": 0,
+          "JourneyDuration": 445,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "7",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "7",
+          "StopQuantityInfos": [],
+          "SegmentRef": 14,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "ECONOMY COMFORT",
+          "SeatsRemaining": 5,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "KNN00C6R",
+          "ItineraryRef": 14
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T15:35:00",
+          "ArrivalDateTime": "2025-02-04T18:15:00",
+          "stops": 0,
+          "JourneyDuration": 460,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "105",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "6680",
+          "StopQuantityInfos": [],
+          "SegmentRef": 16,
+          "CabinClassCode": "Y",
+          "RBD": "V",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "VSTOWMY",
+          "ItineraryRef": 16
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 5,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "772.60",
+        "TotalFare": "967.65"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "26030",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "26030",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "T20zdFNwMDArVmtqSWRNb0JZL2FlSzZUcmp0d0NGZTArWG5HVjl5YTJzd0lidFRXOTdIU3IwRFVsKzVPUmt3ZUN3THBWNkVNMXFtemw2Y25FYkFlZ2paMDVOdG5iQitDRldaRjZEZlg2WEJLd3d0MXpOSUUyWWdxekN2THEyQVNpc2VXQUZ1bnFMb2RtdGdqc3d6WGdySDZvOC84MHFmTG12TXFTRm5ZczJFPQ=="
+    },
+    {
+      "flight_id": "ce188a61-654e-41a6-a6d2-efa22163b5f6",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Bahrain Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "BAH",
+          "DepartureDateTime": "2025-02-03T12:00:00",
+          "ArrivalDateTime": "2025-02-03T15:25:00",
+          "stops": 0,
+          "JourneyDuration": 385,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "251",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "251",
+          "StopQuantityInfos": [],
+          "SegmentRef": 13,
+          "CabinClassCode": "Y",
+          "RBD": "Q",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "QGS0BBLA",
+          "ItineraryRef": 13
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Gulf Air Bahrain",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Bahrain Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "BAH",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-04T02:10:00",
+          "ArrivalDateTime": "2025-02-04T06:35:00",
+          "stops": 0,
+          "JourneyDuration": 445,
+          "Equipment": "789",
+          "OperatingCarrierCode": "GF",
+          "OperatingFlightNumber": "7",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "7",
+          "StopQuantityInfos": [],
+          "SegmentRef": 14,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "ECONOMY COMFORT",
+          "SeatsRemaining": 5,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "KNN00C6R",
+          "ItineraryRef": 14
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Gulf Air Bahrain",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T10:35:00",
+          "ArrivalDateTime": "2025-02-04T13:45:00",
+          "stops": 0,
+          "JourneyDuration": 490,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "101",
+          "MarketingCarriercode": "GF",
+          "MarketingFlightNumber": "6631",
+          "StopQuantityInfos": [],
+          "SegmentRef": 17,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "ECONOMY CONVENIENCE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "LJR4R1SO",
+          "ItineraryRef": 17
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 5,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "772.60",
+        "TotalFare": "967.65"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "26030",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "26030",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "ZUZHenJadlVFdmdmNzUxYmxnTU12QkhaYlZRVW1PMXc1OFlOS0dsS0E5Vktza3VacXBoeGZUb2ErMDhqam5NSE1Vclh1Wm95ZUEzMmhHcEhCeEs1amVYYTRva2JnQUhWU1QrbFNpZ0VwUWFVUFRlN3NKdDlZZlJYT2hNUCtGWG1zNnNXY24vQXRPb1NBUlJPT2dmMHE5aFY5ZUE2TjVMYVJBdGpPU1FoWHA4PQ=="
+    },
+    {
+      "flight_id": "d70c6eab-84ef-4e9b-ab6e-364e3f3469bc",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Biman Bangladesh Airlines",
+          "marketing_airline": "Biman Bangladesh Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Abu Dhabi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "AUH",
+          "DepartureDateTime": "2025-02-03T19:55:00",
+          "ArrivalDateTime": "2025-02-04T01:00:00",
+          "stops": 1,
+          "JourneyDuration": 425,
+          "Equipment": "738",
+          "OperatingCarrierCode": "BG",
+          "OperatingFlightNumber": "127",
+          "MarketingCarriercode": "BG",
+          "MarketingFlightNumber": "127",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "CGP",
+              "ArrivalDateTime": "2025-02-03T20:40:00",
+              "DepartureDateTime": "2025-02-03T21:40:00",
+              "Duration": 60
+            }
+          ],
+          "SegmentRef": 11,
+          "CabinClassCode": "Y",
+          "RBD": "S",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "SNX0OCN1",
+          "ItineraryRef": 11
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Etihad Airways",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Abu Dhabi Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "AUH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T10:10:00",
+          "ArrivalDateTime": "2025-02-04T15:55:00",
+          "stops": 0,
+          "JourneyDuration": 885,
+          "Equipment": "789",
+          "OperatingCarrierCode": "EY",
+          "OperatingFlightNumber": "3",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "3",
+          "StopQuantityInfos": [],
+          "SegmentRef": 18,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "BASIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "OLTBX1BD",
+          "ItineraryRef": 18
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 6,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "822.69",
+        "TotalFare": "980.37"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "58100",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "49800",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "bWJVRkxJNHY3S3hKZGQvWGd2Qmd1NnpjSSt6dzRsdVRYVnpYQ2pLZlNXWlkyOXdtaW5hQ3pJckVzR3BBQkVhWDcyWGMvQmdyQ3F4OS9zS1BtRmx3U0FISTNjazRhcWlTTWcwQ0lqNEJFNVVCbGJOR1U2ckliLys4NWhZM24yNDc3Wlgza1N3WVRtRXlHdjZkQU5SeHl4K2N1eHFSbWtqTjF0d2tSSG5qalY0PQ=="
+    },
+    {
+      "flight_id": "9d385354-34bd-4ec3-b293-aeb31a9d7f5f",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:45:00",
+          "ArrivalDateTime": "2025-02-03T14:00:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "788",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "641",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8169",
+          "StopQuantityInfos": [],
+          "SegmentRef": 19,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "LNX0OCN1",
+          "ItineraryRef": 19
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Miami Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "MIA",
+          "DepartureDateTime": "2025-02-04T01:20:00",
+          "ArrivalDateTime": "2025-02-04T09:50:00",
+          "stops": 0,
+          "JourneyDuration": 990,
+          "Equipment": "351",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "781",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8238",
+          "StopQuantityInfos": [],
+          "SegmentRef": 20,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "LNX0OCN1",
+          "ItineraryRef": 20
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Miami Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "MIA",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T12:35:00",
+          "ArrivalDateTime": "2025-02-04T15:55:00",
+          "stops": 0,
+          "JourneyDuration": 200,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "2210",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "2210",
+          "StopQuantityInfos": [],
+          "SegmentRef": 21,
+          "CabinClassCode": "Y",
+          "RBD": "M",
+          "FareFamily": "FLEX",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "MFLOWBD",
+          "ItineraryRef": 21
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 7,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "623.24",
+        "TotalFare": "1034.13"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "23090",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "SXY0cms0SzlQVlF3b0pDLzcxTHYwWFoxM0tub1pQd1hWMnduN0dIVUNKTEFIZkNWS2hRQkx0OHdsQ0JXRFpHV1pjdzEwNCtNbVowNW8xejFJaWJ4aHRBS05UZW8yeXNnNkNPWk5VSGlMaWNpRFRvNHgrMzBSZTluT2laZU9VRUtqWmhsWndKK3FzVVBTVFQ1TTZPbHEzN0xUM2k5R2VMU05sNVFNRldROGpZPQ=="
+    },
+    {
+      "flight_id": "7cf24a2c-7e02-40fb-b7c8-0c2fa869027b",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Royal Jordanian",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:45:00",
+          "ArrivalDateTime": "2025-02-03T14:00:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "788",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "641",
+          "MarketingCarriercode": "RJ",
+          "MarketingFlightNumber": "3806",
+          "StopQuantityInfos": [],
+          "SegmentRef": 22,
+          "CabinClassCode": "Y",
+          "RBD": "M",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "MSTOWMY",
+          "ItineraryRef": 22
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Royal Jordanian",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Queen Alia Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "AMM",
+          "DepartureDateTime": "2025-02-03T20:45:00",
+          "ArrivalDateTime": "2025-02-03T23:50:00",
+          "stops": 0,
+          "JourneyDuration": 245,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "404",
+          "MarketingCarriercode": "RJ",
+          "MarketingFlightNumber": "3842",
+          "StopQuantityInfos": [],
+          "SegmentRef": 23,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "YIFMH",
+          "ItineraryRef": 23
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Royal Jordanian",
+          "marketing_airline": "Royal Jordanian",
+          "departure_airport": "Queen Alia Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "AMM",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T11:20:00",
+          "ArrivalDateTime": "2025-02-04T16:15:00",
+          "stops": 0,
+          "JourneyDuration": 715,
+          "Equipment": "788",
+          "OperatingCarrierCode": "RJ",
+          "OperatingFlightNumber": "261",
+          "MarketingCarriercode": "RJ",
+          "MarketingFlightNumber": "261",
+          "StopQuantityInfos": [],
+          "SegmentRef": 24,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "ECONOMY LIGHT",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "YQ21MAAO",
+          "ItineraryRef": 24
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 8,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "801.85",
+        "TotalFare": "1197.80"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "13435",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "Q09pemM1dDRaRno5T3RJUWQ4dVhlbU8ra2tTdGtaU0x1VGp6eURia0w1U0R4U1hiMjdRSXhLdmhhZkNwdFFHbHlzSFRpeURHa0JQd0cyb2N0ZFlNWUZtcW9FYytQeUp5MmUvUUQxai9leEJBSThib1N6dTRKM3FpZDBHZk9EYzF6Z1VqZUFWcVhJcjQ4cGU2UEpmZDFLT0NWUkQ2bVAxSW5IK2ZacXpUTks4PQ=="
+    },
+    {
+      "flight_id": "4476ae10-6929-4ede-ab16-d4cab8366e1b",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:45:00",
+          "ArrivalDateTime": "2025-02-03T14:00:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "788",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "641",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8169",
+          "StopQuantityInfos": [],
+          "SegmentRef": 19,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "LNX0OCN1",
+          "ItineraryRef": 19
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:20:00",
+          "ArrivalDateTime": "2025-02-04T08:00:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "777",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8308",
+          "StopQuantityInfos": [],
+          "SegmentRef": 25,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 25
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 9,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "800.12",
+        "TotalFare": "1205.40"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "23090",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "MjJMR0FwSDJpaE1TN2N4UDh5TmFaVXl1OEhhNVlWUnVMdGpncVh1QVdKaHF1RnBJdWxoN09ubmZtZ2xURDgzcjgvVE9VaGhURXJndGltb045Y3EybHNQVkFGblY0alI1L3gvOWhtaTRzRmp0ei9icWNORXZKYXdPeXNUa0ZFTnFCZ1oyL3F2VFZWT2M0SWM5NHk4OFRsK0t0Mlh1dUZBcm41eUFUaHpJeGNBPQ=="
+    },
+    {
+      "flight_id": "fec0920a-a616-421b-80fa-acdb251e81e1",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8250",
+          "StopQuantityInfos": [],
+          "SegmentRef": 26,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 26
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Miami Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "MIA",
+          "DepartureDateTime": "2025-02-04T01:20:00",
+          "ArrivalDateTime": "2025-02-04T09:50:00",
+          "stops": 0,
+          "JourneyDuration": 990,
+          "Equipment": "351",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "781",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8238",
+          "StopQuantityInfos": [],
+          "SegmentRef": 20,
+          "CabinClassCode": "Y",
+          "RBD": "L",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "LNX0OCN1",
+          "ItineraryRef": 20
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Miami Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "MIA",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T12:35:00",
+          "ArrivalDateTime": "2025-02-04T15:55:00",
+          "stops": 0,
+          "JourneyDuration": 200,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "2210",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "2210",
+          "StopQuantityInfos": [],
+          "SegmentRef": 21,
+          "CabinClassCode": "Y",
+          "RBD": "M",
+          "FareFamily": "FLEX",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "MFLOWBD",
+          "ItineraryRef": 21
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 10,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "840.08",
+        "TotalFare": "1250.97"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "23090",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "QUtjSWQwVTZ3bDgrK002d09DdXZUTGg1dmZTSzM1azNkZ056VFFNekw5V0xINmVVTGJ4ekhNWWxXNjB4NzMwZU5CVDJTTUF5WmpsUExwMHNlSS9ENmtDTU9HUkZDamhDakJsSm9Cc2FMOTRaQ2tPa0I1RUtvTDJMckZJNzlLYmtHc3VXODAycTB2MThRb1ZPNG16b25TRTFRTnBER1dWbGFwaFZ0ZElBOXpFPQ=="
+    },
+    {
+      "flight_id": "d2050360-e4d8-40d2-afe2-77fb6ff1d562",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:05:00",
+          "ArrivalDateTime": "2025-02-03T13:20:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "789",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "643",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "643",
+          "StopQuantityInfos": [],
+          "SegmentRef": 10,
+          "CabinClassCode": "Y",
+          "RBD": "M",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "MNN0S9CM",
+          "ItineraryRef": 10
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Barajas",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "MAD",
+          "DepartureDateTime": "2025-02-04T00:55:00",
+          "ArrivalDateTime": "2025-02-04T07:10:00",
+          "stops": 0,
+          "JourneyDuration": 495,
+          "Equipment": "332",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "392",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6952",
+          "StopQuantityInfos": [],
+          "SegmentRef": 27,
+          "CabinClassCode": "S",
+          "RBD": "W",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 27
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Barajas",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "MAD",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T12:30:00",
+          "ArrivalDateTime": "2025-02-04T15:15:00",
+          "stops": 0,
+          "JourneyDuration": 525,
+          "Equipment": "333",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "211",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6903",
+          "StopQuantityInfos": [],
+          "SegmentRef": 28,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "Y",
+          "ItineraryRef": 28
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 11,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1183.11",
+        "TotalFare": "1381.10"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "20155",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "N3hUNjJlK0l4QWhEUjhqOEx6TU9KTmdnL3IyU21DYXMybThkYXQ2R0dNYlZqK2FacXBqT2Y5czY0OGk3TlJ5eHRVRndPSVNySDV5a2VERFM1eE0yYlFaQ2hueGhCWVlRMUxZWGlaUDNJcE03K0w1Z3ZyYjNCbUtrQlVDcSszUGlCeXkraUs0MEtUc2h0UzZwVXgzNXdhcmtreUdHMUdsb0JGMS8rdFZVczlvPQ=="
+    },
+    {
+      "flight_id": "902023c8-f5c3-4ecd-b8e8-e21e0bdb2da5",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T10:45:00",
+          "ArrivalDateTime": "2025-02-03T13:55:00",
+          "stops": 0,
+          "JourneyDuration": 370,
+          "Equipment": "788",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "641",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "641",
+          "StopQuantityInfos": [],
+          "SegmentRef": 8,
+          "CabinClassCode": "Y",
+          "RBD": "N",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "1PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "NNX0OCN1",
+          "ItineraryRef": 8
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Barajas",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "MAD",
+          "DepartureDateTime": "2025-02-04T00:55:00",
+          "ArrivalDateTime": "2025-02-04T07:10:00",
+          "stops": 0,
+          "JourneyDuration": 495,
+          "Equipment": "332",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "392",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6952",
+          "StopQuantityInfos": [],
+          "SegmentRef": 27,
+          "CabinClassCode": "S",
+          "RBD": "W",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 27
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Barajas",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "MAD",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T12:30:00",
+          "ArrivalDateTime": "2025-02-04T15:15:00",
+          "stops": 0,
+          "JourneyDuration": 525,
+          "Equipment": "333",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "211",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6903",
+          "StopQuantityInfos": [],
+          "SegmentRef": 28,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "Y",
+          "ItineraryRef": 28
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 11,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1183.11",
+        "TotalFare": "1381.10"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "20155",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10920",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "TnZScDB1RWJMZHpEMXU0MkpFUk4xZW45RVBQOFZHR3kvV1FCQ2szMkptSm5UMVYrbGdXQWVjamVDcUFzRGxlTWJZWnFOVFpBUDhieUpCbVY0Vm5GcTRxUG1vZTluWUhCL2lsNHVzT0YyYXBDbXVxYVpNZ1FXS3RBL2toRlJSZ2E3ZDZZV0FPL1BwK0prZC90QzlBS3pSL0QwbnpvNitxQTRzb05qSTVwS21BPQ=="
+    },
+    {
+      "flight_id": "805e3619-08c9-4736-bc7e-bc2cbd8cfe2c",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Finnair",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "AY",
+          "MarketingFlightNumber": "6687",
+          "StopQuantityInfos": [],
+          "SegmentRef": 29,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "ECONOMY FLEXI",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "YIFSQ",
+          "ItineraryRef": 29
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Finnair",
+          "marketing_airline": "Finnair",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Helsinki Vantaa",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "HEL",
+          "DepartureDateTime": "2025-02-04T08:05:00",
+          "ArrivalDateTime": "2025-02-04T14:20:00",
+          "stops": 0,
+          "JourneyDuration": 435,
+          "Equipment": "333",
+          "OperatingCarrierCode": "AY",
+          "OperatingFlightNumber": "1982",
+          "MarketingCarriercode": "AY",
+          "MarketingFlightNumber": "1982",
+          "StopQuantityInfos": [],
+          "SegmentRef": 30,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "YIFMH",
+          "ItineraryRef": 30
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Finnair",
+          "marketing_airline": "Finnair",
+          "departure_airport": "Helsinki Vantaa",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HEL",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T16:45:00",
+          "ArrivalDateTime": "2025-02-04T18:55:00",
+          "stops": 0,
+          "JourneyDuration": 550,
+          "Equipment": "333",
+          "OperatingCarrierCode": "AY",
+          "OperatingFlightNumber": "15",
+          "MarketingCarriercode": "AY",
+          "MarketingFlightNumber": "15",
+          "StopQuantityInfos": [],
+          "SegmentRef": 31,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "ECONOMY FULL FLEX",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "Y2AFFSSS",
+          "ItineraryRef": 31
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 12,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1268.16",
+        "TotalFare": "1479.13"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "0",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "U05tdzhVZXNWb01vcDhCU3d0ZE9yZTllOFdMdFBqRVJKeFZKOENDQUF1MDhVN21rQW91ZWZ5NHE1SGNqbFl3Vy9jUmdvY1N6VWNOQXA2RGZFR3h6Rm1OeCtJbUFBSVR0dUQ1N0hVUks0ZzdjZFF3RzgwOUVqUDdBZ1hnZmFFU2gxU2l0UnNZR1h4UWVkSDZINXhlSzFUR2I5WTFUcXpwTXFzRUloSTAzWkF3PQ=="
+    },
+    {
+      "flight_id": "ff916cfc-a241-4df3-958e-a44a89e376d4",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8250",
+          "StopQuantityInfos": [],
+          "SegmentRef": 26,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 26
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:20:00",
+          "ArrivalDateTime": "2025-02-04T08:00:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "777",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8308",
+          "StopQuantityInfos": [],
+          "SegmentRef": 25,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 25
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 13,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1112.13",
+        "TotalFare": "1517.41"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "23090",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "OWZqbld5TXBEV1k4UjNLUWs0ei9ycXhXc0grNUNjZ00zREFvNUM5b3ZzdGlSY05EM1Ezd0o5citxdlpUNExGdXVEa1dFclhITlhEWFJmQTFselZTYjlOMmRFeTkvMmlmalZhazFSbkVVT1dnWCtSV0NNS0d2QnYxbXlZczgxdDR6UDc3VkhaT0VqTTFyL3RTaHBuTUdjcTk3NkZPdUVPZERvQnN0OXVGYTdvPQ=="
+    },
+    {
+      "flight_id": "3eb3dc3d-f3b7-43ba-8008-049fe1189dea",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Air India Limited",
+          "marketing_airline": "Air India Limited",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Indira Gandhi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DEL",
+          "DepartureDateTime": "2025-02-03T21:00:00",
+          "ArrivalDateTime": "2025-02-03T23:00:00",
+          "stops": 0,
+          "JourneyDuration": 150,
+          "Equipment": "32A",
+          "OperatingCarrierCode": "AI",
+          "OperatingFlightNumber": "238",
+          "MarketingCarriercode": "AI",
+          "MarketingFlightNumber": "238",
+          "StopQuantityInfos": [],
+          "SegmentRef": 32,
+          "CabinClassCode": "S",
+          "RBD": "W",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "W2X00ZN5",
+          "ItineraryRef": 32
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Air France",
+          "marketing_airline": "Air France",
+          "departure_airport": "Indira Gandhi Intl",
+          "arrival_airport": "Charles De Gaulle",
+          "DepartureAirportLocationCode": "DEL",
+          "ArrivalAirportLocationCode": "CDG",
+          "DepartureDateTime": "2025-02-04T01:45:00",
+          "ArrivalDateTime": "2025-02-04T07:10:00",
+          "stops": 0,
+          "JourneyDuration": 595,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "AF",
+          "OperatingFlightNumber": "225",
+          "MarketingCarriercode": "AF",
+          "MarketingFlightNumber": "225",
+          "StopQuantityInfos": [],
+          "SegmentRef": 33
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Air France",
+          "marketing_airline": "Air France",
+          "departure_airport": "Charles De Gaulle",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "CDG",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T08:30:00",
+          "ArrivalDateTime": "2025-02-04T10:40:00",
+          "stops": 0,
+          "JourneyDuration": 490,
+          "Equipment": "359",
+          "OperatingCarrierCode": "AF",
+          "OperatingFlightNumber": "2",
+          "MarketingCarriercode": "AF",
+          "MarketingFlightNumber": "2",
+          "StopQuantityInfos": [],
+          "SegmentRef": 34
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 14,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "971.10",
+        "TotalFare": "1600.58"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "16795",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "aTQ5VkRvNndTc2lLYkpiVmtLRFRxalRTemxDaUN4aGlQdE43T1A4dW53YkZkOTI1S1J5ZkhaVFZkaGhCcy9zSVhpNTVPMU15VDlQU0pvR2FqcmNrWTlUNlRGeTRUUjUzeTJZNXpKWDBrMFM4NEtWZzNGbEF5ZTduRks5Q0NJaWc0OHZaRElKR1VoQlY0dmFyN3J3eitFc0FvaTJxeXVjZzNENVBvSmQyRUNzPQ=="
+    },
+    {
+      "flight_id": "0dbc2267-8edf-465a-90a2-7b5501db8e16",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Intersky",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Abu Dhabi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "AUH",
+          "DepartureDateTime": "2025-02-03T20:40:00",
+          "ArrivalDateTime": "2025-02-04T00:35:00",
+          "stops": 0,
+          "JourneyDuration": 355,
+          "Equipment": "320",
+          "OperatingCarrierCode": "3L",
+          "OperatingFlightNumber": "64",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "1367",
+          "StopQuantityInfos": [],
+          "SegmentRef": 35
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Etihad Airways",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Abu Dhabi Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "AUH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T02:55:00",
+          "ArrivalDateTime": "2025-02-04T08:55:00",
+          "stops": 0,
+          "JourneyDuration": 900,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EY",
+          "OperatingFlightNumber": "1",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "1",
+          "StopQuantityInfos": [],
+          "SegmentRef": 12,
+          "CabinClassCode": "Y",
+          "RBD": "G",
+          "FareFamily": "",
+          "SeatsRemaining": 1,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "QGS0BBLA",
+          "ItineraryRef": 12
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 15,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1586.18",
+        "TotalFare": "1743.86"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "50380",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "41985",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "ejJ3cGp2TXZBUUh6SHk2K01wMndUbGkvMWlMVG5Ja0FRR056TmxYZ2ZYYmVMVnRhSXRhdENhcHU0N2FZanJsMko1ODdRY3lPV2dDcHpJMmJuR1BVeVNGTlo5dHlhaGlsaGdJR2JJeFZjcVJwS0tDY1A1RlhqK2VGcVFyRHBXMlF5RVdPckxHOTdjcTI1ajBGOWhCTFhtZDVrOXR3ZU9WZFNhYjRNNTVnYkFjPQ=="
+    },
+    {
+      "flight_id": "192c00bd-9290-47bf-80bf-7e516b6d9c40",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Intersky",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Abu Dhabi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "AUH",
+          "DepartureDateTime": "2025-02-03T20:40:00",
+          "ArrivalDateTime": "2025-02-04T00:35:00",
+          "stops": 0,
+          "JourneyDuration": 355,
+          "Equipment": "320",
+          "OperatingCarrierCode": "3L",
+          "OperatingFlightNumber": "64",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "1367",
+          "StopQuantityInfos": [],
+          "SegmentRef": 35
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Etihad Airways",
+          "marketing_airline": "Etihad Airways",
+          "departure_airport": "Abu Dhabi Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "AUH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T10:10:00",
+          "ArrivalDateTime": "2025-02-04T15:55:00",
+          "stops": 0,
+          "JourneyDuration": 885,
+          "Equipment": "789",
+          "OperatingCarrierCode": "EY",
+          "OperatingFlightNumber": "3",
+          "MarketingCarriercode": "EY",
+          "MarketingFlightNumber": "3",
+          "StopQuantityInfos": [],
+          "SegmentRef": 18,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "BASIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "OLTBX1BD",
+          "ItineraryRef": 18
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 16,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1636.15",
+        "TotalFare": "1793.83"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "50380",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "41985",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "RjRvdlgrdVluUXdJeFJyRnBLbTBJNiszRFZuZHpoeEp1OEI1VHlIOEZhaGtvdEV1UUgxYWp6VnZKRFZuMGp0c2RKWHNxemlKRW5JOUJ0L3pWQTJhbkE5OWs3d1ZPQkEzUjREeE9EWkJESEN0SnhrYldneDdmVFJ5ekkvR05WY3JrK2hkVW1DRHduVlkxZm5zL0xLZjl6QzVwNGE0Y2VWSTZPNzM3RXFZVkdZPQ=="
+    },
+    {
+      "flight_id": "16bd5cb5-cb74-4ef4-9098-321b3b0375a9",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T22:55:00",
+          "ArrivalDateTime": "2025-02-04T04:55:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "197",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "197",
+          "StopQuantityInfos": [],
+          "SegmentRef": 36
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Hong Kong Intl",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "HKG",
+          "DepartureDateTime": "2025-02-04T08:55:00",
+          "ArrivalDateTime": "2025-02-04T12:55:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "72",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "72",
+          "StopQuantityInfos": [],
+          "SegmentRef": 37
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Cathay Pacific",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Hong Kong Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HKG",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T16:30:00",
+          "ArrivalDateTime": "2025-02-04T19:05:00",
+          "stops": 0,
+          "JourneyDuration": 935,
+          "Equipment": "359",
+          "OperatingCarrierCode": "CX",
+          "OperatingFlightNumber": "840",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9184",
+          "StopQuantityInfos": [],
+          "SegmentRef": 38
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 17,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1657.17",
+        "TotalFare": "1943.71"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "44520",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "8400",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "K3MvZmhQME5payszYnRYelJMVnhqeFVZUWx4T1RrcllxOEp4NVlnODc1MkNZbzFtVWtCeUc0cURqQUROdXZ1MUR4QW5EeEUyNnkraUQxRE0vWFVLMmRjWExQanI3Z3FzYnFqTUxEQ1dUUVpNUFJPeis3aFdOUWp5U3hQaDZNMWxGZW9ZVzhBd0J3VEF3ZnBFMnBMYW5jN3ZNUEM3ck1lYlpOOHUxYnVXOURJPQ=="
+    },
+    {
+      "flight_id": "9a4d94f8-9778-4bff-bbaa-a29ee18b0d99",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "639",
+          "StopQuantityInfos": [],
+          "SegmentRef": 39
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T08:20:00",
+          "ArrivalDateTime": "2025-02-04T15:00:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "701",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "701",
+          "StopQuantityInfos": [],
+          "SegmentRef": 40
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 18,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1851.20",
+        "TotalFare": "2032.46"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "10920",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "6300",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "N0dJbDlrSW5zUnlUcXR0RW5HSVlYQ3hNb2ovUFFLRDZYMlVXODNUcVRrVzBwTWhiUnpZYTNWNHVzU056M3o0Z3d3Q0xkNVNpN1dnYzcrSWd0SFk4TVYrU2hQSTJFRDYzVWo1SU1CdStWcnpDT2t1a24zZDlReHh2QnR0c0NhZVh3WTF0dnJDMGtodlkzUkdMVk9veTA2TEJGTmNScmo1UzJob0JmT0dyMktNPQ=="
+    },
+    {
+      "flight_id": "82a0ebe4-2aa2-414f-8f7b-10ef86732af0",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "639",
+          "StopQuantityInfos": [],
+          "SegmentRef": 39
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "703",
+          "StopQuantityInfos": [],
+          "SegmentRef": 9,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECONOMY CLASSIC",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TJBDP1RO",
+          "ItineraryRef": 9
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 18,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1851.20",
+        "TotalFare": "2032.46"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "10920",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "6300",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "ckN6REhBVXNtOXozZ3dMekxBbnpkZDh1ZnNSYm8xNGhqdnpiK1NMcTJNVDMwcDZSODREVDFTT3puUVlhUGNCeHlqSWRqR0MwTlV3WHJTdkpWRnNPak92TzVGY3JwSjNjSytzbE5SeXUwSGpQazVxS3VtVGc4SWtYdHorUXdCREJFamp6TXdzQW5UUlBsdTNWcTYyNGNKRGZnQTNWTGdzOE1WL3V6S0grVmpJPQ=="
+    },
+    {
+      "flight_id": "0e45bfe7-962c-4a78-858f-0a93eaedcd4f",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T12:30:00",
+          "ArrivalDateTime": "2025-02-03T18:40:00",
+          "stops": 0,
+          "JourneyDuration": 250,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "103",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "103",
+          "StopQuantityInfos": [],
+          "SegmentRef": 41
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-03T23:30:00",
+          "ArrivalDateTime": "2025-02-04T05:35:00",
+          "stops": 0,
+          "JourneyDuration": 845,
+          "Equipment": "359",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "2",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "2",
+          "StopQuantityInfos": [],
+          "SegmentRef": 42
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T08:40:00",
+          "ArrivalDateTime": "2025-02-04T11:40:00",
+          "stops": 0,
+          "JourneyDuration": 480,
+          "Equipment": "772",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "103",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9393",
+          "StopQuantityInfos": [],
+          "SegmentRef": 43
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 19,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1695.17",
+        "TotalFare": "2055.05"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15385",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "3915",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "M0dHa2xsZVo1WmE2dSthakJkblBncGFxZ2QzT3FwK2tCYmdwL1NSa1dmbnBiTnU2elFhbFVpSVlVT25rRFhmWVhjNk5NQkdibk5BNGlrTy80SFVMWVpSYS9KSjliVnFpTW1sb3A4SVNrRDBWcENMODc0aFo3bWpTeHdXcFRFV1V6WGlQNDlleVhZc1MzclBGYkcyUXhnREJkaFFkeTdXeWdwRVRKUElBWmowPQ=="
+    },
+    {
+      "flight_id": "3c1e2bf8-8b9d-48d2-94f7-7bc90e3beee5",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T12:30:00",
+          "ArrivalDateTime": "2025-02-03T18:40:00",
+          "stops": 0,
+          "JourneyDuration": 250,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "103",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "103",
+          "StopQuantityInfos": [],
+          "SegmentRef": 41
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-03T23:30:00",
+          "ArrivalDateTime": "2025-02-04T05:35:00",
+          "stops": 0,
+          "JourneyDuration": 845,
+          "Equipment": "359",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "2",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "2",
+          "StopQuantityInfos": [],
+          "SegmentRef": 42
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T17:05:00",
+          "ArrivalDateTime": "2025-02-04T20:10:00",
+          "stops": 0,
+          "JourneyDuration": 485,
+          "Equipment": "772",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "105",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9555",
+          "StopQuantityInfos": [],
+          "SegmentRef": 44
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 19,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1695.17",
+        "TotalFare": "2055.05"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15385",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "3915",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "UHRpSFArQ2FWQWU0aXBJMHJLRzhnVmJSaTIyZkVXY2ZzTXExRUhxQXFIeFpYRThubi9NQlNmTmlIZi9DRitsQm9yRmpJenhDVmp0U0RJNTFaWkZQOURmeTdlQ0t5WWdZd2hUMkloV2tOeDRQRzc2VFE5NWpJYzZnZG55Z01XajJTZGk4Q2lzUElhMk9QRVRSUDdiL0I2elRtdERxRnVCNTZJM2tpVjd2SnVFPQ=="
+    },
+    {
+      "flight_id": "f429514b-39f0-4fdd-beed-9454ecd1db00",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T22:55:00",
+          "ArrivalDateTime": "2025-02-04T04:55:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "197",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "197",
+          "StopQuantityInfos": [],
+          "SegmentRef": 36
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Heathrow",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "LHR",
+          "DepartureDateTime": "2025-02-04T09:25:00",
+          "ArrivalDateTime": "2025-02-04T15:25:00",
+          "stops": 0,
+          "JourneyDuration": 840,
+          "Equipment": "359",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "4",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "4",
+          "StopQuantityInfos": [],
+          "SegmentRef": 45
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Heathrow",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LHR",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T17:05:00",
+          "ArrivalDateTime": "2025-02-04T20:10:00",
+          "stops": 0,
+          "JourneyDuration": 485,
+          "Equipment": "772",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "105",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9555",
+          "StopQuantityInfos": [],
+          "SegmentRef": 44
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 19,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1695.17",
+        "TotalFare": "2055.05"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "15385",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "3915",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "VXpVVTlqa1dUcko5TUxCR0tKeGNUZ1FXQyswNWxCSVpNK0lzRGRYbnQyZjQ1QXNJK1ErbGh4N3JFMU1DMHJsbzBnLzRFVFJna0ZaUnBYWWxYVVUrWWo3R1VvNWhCczVXZFFwMjg1VHF4SWFWOHFhZHdNeTd6bERyYkhmZEkxK0QxU2xpaEs0SWdnRFBqYmtCYVhHQUI3cXhJK2xTcVhTRHkxRXhhcFNVS2RRPQ=="
+    },
+    {
+      "flight_id": "1bd6690f-799e-43e0-81b0-45b6187f18bf",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "639",
+          "StopQuantityInfos": [],
+          "SegmentRef": 39
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T01:20:00",
+          "ArrivalDateTime": "2025-02-04T08:00:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "777",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "703",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "8308",
+          "StopQuantityInfos": [],
+          "SegmentRef": 25,
+          "CabinClassCode": "Y",
+          "RBD": "K",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 25
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 20,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "1846.20",
+        "TotalFare": "2251.48"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "",
+        "RefundAllowed": false,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "23090",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "cXRqOWtXc1VpMjYwaGg5NFdzRzVnZzMvY3dXQWJmMFQxVFAzVlNwcWpuNkU2cCtBN0ZBakFNNVZKdTlsbUdmelVBUnZLaEpXTDhrSE5Ld0EzdklYU3BsbGJYRlByamtCQlRwR1FMYmovWGZGc2EybW5tT0VHOEMyd3k0ZGpkSDBJbkhCTVVDa2xhUEJ6a3BPSlhLRUJ3bVNlSEFvRjZJTDFzc1lTY1NoUXVVPQ=="
+    },
+    {
+      "flight_id": "1f5770a7-9505-4949-840b-e5cb82a881e7",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T12:30:00",
+          "ArrivalDateTime": "2025-02-03T18:40:00",
+          "stops": 0,
+          "JourneyDuration": 250,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "103",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "103",
+          "StopQuantityInfos": [],
+          "SegmentRef": 41
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Hong Kong Intl",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "HKG",
+          "DepartureDateTime": "2025-02-03T19:50:00",
+          "ArrivalDateTime": "2025-02-03T23:50:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "78",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "78",
+          "StopQuantityInfos": [],
+          "SegmentRef": 46
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Cathay Pacific",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Hong Kong Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HKG",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T03:20:00",
+          "ArrivalDateTime": "2025-02-04T05:45:00",
+          "stops": 0,
+          "JourneyDuration": 925,
+          "Equipment": "351",
+          "OperatingCarrierCode": "CX",
+          "OperatingFlightNumber": "844",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9210",
+          "StopQuantityInfos": [],
+          "SegmentRef": 47
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 21,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "2121.22",
+        "TotalFare": "2423.21"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "7830",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "3915",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "Vk9QTVZ2VG1ydDVjY3JDWlQ4NDVDOHJWZFVOSDIzOGowb3NXVDI1eURxc0VnY3RHWWY4QVphVWZoYjJzbUE0akJaNk80UHViYzdSS3dGQy94ZVMrNW90L0lqTnIyWUtMWER3R3BCNURQL2tmR1cxdytGVzhISWRVNFE3ejZKZFNWR0lrRy9yTUdqRm9yT0pwdlBvd2hDWDE2ZkN0NmxXb2lLYUlXR3RIcEdJPQ=="
+    },
+    {
+      "flight_id": "6269bfb3-0528-4e2d-8de8-36401a7e3d04",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Qatar Airways",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Doha Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DOH",
+          "DepartureDateTime": "2025-02-03T20:15:00",
+          "ArrivalDateTime": "2025-02-03T23:30:00",
+          "stops": 0,
+          "JourneyDuration": 375,
+          "Equipment": "333",
+          "OperatingCarrierCode": "QR",
+          "OperatingFlightNumber": "639",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "639",
+          "StopQuantityInfos": [],
+          "SegmentRef": 39
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Doha Intl",
+          "arrival_airport": "Barajas",
+          "DepartureAirportLocationCode": "DOH",
+          "ArrivalAirportLocationCode": "MAD",
+          "DepartureDateTime": "2025-02-04T00:55:00",
+          "ArrivalDateTime": "2025-02-04T07:10:00",
+          "stops": 0,
+          "JourneyDuration": 495,
+          "Equipment": "332",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "392",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6952",
+          "StopQuantityInfos": [],
+          "SegmentRef": 27,
+          "CabinClassCode": "S",
+          "RBD": "W",
+          "FareFamily": "",
+          "SeatsRemaining": 7,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "WOWBD7",
+          "ItineraryRef": 27
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Iberia Airlines",
+          "marketing_airline": "Qatar Airways",
+          "departure_airport": "Barajas",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "MAD",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T12:30:00",
+          "ArrivalDateTime": "2025-02-04T15:15:00",
+          "stops": 0,
+          "JourneyDuration": 525,
+          "Equipment": "333",
+          "OperatingCarrierCode": "IB",
+          "OperatingFlightNumber": "211",
+          "MarketingCarriercode": "QR",
+          "MarketingFlightNumber": "6903",
+          "StopQuantityInfos": [],
+          "SegmentRef": 28,
+          "CabinClassCode": "Y",
+          "RBD": "Y",
+          "FareFamily": "",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "7KG"
+            }
+          ],
+          "FareBasisCodes": "Y",
+          "ItineraryRef": 28
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 22,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "2621.24",
+        "TotalFare": "2819.23"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "10920",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "6300",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "MWpSRUgxVlZCU1AyWWZEQVdnbS8zemhTL25sRTd0YjdOVVJKRjFGaGZFSmJMdE5JK3dRTlZyM2lmRkRKWGEwYWtZNzRNMGp1T3NZdTUzTERpeFNaZ2J5QnJKTlhwMVVVYklnN0duSXdWcUxJUUpjays2M29IQjhycVFCclE2OWRFakllUi9mQkxITW9nZnVoT3RHOUdtQkhRdHdsbU1HSzBmc3hvamFKVm9RPQ=="
+    },
+    {
+      "flight_id": "baa581e3-64a3-4630-9dc4-f8f8b89dca56",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T12:30:00",
+          "ArrivalDateTime": "2025-02-03T18:40:00",
+          "stops": 0,
+          "JourneyDuration": 250,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "103",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "103",
+          "StopQuantityInfos": [],
+          "SegmentRef": 41
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Hong Kong Intl",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "HKG",
+          "DepartureDateTime": "2025-02-03T19:50:00",
+          "ArrivalDateTime": "2025-02-03T23:50:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "78",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "78",
+          "StopQuantityInfos": [],
+          "SegmentRef": 46
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Cathay Pacific",
+          "marketing_airline": "Cathay Pacific",
+          "departure_airport": "Hong Kong Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HKG",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T03:20:00",
+          "ArrivalDateTime": "2025-02-04T06:00:00",
+          "stops": 0,
+          "JourneyDuration": 940,
+          "Equipment": "359",
+          "OperatingCarrierCode": "CX",
+          "OperatingFlightNumber": "844",
+          "MarketingCarriercode": "CX",
+          "MarketingFlightNumber": "844",
+          "StopQuantityInfos": [],
+          "SegmentRef": 48
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 23,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "4028.40",
+        "TotalFare": "4317.58"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "16635",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "7830",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "d1E4OHJrazF2L3o2V056dG14Y25DM1N1U2dXT0NlVzJ2ZDY5NEt4OG1GVStSYmVEcE1MbEZEb1d6ZEhaQitqd2NydG1obmc5Mk9ZQ3lWaUxxdWJXRWh4Q253NUxOcVJuR1Q5MjE1UTlkbDFBUkRCbHQ5eEErSzBLMTA5czBseEZxOExyK3hDd05qQWszOHBZS09mZis0YUczYlJkQ0tZNkhJc3I0UmdhZ2UwPQ=="
+    },
+    {
+      "flight_id": "fd85565f-86d1-4780-b729-d7f6c46cb55c",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Biman Bangladesh Airlines",
+          "marketing_airline": "Biman Bangladesh Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Indira Gandhi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DEL",
+          "DepartureDateTime": "2025-02-03T15:15:00",
+          "ArrivalDateTime": "2025-02-03T17:30:00",
+          "stops": 0,
+          "JourneyDuration": 165,
+          "Equipment": "738",
+          "OperatingCarrierCode": "BG",
+          "OperatingFlightNumber": "397",
+          "MarketingCarriercode": "BG",
+          "MarketingFlightNumber": "397",
+          "StopQuantityInfos": [],
+          "SegmentRef": 49
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Indira Gandhi Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DEL",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T21:25:00",
+          "ArrivalDateTime": "2025-02-03T23:55:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "515",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "515",
+          "StopQuantityInfos": [],
+          "SegmentRef": 50
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T02:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "203",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "203",
+          "StopQuantityInfos": [],
+          "SegmentRef": 4,
+          "CabinClassCode": "Y",
+          "RBD": "V",
+          "FareFamily": "ECONOMY VALUE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VLN00V6R",
+          "ItineraryRef": 4
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 24,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "4788.44",
+        "TotalFare": "4944.76"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "0",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "d01RWU01NWJsd2RxS2dEMXpLK1dSTTIvTXBtSWFGSjc4TlpETnZmeEJwYm05M3FUVFEvU3JUN3VCU1dLOUxRQzkvYkQ4R0NrT1ppN2NhMVZ0aTZQU0k1YUVlUjdpMXpMSzNxTDQ0NkVra0IycEgyM1IrVVJlWTFGWEVTaENWTmN0MDBLV1ZKdEJ4RFlHTGZmTlJYdG9WbW5tdFBNc3NhWXNkNG9BT3FHVjZBPQ=="
+    },
+    {
+      "flight_id": "830f23b9-06dc-4b3d-9b52-67933112cb9a",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Biman Bangladesh Airlines",
+          "marketing_airline": "Biman Bangladesh Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T20:45:00",
+          "ArrivalDateTime": "2025-02-04T00:30:00",
+          "stops": 0,
+          "JourneyDuration": 345,
+          "Equipment": "788",
+          "OperatingCarrierCode": "BG",
+          "OperatingFlightNumber": "347",
+          "MarketingCarriercode": "BG",
+          "MarketingFlightNumber": "347",
+          "StopQuantityInfos": [],
+          "SegmentRef": 51
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T02:35:00",
+          "ArrivalDateTime": "2025-02-04T08:15:00",
+          "stops": 0,
+          "JourneyDuration": 880,
+          "Equipment": "388",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "203",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "203",
+          "StopQuantityInfos": [],
+          "SegmentRef": 4,
+          "CabinClassCode": "Y",
+          "RBD": "V",
+          "FareFamily": "ECONOMY VALUE",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "VLN00V6R",
+          "ItineraryRef": 4
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 24,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "4788.44",
+        "TotalFare": "4944.76"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "0",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "Y2oycUZsWjdoREZGZTVhYzZJTjg5TUdzdHpMSkIrSmpqOGlCSDdZeWZ5S3pMWk5SRTA0c24xM2luODVFK1VaRUI3L2p5ZjE3OVdUZzlIZlZqZXVLdm9idEtrT2laV2llM0lXZmNGNGhNaytLVlFzOXRlQVVJKzdscTlvWjBOOWs3cmROUUJyN09lc0hQc2JXaHNMVE9QZ05ZOVJvTHhueUZMWW8wbkJkRkdzPQ=="
+    },
+    {
+      "flight_id": "237c6c13-548a-43b0-bdf0-ecad911c28be",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Biman Bangladesh Airlines",
+          "marketing_airline": "Biman Bangladesh Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Changi Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "SIN",
+          "DepartureDateTime": "2025-02-03T08:30:00",
+          "ArrivalDateTime": "2025-02-03T14:40:00",
+          "stops": 0,
+          "JourneyDuration": 250,
+          "Equipment": "738",
+          "OperatingCarrierCode": "BG",
+          "OperatingFlightNumber": "584",
+          "MarketingCarriercode": "BG",
+          "MarketingFlightNumber": "584",
+          "StopQuantityInfos": [],
+          "SegmentRef": 52
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Singapore Airlines",
+          "marketing_airline": "Singapore Airlines",
+          "departure_airport": "Changi Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "SIN",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-03T23:55:00",
+          "ArrivalDateTime": "2025-02-04T11:15:00",
+          "stops": 1,
+          "JourneyDuration": 1460,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "SQ",
+          "OperatingFlightNumber": "26",
+          "MarketingCarriercode": "SQ",
+          "MarketingFlightNumber": "26",
+          "StopQuantityInfos": [
+            {
+              "LocationCode": "FRA",
+              "ArrivalDateTime": "2025-02-04T06:20:00",
+              "DepartureDateTime": "2025-02-04T08:20:00",
+              "Duration": 120
+            }
+          ],
+          "SegmentRef": 53
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 25,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "4987.47",
+        "TotalFare": "5186.48"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "0",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "WVNSbEJ2YkJ5S0UyTVpVdmJtMG12RFJ1S01pcXlZVDVIbDBKZEs1Si9GcHZNY1pZUjJzNGo1WFVUbzZRNkUwL1hlT0xhZkRtdTlGaUNLeTlzaE1wd2praU5Hd2NxaWxQTDZaVnNRSC9RakR1ZTVrSWR3cGttWTNUZzZLV1N4cEJLYlFVcnhpK1VRZGxxM2g4eVUxR09CTHRpa0c1SDd4ZXY4RVhtMzQvdGIwPQ=="
+    },
+    {
+      "flight_id": "15664897-0da5-439e-8c91-b516420314c7",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T01:00:00",
+          "ArrivalDateTime": "2025-02-03T04:25:00",
+          "stops": 0,
+          "JourneyDuration": 325,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "585",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "585",
+          "StopQuantityInfos": [],
+          "SegmentRef": 5,
+          "CabinClassCode": "Y",
+          "RBD": "O",
+          "FareFamily": "ECONOMY LIGHT",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "OBLITLBD",
+          "ItineraryRef": 5
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "Lisboa",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "LIS",
+          "DepartureDateTime": "2025-02-03T07:25:00",
+          "ArrivalDateTime": "2025-02-03T12:00:00",
+          "stops": 0,
+          "JourneyDuration": 515,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "191",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "191",
+          "StopQuantityInfos": [],
+          "SegmentRef": 54
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "TAP Portugal",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Lisboa",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LIS",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-03T16:40:00",
+          "ArrivalDateTime": "2025-02-03T20:05:00",
+          "stops": 0,
+          "JourneyDuration": 505,
+          "Equipment": "32Q",
+          "OperatingCarrierCode": "TP",
+          "OperatingFlightNumber": "209",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "4838",
+          "StopQuantityInfos": [],
+          "SegmentRef": 55
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 26,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "6388.62",
+        "TotalFare": "6580.88"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "0",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "bmVxVHRsd05LTUthekNzYTBrU2ltWmJ5RTI5cWIzQ1ArUy9rRUlVV0kySGZCdGlPWloyQm1BVUM4cHRQU3l0Snp3bDVkQ0J3U2ZKZEZFTkU4VTExQ0x0SG1FaVl2T1pIbi9BazdFcHIvamg0dERWR2FPTm1Sdzc1aFliNzZ1Q0d3U1F4dEM5LzlOd0xjTTF3OVVqclJ5YjZkb0tsdVZpZFVaK05IUnBnUmlJPQ=="
+    },
+    {
+      "flight_id": "c8a16ee2-bba9-4581-bc41-734751a9feba",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Dubai Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "DXB",
+          "DepartureDateTime": "2025-02-03T18:45:00",
+          "ArrivalDateTime": "2025-02-03T22:15:00",
+          "stops": 0,
+          "JourneyDuration": 330,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "587",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "587",
+          "StopQuantityInfos": [],
+          "SegmentRef": 0,
+          "CabinClassCode": "Y",
+          "RBD": "T",
+          "FareFamily": "ECO SAVER",
+          "SeatsRemaining": 9,
+          "CheckinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "2PC"
+            }
+          ],
+          "CabinBaggage": [
+            {
+              "Type": "ADT",
+              "Value": "SB"
+            }
+          ],
+          "FareBasisCodes": "TAAOPBD1",
+          "ItineraryRef": 0
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Emirates",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Dubai Intl",
+          "arrival_airport": "Lisboa",
+          "DepartureAirportLocationCode": "DXB",
+          "ArrivalAirportLocationCode": "LIS",
+          "DepartureDateTime": "2025-02-04T07:25:00",
+          "ArrivalDateTime": "2025-02-04T12:00:00",
+          "stops": 0,
+          "JourneyDuration": 515,
+          "Equipment": "77W",
+          "OperatingCarrierCode": "EK",
+          "OperatingFlightNumber": "191",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "191",
+          "StopQuantityInfos": [],
+          "SegmentRef": 56
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "TAP Portugal",
+          "marketing_airline": "Emirates",
+          "departure_airport": "Lisboa",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "LIS",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T16:40:00",
+          "ArrivalDateTime": "2025-02-04T20:05:00",
+          "stops": 0,
+          "JourneyDuration": 505,
+          "Equipment": "32Q",
+          "OperatingCarrierCode": "TP",
+          "OperatingFlightNumber": "209",
+          "MarketingCarriercode": "EK",
+          "MarketingFlightNumber": "4838",
+          "StopQuantityInfos": [],
+          "SegmentRef": 57
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 26,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "6388.62",
+        "TotalFare": "6580.88"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "0",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "Refer Penalties",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "YmFPRWxIM2VhOHN5L1R4ZEtURnppcTVBMk9tVDlEaWtWaVlYL3hCa0dLKzhzL0RxM3N0N1BNeGhJVTJxUGNITlhNWENxOGFOa2hXNzVYV3Ewb1pkVW9aRldvSmR2dkg1VXBXWDNTbjJBMC94RWlLbjNYZzgva0Q5NW5LdkVmeDBtaWN6czBmdEJmUTJ6TDVYYVI0dkRVWGxkSzAzcXJGTzZZOVZaWVhmZ3dVPQ=="
+    },
+    {
+      "flight_id": "90d65dc5-e7c9-48a2-bea7-2952f6f56e98",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "Malaysia Airlines",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Kuala Lumpur Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "KUL",
+          "DepartureDateTime": "2025-02-03T22:55:00",
+          "ArrivalDateTime": "2025-02-04T04:55:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "7M8",
+          "OperatingCarrierCode": "MH",
+          "OperatingFlightNumber": "197",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "197",
+          "StopQuantityInfos": [],
+          "SegmentRef": 36
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Cathay Pacific",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Kuala Lumpur Intl",
+          "arrival_airport": "Hong Kong Intl",
+          "DepartureAirportLocationCode": "KUL",
+          "ArrivalAirportLocationCode": "HKG",
+          "DepartureDateTime": "2025-02-04T08:20:00",
+          "ArrivalDateTime": "2025-02-04T12:20:00",
+          "stops": 0,
+          "JourneyDuration": 240,
+          "Equipment": "32Q",
+          "OperatingCarrierCode": "CX",
+          "OperatingFlightNumber": "730",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9188",
+          "StopQuantityInfos": [],
+          "SegmentRef": 58
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "Cathay Pacific",
+          "marketing_airline": "Malaysia Airlines",
+          "departure_airport": "Hong Kong Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HKG",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T16:30:00",
+          "ArrivalDateTime": "2025-02-04T19:05:00",
+          "stops": 0,
+          "JourneyDuration": 935,
+          "Equipment": "359",
+          "OperatingCarrierCode": "CX",
+          "OperatingFlightNumber": "840",
+          "MarketingCarriercode": "MH",
+          "MarketingFlightNumber": "9184",
+          "StopQuantityInfos": [],
+          "SegmentRef": 38
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 27,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "6791.62",
+        "TotalFare": "6973.14"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "39630",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "8400",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "MkZoWUhJRmNkcFIxVkgrKzN0YmhCV2NXMnhuVEQ0c1ZzSHhCVkU0ZFo1Rmh5SXhtSXVRWEFoR1d2TGg4eHZxQ2N2RGQ2M011NTJONHVzZUZMMVpXMVNQc3VWVXRONzlXeThhNmxpN0M3ZEVYVThsbGZCS21iR3pVbzlwK0FNeFZ1N1k2a2Q5SG44UW5hRTJpZ2EzVUNXVllCaGtLN2JOYWcwR0xWY2MraUhZPQ=="
+    },
+    {
+      "flight_id": "87a2dbd6-fdab-4cc5-9be9-f580820720d3",
+      "segments": [
+        {
+          "legIndicator": "0",
+          "operating_airline": "China Southern Airlines",
+          "marketing_airline": "China Southern Airlines",
+          "departure_airport": "Zia Intl",
+          "arrival_airport": "Baiyun Intl",
+          "DepartureAirportLocationCode": "DAC",
+          "ArrivalAirportLocationCode": "CAN",
+          "DepartureDateTime": "2025-02-03T23:00:00",
+          "ArrivalDateTime": "2025-02-04T04:30:00",
+          "stops": 0,
+          "JourneyDuration": 210,
+          "Equipment": "789",
+          "OperatingCarrierCode": "CZ",
+          "OperatingFlightNumber": "392",
+          "MarketingCarriercode": "CZ",
+          "MarketingFlightNumber": "392",
+          "StopQuantityInfos": [],
+          "SegmentRef": 59
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "China Southern Airlines",
+          "marketing_airline": "China Southern Airlines",
+          "departure_airport": "Baiyun Intl",
+          "arrival_airport": "Tokyo Intl",
+          "DepartureAirportLocationCode": "CAN",
+          "ArrivalAirportLocationCode": "HND",
+          "DepartureDateTime": "2025-02-04T08:45:00",
+          "ArrivalDateTime": "2025-02-04T13:35:00",
+          "stops": 0,
+          "JourneyDuration": 230,
+          "Equipment": "789",
+          "OperatingCarrierCode": "CZ",
+          "OperatingFlightNumber": "385",
+          "MarketingCarriercode": "CZ",
+          "MarketingFlightNumber": "385",
+          "StopQuantityInfos": [],
+          "SegmentRef": 60
+        },
+        {
+          "legIndicator": "0",
+          "operating_airline": "American Airlines",
+          "marketing_airline": "American Airlines",
+          "departure_airport": "Tokyo Intl",
+          "arrival_airport": "John F Kennedy Intl",
+          "DepartureAirportLocationCode": "HND",
+          "ArrivalAirportLocationCode": "JFK",
+          "DepartureDateTime": "2025-02-04T17:10:00",
+          "ArrivalDateTime": "2025-02-04T16:25:00",
+          "stops": 0,
+          "JourneyDuration": 795,
+          "Equipment": "789",
+          "OperatingCarrierCode": "AA",
+          "OperatingFlightNumber": "168",
+          "MarketingCarriercode": "AA",
+          "MarketingFlightNumber": "168",
+          "StopQuantityInfos": [],
+          "SegmentRef": 61
+        }
+      ],
+      "fares": {
+        "FareType": "Public",
+        "Currency": "USD",
+        "FareRef": 28,
+        "PaxType": "ADT",
+        "Quantity": 1,
+        "BaseFare": "10020.92",
+        "TotalFare": "10457.14"
+      },
+      "penaltiesData": {
+        "PaxType": "ADT",
+        "RefundPenaltyAmount": "354830",
+        "RefundAllowed": true,
+        "Currency": "INR",
+        "ChangePenaltyAmount": "10500",
+        "ChangeAllowed": true
+      },
+      "fareSourceCode": "SWl1VFdRcHVLcm1HRWJONWVvRHhaNVpET3hQZVlOMlJUQTNFYVhoSHJyaytBWjlkZUpnOXlIaXlTN2xpc21VZEZVU3orRDFiZEtreEtkRW5pR2tTT29PN0hFNXlNM3VBdGpmNU1lQ3dDZGdrSzQ4ZGF5VDVPTmNVWUg2Z0FIcXljcC9Ed1ZmS0RzY1ZKQmtSWmlOcWE5djA3akZtdUs4dzgzWC90Z2cxRVRvPQ=="
+    }
+  ],
+  "filter": {
+    "airlines": [
+      {
+        "value": "EK",
+        "label": "Emirates"
+      },
+      {
+        "value": "FZ",
+        "label": "Fly Dubai"
+      },
+      {
+        "value": "QR",
+        "label": "Qatar Airways"
+      },
+      {
+        "value": "BG",
+        "label": "Biman Bangladesh Airlines"
+      },
+      {
+        "value": "EY",
+        "label": "Etihad Airways"
+      },
+      {
+        "value": "GF",
+        "label": "Gulf Air Bahrain"
+      },
+      {
+        "value": "AA",
+        "label": "American Airlines"
+      },
+      {
+        "value": "RJ",
+        "label": "Royal Jordanian"
+      },
+      {
+        "value": "IB",
+        "label": "Iberia Airlines"
+      },
+      {
+        "value": "AY",
+        "label": "Finnair"
+      },
+      {
+        "value": "AI",
+        "label": "Air India Limited"
+      },
+      {
+        "value": "AF",
+        "label": "Air France"
+      },
+      {
+        "value": "3L",
+        "label": "Intersky"
+      },
+      {
+        "value": "MH",
+        "label": "Malaysia Airlines"
+      },
+      {
+        "value": "CX",
+        "label": "Cathay Pacific"
+      },
+      {
+        "value": "SQ",
+        "label": "Singapore Airlines"
+      },
+      {
+        "value": "TP",
+        "label": "TAP Portugal"
+      },
+      {
+        "value": "CZ",
+        "label": "China Southern Airlines"
+      }
+    ],
+    "flight_numbers": [
+      "587",
+      "205",
+      "524",
+      "201",
+      "203",
+      "585",
+      "641",
+      "703",
+      "643",
+      "127",
+      "1",
+      "251",
+      "7",
+      "107",
+      "105",
+      "101",
+      "3",
+      "781",
+      "2210",
+      "404",
+      "261",
+      "639",
+      "392",
+      "211",
+      "1982",
+      "15",
+      "238",
+      "225",
+      "2",
+      "64",
+      "197",
+      "72",
+      "840",
+      "701",
+      "103",
+      "4",
+      "78",
+      "844",
+      "397",
+      "515",
+      "347",
+      "584",
+      "26",
+      "191",
+      "209",
+      "730",
+      "385",
+      "168"
+    ],
+    "stops": [0, 1]
+  }
+}

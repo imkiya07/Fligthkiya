@@ -18,47 +18,52 @@ export class PrebookingService extends AbstractServices {
 
   // ORDER TICKET
   orderTicket = async (req: Request) => {
-    const { uniqu_id } = req.query;
+    const { booking_ref } = req.query;
 
-    if (!uniqu_id) {
+    if (!booking_ref) {
       this.throwError("Unique id missing", 400);
     }
 
     const reqBody = {
-      UniqueID: uniqu_id,
+      UniqueID: booking_ref,
       Target: "Test",
     };
 
-    const response = await this.Req.postRequest("/v1/OrderTicket", reqBody);
+    const response = await this.Req.request("POST", "/v1/OrderTicket", reqBody);
 
     // API RESPONSE ERROR
     if (!response?.Success) {
       this.throwError(response?.Message, 400);
     }
 
-    return { success: true, message: "Order ticket", data: response };
+    return {
+      success: true,
+      message: "Order ticket successfully!",
+      data: response?.Data,
+    };
   };
-
 
   // TRIP/FLIGHT DETAILS
   tripDetails = async (req: Request) => {
-    const { booking_ref } = req.query;
+    const { booking_ref } = req.params;
 
     if (!booking_ref) {
       this.throwError("Booking reference is missing", 400);
     }
 
-    const reqBody = {   
-      "BookingRef": booking_ref
-    } ;
-
-    const response = await this.Req.postRequest("/v1/OrderTicket", reqBody);
+    const response = await this.Req.request(
+      "GET",
+      `/TripDetails/${booking_ref}`
+    );
 
     // API RESPONSE ERROR
     if (!response?.Success) {
       this.throwError(response?.Message, 400);
     }
 
-    return { success: true, message: "Order ticket", data: response };
+    // FORMAT RESPONSE
+    const {} = response?.Data;
+
+    return { success: true, message: "Order ticket", data: response?.Data };
   };
 }

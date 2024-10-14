@@ -15,41 +15,50 @@ export class FlightSearchService extends AbstractServices {
     super();
   }
 
-  // FLIGHT SEARCH
   async flightSearch(req: Request) {
     const conn = new PrebookinModels(db);
-    const cacheKey = req.headers.sessionid as string;
 
-    const cachedData = cacheKey ? this.cache.get<any>(cacheKey) : null;
+    // FILTER DATA
+    if (req.query.filter && req.query.filter === "true") {
+      const cacheKey = req.headers.sessionid as string;
 
-    if (cachedData) {
-      const { airlines, flight_numbers, stops, refundable } =
-        req.query as fSearchParams;
+      const cachedData = cacheKey ? this.cache.get<any>(cacheKey) : null;
 
-      let results = cachedData?.results;
+      if (cachedData) {
+        const { airlines, flight_numbers, stops, refundable } =
+          req.query as fSearchParams;
 
-      results = airlines ? filterByCarrierCode(results, airlines) : results;
+        let results = cachedData?.results;
 
-      results = flight_numbers
-        ? filterByFlightNumber(results, flight_numbers)
-        : results;
+        results = airlines ? filterByCarrierCode(results, airlines) : results;
 
-      results = stops ? filterByStops(results, stops) : results;
+        results = flight_numbers
+          ? filterByFlightNumber(results, flight_numbers)
+          : results;
 
-      return {
-        success: true,
-        message: "Flight search results from cached",
-        count: results?.length,
-        results,
-        filter: cachedData?.filter,
-      };
+        results = stops ? filterByStops(results, stops) : results;
+
+        return {
+          success: true,
+          message: "Flight search results from cached",
+          count: results?.length,
+          results,
+          filter: cachedData?.filter,
+        };
+      }
     }
 
+    // SEARCH DATA
+
     const reqBody = req.body;
-    const flightsResponse = await this.Req.postRequest("/v2/Search/Flight", {
-      ...reqBody,
-      ConversationId: "MY_SECRET",
-    });
+    const flightsResponse = await this.Req.request(
+      "POST",
+      "/v2/Search/Flight",
+      {
+        ...reqBody,
+        ConversationId: "MY_SECRET",
+      }
+    );
 
     // API RESPONSE ERROR
     if (!flightsResponse?.Success) {

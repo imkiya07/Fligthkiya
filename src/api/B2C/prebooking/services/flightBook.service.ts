@@ -40,6 +40,12 @@ export class FlightBookService extends AbstractServices {
           FlightNumber:
             item.OperatingCarrierCode + "" + item.OperatingFlightNumber,
           DepartureDateTime: item.DepartureDateTime,
+          RequestSSRs: [
+            {
+              SSRCode: "Any",
+              FreeText: "Meal MOML",
+            },
+          ],
         };
       }
     );
@@ -56,7 +62,11 @@ export class FlightBookService extends AbstractServices {
     const AirTravelers = airTravelers?.map((item: any) => {
       return {
         ...item,
-        SpecialServiceRequest: { RequestedSegments },
+        SpecialServiceRequest: {
+          SeatPreference: "Any",
+          MealPreference: "Any",
+          RequestedSegments,
+        },
       };
     });
 
@@ -73,7 +83,7 @@ export class FlightBookService extends AbstractServices {
       Target: "Test",
     };
 
-    const response = await this.Req.postRequest("/v1/Book/Flight", reqBody);
+    const response = await this.Req.request("POST", "/v1/Book/Flight", reqBody);
 
     // API RESPONSE ERROR
     if (!response?.Success) {
