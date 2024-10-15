@@ -328,3 +328,12 @@ Error
     at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
     at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
 
+[2024-10-15T16:48:28.729Z] Cannot access 'fareBreakdowns' before initialization
+ReferenceError: Cannot access 'fareBreakdowns' before initialization
+    at D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:77:21
+    at Array.map (<anonymous>)
+    at PrebookingService.tripDetails (D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\services\prebooking.services.js:56:67)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
+    at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
+

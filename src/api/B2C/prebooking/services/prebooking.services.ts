@@ -62,8 +62,50 @@ export class PrebookingService extends AbstractServices {
     }
 
     // FORMAT RESPONSE
-    const {} = response?.Data;
+    const { TravelItinerary, BookingCreatedOn } =
+      response?.Data?.TripDetailsResult;
+    const {
+      PassengerInfos,
+      TripDetailsPTC_FareBreakdowns,
+      Itineraries,
+      ...restItinerary
+    } = TravelItinerary;
 
-    return { success: true, message: "Order ticket", data: response?.Data };
+    const passengerInfos = PassengerInfos?.map((item: any) => item.Passenger);
+
+    const fareBreakdowns = TripDetailsPTC_FareBreakdowns?.map((item: any) => {
+      const { EquiFare, Tax, TotalFare, AirportTaxBreakUp } =
+        item?.TripDetailsPassengerFare;
+      return {
+        passengerType: item?.PassengerTypeQuantity?.Code,
+        passengerQuantity: item?.PassengerTypeQuantity?.Quantity,
+        EquiFare,
+        Tax,
+        TotalFare,
+        AirportTaxBreakUp,
+        BaggageInfo: item?.BaggageInfo,
+        CabinBaggageInfo: item?.CabinBaggageInfo,
+        IsPenaltyDetailsAvailable: item?.IsPenaltyDetailsAvailable,
+        AirRefundCharges: item?.AirRefundCharges,
+        AirExchangeCharges: item?.AirExchangeCharges,
+        AirVoidCharges: item?.AirVoidCharges,
+      };
+    });
+
+    const [itineraries] = Itineraries?.map((item: any) => {
+      return item?.ItineraryInfo?.ReservationItems;
+    });
+
+    return {
+      success: true,
+      message: "Trip details",
+      data: {
+        BookingCreatedOn,
+        ...restItinerary,
+        itineraries,
+        passengerInfos,
+        fareBreakdowns,
+      },
+    };
   };
 }
