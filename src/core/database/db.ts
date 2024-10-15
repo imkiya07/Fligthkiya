@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import knex from "knex";
-import config from "../../../knexfile";
+import { dbConfig as config } from "../config/knexfile";
 
 dotenv.config();
 

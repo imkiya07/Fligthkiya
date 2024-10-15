@@ -39,3 +39,13 @@ PTR Services (VOID, Refund and Reissue)
 <!-- ERROR MESSAGE -->
 
 Error in FlightBook API "API version mismatch - Invalid FareSourceCode"
+
+PORT=4001
+DB_HOST=cosmelic.com
+DB_USER=cosmelic_fk
+DB_PASSWORD=flightkiya@
+DB_NAME=cosmelic_fk
+
+API_TARGET=Test
+BEARER_TOKEN=52AE7086-9529-488F-8BC4-BB57CF7B3802-6386
+MYSTIFLY_API_URL=https://restapidemo.myfarebox.com/api

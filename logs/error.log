@@ -337,3 +337,15 @@ ReferenceError: Cannot access 'fareBreakdowns' before initialization
     at async D:\PROJECTS\flight_kiya_server\dist\src\api\B2C\prebooking\controllers\prebooking.controllers.js:36:26
     at async D:\PROJECTS\flight_kiya_server\dist\src\middlewares\asyncWrapper.js:26:13
 
+[2024-10-15T17:22:17.177Z] connect ETIMEDOUT
+Error: connect ETIMEDOUT
+    at Connection._handleTimeoutError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:205:17)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2024-10-15T17:22:33.410Z] connect ETIMEDOUT
+Error: connect ETIMEDOUT
+    at Connection._handleTimeoutError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:205:17)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+

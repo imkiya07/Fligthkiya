@@ -146,3 +146,5 @@
 2024-10-15T16:49:26.995Z [info]: [2024-10-15T16:49:26.992Z] GET /api/b2c/trip-details/MF28457624
 2024-10-15T16:51:25.055Z [info]: [2024-10-15T16:51:25.052Z] GET /api/b2c/trip-details/MF28457624
 2024-10-15T16:52:06.521Z [info]: [2024-10-15T16:52:06.519Z] GET /api/b2c/trip-details/MF28457624
+2024-10-15T17:22:07.132Z [info]: [2024-10-15T17:22:07.129Z] GET /api/common/airports?size=25&search=cxb
+2024-10-15T17:22:23.392Z [info]: [2024-10-15T17:22:23.392Z] GET /api/common/airports?size=25&search=cxb

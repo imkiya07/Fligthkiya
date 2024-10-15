@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import path from "path";
 
 // Load environment variables from .env file
-dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 // Helper function to ensure all required environment variables are defined
 const getEnvVariable = (key: string, defaultValue?: string): string => {
