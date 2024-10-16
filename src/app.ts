@@ -1,4 +1,5 @@
 import bodyParser from "body-parser";
+import cors from "cors";
 import express from "express";
 import { errorHandler } from "./middlewares/errorHandler";
 import { registerRoutes } from "./routes/routes";
@@ -7,6 +8,16 @@ const path = require("path");
 const fs = require("fs");
 
 export const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
+// const corsOptions = {
+//   origin: 'http://example.com',
+//   credentials: true,
+// };
+
+// app.use(cors(corsOptions));
 
 // download logs
 

@@ -10,10 +10,13 @@ export class CommonModel {
     return this.db("airports")
       .select("id", "name", "city", "country", "iata")
       .where((builder) => {
-        builder.whereRaw("name LIKE ?", [`%${search}%`])
-        .orWhereRaw("city LIKE ?", [`%${search}%`])
-        .orWhereRaw("country LIKE ?", [`%${search}%`])
-        .orWhereRaw("iata LIKE ?", [`%${search}%`])
+        if (search) {
+          builder
+            .whereRaw("name LIKE ?", [`%${search}%`])
+            .orWhereRaw("city LIKE ?", [`%${search}%`])
+            .orWhereRaw("country LIKE ?", [`%${search}%`])
+            .orWhereRaw("iata LIKE ?", [`%${search}%`]);
+        }
       })
 
       .limit(Number(size));

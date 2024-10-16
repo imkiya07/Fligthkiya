@@ -349,3 +349,15 @@ Error: connect ETIMEDOUT
     at listOnTimeout (node:internal/timers:594:17)
     at process.processTimers (node:internal/timers:529:7)
 
+[2024-10-16T14:55:56.835Z] connect ETIMEDOUT
+Error: connect ETIMEDOUT
+    at Connection._handleTimeoutError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:205:17)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2024-10-16T14:56:06.882Z] connect ETIMEDOUT
+Error: connect ETIMEDOUT
+    at Connection._handleTimeoutError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:205:17)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+

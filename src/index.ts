@@ -5,7 +5,7 @@ import config from "./core/config/config";
 
 dotenv.config();
 
-const PORT = config.PORT;
+const PORT = process.env.PORT || config.PORT;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("flight kiya server...");

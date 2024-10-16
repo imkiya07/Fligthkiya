@@ -148,3 +148,16 @@
 2024-10-15T16:52:06.521Z [info]: [2024-10-15T16:52:06.519Z] GET /api/b2c/trip-details/MF28457624
 2024-10-15T17:22:07.132Z [info]: [2024-10-15T17:22:07.129Z] GET /api/common/airports?size=25&search=cxb
 2024-10-15T17:22:23.392Z [info]: [2024-10-15T17:22:23.392Z] GET /api/common/airports?size=25&search=cxb
+2024-10-15T17:27:15.161Z [info]: [2024-10-15T17:27:15.159Z] GET /api/common/airports?size=25&search=cxb
+2024-10-16T14:55:46.765Z [info]: [2024-10-16T14:55:46.763Z] GET /api/common/airports?size=25
+2024-10-16T14:55:56.861Z [info]: [2024-10-16T14:55:56.861Z] GET /api/common/airports?size=25
+2024-10-16T14:58:03.144Z [info]: [2024-10-16T14:58:03.142Z] GET /
+2024-10-16T14:58:07.515Z [info]: [2024-10-16T14:58:07.515Z] GET /api/common/airports?size=25&search=cxb
+2024-10-16T14:58:17.563Z [info]: [2024-10-16T14:58:17.563Z] GET /api/common/airports?size=25
+2024-10-16T14:58:17.786Z [info]: [2024-10-16T14:58:17.786Z] GET /api/common/airports?size=25
+2024-10-16T15:00:32.974Z [info]: [2024-10-16T15:00:32.971Z] GET /api/common/airports?size=25
+2024-10-16T15:00:34.036Z [info]: [2024-10-16T15:00:34.036Z] GET /api/common/airports?size=25
+2024-10-16T15:00:53.020Z [info]: [2024-10-16T15:00:53.020Z] GET /api/common/airports?size=25
+2024-10-16T15:01:04.760Z [info]: [2024-10-16T15:01:04.760Z] GET /api/common/airports?size=25&search=
+2024-10-16T15:01:43.213Z [info]: [2024-10-16T15:01:43.211Z] GET /api/common/airports?size=25
+2024-10-16T15:01:44.266Z [info]: [2024-10-16T15:01:44.266Z] GET /api/common/airports?size=25
