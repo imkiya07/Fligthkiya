@@ -1,0 +1,13 @@
+2024-10-18T14:47:11.323Z [info]: [2024-10-18T14:47:11.321Z] POST /api/b2c/search?filter=true&sort=chippest%20
+2024-10-18T14:48:03.424Z [info]: [2024-10-18T14:48:03.424Z] GET /api/b2c/revalidated/253c19bb-4752-42b5-8750-ebe048dd4f31
+2024-10-18T14:48:47.564Z [info]: [2024-10-18T14:48:47.563Z] GET /api/b2c/fare-rules/253c19bb-4752-42b5-8750-ebe048dd4f31
+2024-10-18T14:59:57.443Z [info]: [2024-10-18T14:59:57.440Z] POST /api/b2c/search?filter=true&sort=chippest%20
+2024-10-18T15:00:48.744Z [info]: [2024-10-18T15:00:48.744Z] GET /api/b2c/revalidated/3f90f2ee-d43f-44c4-ba0a-7ff33ee9b6e0
+2024-10-18T15:01:48.901Z [info]: [2024-10-18T15:01:48.901Z] POST /api/b2c/flight-book
+2024-10-18T15:12:27.557Z [info]: [2024-10-18T15:12:27.556Z] GET /api/b2c/trip-details/MF28505124
+2024-10-18T15:18:04.663Z [info]: [2024-10-18T15:18:04.661Z] PATCH /api/b2c/cancel-booking
+2024-10-18T15:18:53.673Z [info]: [2024-10-18T15:18:53.671Z] PATCH /api/b2c/cancel-booking
+2024-10-18T15:19:29.502Z [info]: [2024-10-18T15:19:29.499Z] PATCH /api/b2c/cancel-booking
+2024-10-18T15:19:42.673Z [info]: [2024-10-18T15:19:42.672Z] PATCH /api/b2c/cancel-booking
+2024-10-18T15:20:52.731Z [info]: [2024-10-18T15:20:52.729Z] PATCH /api/b2c/cancel-booking
+2024-10-18T15:21:38.249Z [info]: [2024-10-18T15:21:38.246Z] GET /api/b2c/trip-details/MF28505124

@@ -1,9 +1,9 @@
 import { Request } from "express";
+import AbstractServices from "../../../../core/abstract/abstract.services";
 import { FareRules } from "./fareRules.service";
 import { FlightBookService } from "./flightBook.service";
 import { FlightSearchService } from "./flightSearch.service";
 import { Revalidation } from "./revalidation.service";
-import AbstractServices from "../../../../core/abstract/abstract.services";
 
 export class PreBookingService extends AbstractServices {
   constructor() {
@@ -18,15 +18,15 @@ export class PreBookingService extends AbstractServices {
 
   // ORDER TICKET
   orderTicket = async (req: Request) => {
-    const { booking_ref } = req.query;
+    const { booking_ref } = req.params;
 
     if (!booking_ref) {
-      this.throwError("Unique id missing", 400);
+      this.throwError("Booking reference is missing", 400);
     }
 
     const reqBody = {
       UniqueID: booking_ref,
-      Target: "Test",
+      Target: process.env.API_TARGET,
     };
 
     const response = await this.Req.request("POST", "/v1/OrderTicket", reqBody);
@@ -106,6 +106,42 @@ export class PreBookingService extends AbstractServices {
         passengerInfos,
         fareBreakdowns,
       },
+    };
+  };
+
+  // SEAT MAP SEARCH
+  seatMap = async (req: Request) => {
+    const sessionId = req.get("sessionid") as string;
+
+    const revalidationItem = this.cache.get<{ FareSourceCode: string }>(
+      `revalidation-${sessionId}`
+    );
+
+    if (!revalidationItem) {
+      this.throwError("Revalidation is required!", 400);
+    }
+
+    const reqBody = {
+      FareSourceCode: revalidationItem?.FareSourceCode,
+      Target: process.env.API_TARGET || "Test",
+      ConversationId: "MY_SECRET",
+    };
+
+    const response = await this.Req.request(
+      "POST",
+      "/v1/SeatMap/Flight",
+      reqBody
+    );
+
+    // API RESPONSE ERROR
+    if (!response?.Success) {
+      this.throwError(response?.Message, 400);
+    }
+
+    return {
+      success: true,
+      message: "Flight Seat Map Search",
+      response,
     };
   };
 }

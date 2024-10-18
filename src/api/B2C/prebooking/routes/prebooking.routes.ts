@@ -32,8 +32,10 @@ export class PreBookingRoutes {
       this.controllers.flightBook
     );
 
-    this.router.get("/order-ticket", this.controllers.orderTicket);
+    this.router.get("/order-ticket/:booking_ref", this.controllers.orderTicket);
 
     this.router.get("/trip-details/:booking_ref", this.controllers.tripDetails);
+
+    this.router.get("/seat-map/:flight_id", this.controllers.seatMap);
   }
 }

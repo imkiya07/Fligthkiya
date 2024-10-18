@@ -83,7 +83,7 @@ export class FlightBookService extends AbstractServices {
         Email,
         PostCode,
       },
-      Target: "Test",
+      Target: process.env.API_TARGET,
     };
 
     const response = await this.Req.request("POST", "/v1/Book/Flight", reqBody);
@@ -92,8 +92,6 @@ export class FlightBookService extends AbstractServices {
     if (!response?.Success) {
       this.throwError(response?.Message, 400);
     }
-
-    // FORMATTER
 
     return {
       success: true,

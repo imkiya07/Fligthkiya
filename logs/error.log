@@ -1,0 +1,8 @@
+[2024-10-18T14:48:34.305Z] Seat-sold out for the selected class of itinerary
+Error: Seat-sold out for the selected class of itinerary
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:19:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:33:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

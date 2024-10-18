@@ -42,4 +42,10 @@ export class PreBookingControllers extends AbstractController {
     const data = await this.services.tripDetails(req);
     res.json(data);
   });
+
+  // SEAT MAP
+  public seatMap = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.seatMap(req);
+    res.json(data);
+  });
 }

@@ -11,6 +11,11 @@ export class PostBookingRoutes {
   }
 
   private initializeRoutes() {
-    this.router.get("/fare-rules", this.controllers.fareRules);
+    this.router.get("/fare-rules", this.controllers.bookingNote);
+    this.router.patch("/cancel-booking", this.controllers.cancelBooking);
+    this.router.get("/fare-rules", this.controllers.changeSchedule);
+    this.router.get("/fare-rules", this.controllers.invoice);
+    this.router.get("/fare-rules", this.controllers.postTicketingReq);
+    this.router.get("/fare-rules", this.controllers.acceptChangeSchedule);
   }
 }

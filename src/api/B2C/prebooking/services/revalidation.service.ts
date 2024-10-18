@@ -1,9 +1,9 @@
 import { Request } from "express";
+import AbstractServices from "../../../../core/abstract/abstract.services";
 import db from "../../../../core/database/db";
 import { IFlightCache } from "../interfaces/preBooking.interface";
-import { formatRevalidation } from "../utils/prebooking.utils";
-import AbstractServices from "../../../../core/abstract/abstract.services";
 import { PreBookingModels } from "../models/preBooking.models";
+import { formatRevalidation } from "../utils/preBooking.utils";
 
 export class Revalidation extends AbstractServices {
   constructor() {
@@ -34,11 +34,13 @@ export class Revalidation extends AbstractServices {
       ConversationId: "MY_SECRET",
     };
 
+
     const response = await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
       reqBody
     );
+
 
     // API RESPONSE ERROR
     if (!response?.Success) {

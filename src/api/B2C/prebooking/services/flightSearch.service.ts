@@ -7,7 +7,7 @@ import {
   filterByFlightNumber,
   filterByStops,
   FormatFlightSearch,
-} from "../utils/prebooking.utils";
+} from "../utils/preBooking.utils";
 import { PreBookingModels } from "../models/preBooking.models";
 
 export class FlightSearchService extends AbstractServices {
@@ -65,16 +65,16 @@ export class FlightSearchService extends AbstractServices {
       this.throwError(flightsResponse?.error?.Data, flightsResponse?.status);
     }
 
-    const formatedData = await FormatFlightSearch(flightsResponse?.Data, conn);
+    const formattedData = await FormatFlightSearch(flightsResponse?.Data, conn);
     const sessionId = "49013bca224f1728799949660"; // this.createSession();
 
-    this.cache.set(sessionId, formatedData);
+    this.cache.set(sessionId, formattedData);
 
     return {
       success: true,
       message: "Flight search results",
       sessionId,
-      ...formatedData,
+      ...formattedData,
     };
   }
 }
