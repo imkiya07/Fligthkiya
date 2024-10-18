@@ -11,3 +11,5 @@
 2024-10-18T15:19:42.673Z [info]: [2024-10-18T15:19:42.672Z] PATCH /api/b2c/cancel-booking
 2024-10-18T15:20:52.731Z [info]: [2024-10-18T15:20:52.729Z] PATCH /api/b2c/cancel-booking
 2024-10-18T15:21:38.249Z [info]: [2024-10-18T15:21:38.246Z] GET /api/b2c/trip-details/MF28505124
+2024-10-18T18:44:06.254Z [info]: [2024-10-18T18:44:06.252Z] POST /api/b2c/search?filter=true&sort=chippest
+2024-10-18T18:46:42.649Z [info]: [2024-10-18T18:46:42.647Z] POST /api/b2c/search?filter=true&sort=chippest

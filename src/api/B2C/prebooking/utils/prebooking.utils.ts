@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { PreBookingModels } from "../models/preBooking.models";
 // FORMAT FLIGHT SEARCH RESPONSE
 export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
+  const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
   // FORMAT & FILTER DATA
   const filter: {
     airlines: any[];
@@ -94,8 +95,9 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
 
     results.push({
       flight_id: uuidv4(),
-      airlines: pricedItem.ValidatingCarrier,
+      airline: pricedItem.ValidatingCarrier,
       airline_name,
+      airline_img: imageBaseUrl + pricedItem.ValidatingCarrier + ".png",
       segments,
       fares,
       penaltiesData,

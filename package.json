@@ -9,7 +9,7 @@
     "prestart": "npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "NAZMUL AHMED",
   "license": "ISC",
   "description": "",
   "dependencies": {
