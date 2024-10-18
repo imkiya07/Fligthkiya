@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { PostbookingRoutes } from "./postbooking/routes/postbooking.routes";
-import { PrebookingRoutes } from "./prebooking/routes/prebooking.routes";
+import { PreBookingRoutes } from "./preBooking/routes/preBooking.routes";
+import { PostBookingRoutes } from "./postBooking/routes/postBooking.routes";
 
 export class B2CRoutes {
   public router: Router;
@@ -11,7 +11,7 @@ export class B2CRoutes {
   }
 
   private initializeRoutes() {
-    this.router.use("/", new PrebookingRoutes().router);
-    this.router.use("/", new PostbookingRoutes().router);
+    this.router.use("/", new PreBookingRoutes().router);
+    this.router.use("/", new PostBookingRoutes().router);
   }
 }

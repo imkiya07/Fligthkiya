@@ -1,10 +1,10 @@
 import { Router } from "express";
 import checkSessionId from "../../../../middlewares/checkSessionId";
-import { PrebookingControllers } from "../controllers/prebooking.controllers";
+import { PreBookingControllers } from "../controllers/preBooking.controllers";
 
-export class PrebookingRoutes {
+export class PreBookingRoutes {
   public router: Router;
-  private controllers = new PrebookingControllers();
+  private controllers = new PreBookingControllers();
 
   constructor() {
     this.router = Router();

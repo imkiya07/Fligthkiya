@@ -1,14 +1,14 @@
 import { Request } from "express";
+import AbstractServices from "../../../../core/abstract/abstract.services";
 import db from "../../../../core/database/db";
-import AbstractServices from "../../../../utils/abstracts/abstract.services";
-import { fSearchParams } from "../interfaces/flight.interface";
-import { PrebookinModels } from "../models/prebooking.models";
+import { fSearchParams } from "../interfaces/preBooking.interface";
 import {
   filterByCarrierCode,
   filterByFlightNumber,
   filterByStops,
   FormatFlightSearch,
 } from "../utils/prebooking.utils";
+import { PreBookingModels } from "../models/preBooking.models";
 
 export class FlightSearchService extends AbstractServices {
   constructor() {
@@ -16,7 +16,7 @@ export class FlightSearchService extends AbstractServices {
   }
 
   async flightSearch(req: Request) {
-    const conn = new PrebookinModels(db);
+    const conn = new PreBookingModels(db);
 
     // FILTER DATA
     if (req.query.filter && req.query.filter === "true") {

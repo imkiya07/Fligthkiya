@@ -1,12 +1,8 @@
 import { Request } from "express";
-import config from "../../../../core/config/config";
-import db from "../../../../core/database/db";
-import AbstractServices from "../../../../utils/abstracts/abstract.services";
-import { IFlightCache } from "../interfaces/flight.interface";
-import { PrebookinModels } from "../models/prebooking.models";
+import AbstractServices from "../../../../core/abstract/abstract.services";
+import { IFlightCache } from "../interfaces/preBooking.interface";
 
 export class FareRules extends AbstractServices {
-  private conn = new PrebookinModels(db);
   constructor() {
     super();
   }
@@ -29,7 +25,7 @@ export class FareRules extends AbstractServices {
 
     const reqBody = {
       FareSourceCode: foundItem?.fareSourceCode,
-      Target: config.API_TARGET,
+      Target: process.env.API_TARGET,
       ConversationId: "MY_SECRET",
     };
     const response = await this.Req.request(

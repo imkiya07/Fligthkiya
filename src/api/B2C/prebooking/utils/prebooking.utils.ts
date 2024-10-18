@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import { PrebookinModels } from "../models/prebooking.models";
-
+import { PreBookingModels } from "../models/preBooking.models";
 // FORMAT FLIGHT SEARCH RESPONSE
-export const FormatFlightSearch = async (data: any, conn: PrebookinModels) => {
+export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
   // FORMAT & FILTER DATA
   const filter: {
     airlines: any[];
@@ -16,6 +15,7 @@ export const FormatFlightSearch = async (data: any, conn: PrebookinModels) => {
 
   const formatFlightSegments: any[] = [];
 
+  // SEGMENTS
   for (let item of data?.FlightSegmentList) {
     // airline name
     const operating_airline = await conn.getAirline(item?.OperatingCarrierCode);
@@ -56,8 +56,9 @@ export const FormatFlightSearch = async (data: any, conn: PrebookinModels) => {
     });
   }
 
-  // FORMAT ALL DATA
-  const results = data.PricedItineraries.map((pricedItem: any) => {
+  const results = [];
+  // PRICED ITINERARIES
+  for (const pricedItem of data.PricedItineraries) {
     const segments = pricedItem?.OriginDestinations?.map((item: any) => {
       const segment = formatFlightSegments.find(
         (item1) => item1.SegmentRef === item.SegmentRef
@@ -89,15 +90,19 @@ export const FormatFlightSearch = async (data: any, conn: PrebookinModels) => {
         item.FulfillmentDetailsRef === pricedItem.FulfillmentDetailsRef
     );
 
-    return {
+    const airline_name = await conn.getAirline(pricedItem.ValidatingCarrier);
+
+    results.push({
       flight_id: uuidv4(),
+      airlines: pricedItem.ValidatingCarrier,
+      airline_name,
       segments,
       fares,
       penaltiesData,
       fullfillmentData,
       fareSourceCode: pricedItem?.FareSourceCode,
-    };
-  });
+    });
+  }
 
   return { count: results.length, results, filter };
 };
@@ -160,7 +165,7 @@ export const filterByRefundable = (data: any, refundable: string) => {
 };
 
 // FORMAT REVALIDATION RESPONSE
-export const formatRevalidatioin = async (Data: any, conn: PrebookinModels) => {
+export const formatRevalidation = async (Data: any, conn: PreBookingModels) => {
   const TraceId = Data.TraceId;
   const PricedItineraries = Data.PricedItineraries;
 
@@ -243,7 +248,7 @@ const formatAirItinerary = (AirItineraryPricingInfo: any) => {
 
 const formatOriginDestination = async (
   OriginDestinationOptions: any,
-  conn: PrebookinModels
+  conn: PreBookingModels
 ) => {
   const segments = [];
 

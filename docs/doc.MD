@@ -36,9 +36,7 @@ TripDetails
 
 PTR Services (VOID, Refund and Reissue)
 
-<!-- ERROR MESSAGE -->
-
-Error in FlightBook API "API version mismatch - Invalid FareSourceCode"
+<!-- ====== ENV FILES============= -->
 
 PORT=4001
 DB_HOST=cosmelic.com

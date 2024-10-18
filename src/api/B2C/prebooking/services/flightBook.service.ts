@@ -1,6 +1,9 @@
 import { Request } from "express";
-import AbstractServices from "../../../../utils/abstracts/abstract.services";
-import { IFlightCache, IFlightSegment } from "../interfaces/flight.interface";
+import {
+  IFlightCache,
+  IFlightSegment,
+} from "../interfaces/preBooking.interface";
+import AbstractServices from "../../../../core/abstract/abstract.services";
 
 export class FlightBookService extends AbstractServices {
   constructor() {

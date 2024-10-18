@@ -1,9 +1,8 @@
 import { Express } from "express";
 import { adminRouter } from "../api/admin/AdminRouter";
 import { b2bRouter } from "../api/B2B/B2BRouter";
-import { PrebookingRoutes } from "../api/B2C/prebooking/routes/prebooking.routes";
-import { CommonRouter } from "../api/common/common.routes";
 import { B2CRoutes } from "../api/B2C/b2c.routes";
+import { CommonRouter } from "../api/common/common.routes";
 
 export function registerRoutes(app: Express): void {
   // COMMON ROUTES

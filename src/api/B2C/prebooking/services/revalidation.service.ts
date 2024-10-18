@@ -1,10 +1,9 @@
 import { Request } from "express";
-import config from "../../../../core/config/config";
 import db from "../../../../core/database/db";
-import AbstractServices from "../../../../utils/abstracts/abstract.services";
-import { IFlightCache } from "../interfaces/flight.interface";
-import { PrebookinModels } from "../models/prebooking.models";
-import { formatRevalidatioin } from "../utils/prebooking.utils";
+import { IFlightCache } from "../interfaces/preBooking.interface";
+import { formatRevalidation } from "../utils/prebooking.utils";
+import AbstractServices from "../../../../core/abstract/abstract.services";
+import { PreBookingModels } from "../models/preBooking.models";
 
 export class Revalidation extends AbstractServices {
   constructor() {
@@ -13,7 +12,7 @@ export class Revalidation extends AbstractServices {
 
   // FLIGHT SEARCH
   async revalidated(req: Request) {
-    const conn = new PrebookinModels(db);
+    const conn = new PreBookingModels(db);
 
     const sessionId = req.get("sessionid") as string;
 
@@ -31,7 +30,7 @@ export class Revalidation extends AbstractServices {
 
     const reqBody = {
       FareSourceCode: foundItem?.fareSourceCode,
-      Target: config.API_TARGET,
+      Target: process.env.API_TARGET,
       ConversationId: "MY_SECRET",
     };
 
@@ -46,7 +45,7 @@ export class Revalidation extends AbstractServices {
       this.throwError(response?.Message, 400);
     }
 
-    const formatedData = (await formatRevalidatioin(
+    const formatedData = (await formatRevalidation(
       response?.Data,
       conn
     )) as any;

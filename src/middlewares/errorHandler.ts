@@ -1,6 +1,6 @@
 // errorHandler.ts
 import { NextFunction, Request, Response } from "express";
-import logger from "../utils/logger/logger";
+import logger from "../core/utils/logger/logger";
 
 export const errorHandler = (
   err: any,

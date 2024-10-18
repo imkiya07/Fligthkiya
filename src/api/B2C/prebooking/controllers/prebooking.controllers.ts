@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { AbstractController } from "../../../../utils/abstracts/abstractController";
-import { PrebookingService } from "../services/prebooking.services";
+import { AbstractController } from "../../../../core/abstract/abstractController";
+import { PreBookingService } from "../services/preBooking.services";
 
-export class PrebookingControllers extends AbstractController {
-  private services = new PrebookingService();
+export class PreBookingControllers extends AbstractController {
+  private services = new PreBookingService();
   constructor() {
     super();
   }

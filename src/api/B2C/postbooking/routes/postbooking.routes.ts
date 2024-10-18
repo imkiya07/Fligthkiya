@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { PostbookingControllers } from "../controllers/postbooking.controllers";
+import { PostBookingControllers } from "../controllers/postBooking.controllers";
 
-export class PostbookingRoutes {
+export class PostBookingRoutes {
   public router: Router;
-  private controllers = new PostbookingControllers();
+  private controllers = new PostBookingControllers();
 
   constructor() {
     this.router = Router();

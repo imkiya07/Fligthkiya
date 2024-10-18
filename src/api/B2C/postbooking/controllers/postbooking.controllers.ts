@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { AbstractController } from "../../../../utils/abstracts/abstractController";
-import { PostbookingService } from "../services/postbooking.services";
+import { AbstractController } from "../../../../core/abstract/abstractController";
+import { PostBookingService } from "../services/postBooking.services";
 
-export class PostbookingControllers extends AbstractController {
-  private services = new PostbookingService();
+export class PostBookingControllers extends AbstractController {
+  private services = new PostBookingService();
   constructor() {
     super();
   }

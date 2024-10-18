@@ -1,7 +1,7 @@
 import knex from "knex";
 import NodeCache from "node-cache";
 
-export class PrebookinModels {
+export class PreBookingModels {
   private db;
   private cache = new NodeCache({ stdTTL: 10 * 60, checkperiod: 120 });
   constructor(db: knex.Knex<any, unknown[]>) {

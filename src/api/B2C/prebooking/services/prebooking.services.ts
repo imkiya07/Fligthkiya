@@ -1,11 +1,11 @@
 import { Request } from "express";
-import AbstractServices from "../../../../utils/abstracts/abstract.services";
 import { FareRules } from "./fareRules.service";
 import { FlightBookService } from "./flightBook.service";
 import { FlightSearchService } from "./flightSearch.service";
 import { Revalidation } from "./revalidation.service";
+import AbstractServices from "../../../../core/abstract/abstract.services";
 
-export class PrebookingService extends AbstractServices {
+export class PreBookingService extends AbstractServices {
   constructor() {
     super();
   }

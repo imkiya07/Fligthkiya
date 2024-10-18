@@ -1,9 +1,9 @@
-import { PostbookingModels } from "../models/postbooking.models";
+import { PostBookingModels } from "../models/postBooking.models";
 
 // FORMAT FLIGHT SEARCH RESPONSE
 export const FormatFlightSearch = async (
   data: any,
-  conn: PostbookingModels
+  conn: PostBookingModels
 ) => {
   // FORMAT & FILTER DATA
   const filter: {
@@ -163,9 +163,9 @@ export const filterByRefundable = (data: any, refundable: string) => {
 };
 
 // FORMAT REVALIDATION RESPONSE
-export const formatRevalidatioin = async (
+export const formatRevalidation = async (
   Data: any,
-  conn: PostbookingModels
+  conn: PostBookingModels
 ) => {
   const TraceId = Data.TraceId;
   const PricedItineraries = Data.PricedItineraries;
@@ -225,7 +225,7 @@ const formatAirItinerary = (AirItineraryPricingInfo: any) => {
     Taxes,
   } = PassengerFare;
 
-  const formattedAirItnerary = {
+  const formattedAirItinerary = {
     FareSourceCode,
     BaseFare,
     EquivFare,
@@ -244,12 +244,12 @@ const formatAirItinerary = (AirItineraryPricingInfo: any) => {
     Taxes,
   };
 
-  return formattedAirItnerary;
+  return formattedAirItinerary;
 };
 
 const formatOriginDestination = async (
   OriginDestinationOptions: any,
-  conn: PostbookingModels
+  conn: PostBookingModels
 ) => {
   const originDestination = [];
 

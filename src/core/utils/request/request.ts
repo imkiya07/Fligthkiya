@@ -1,5 +1,4 @@
 import axios, { AxiosError } from "axios";
-import config from "../../core/config/config";
 
 export class MakeRequest {
   public request = async (
@@ -21,23 +20,23 @@ export class MakeRequest {
         }
 
         response = await axios.post(
-          `${config.MYSTIFLY_API_URL + API}` as string,
+          `${process.env.MYSTIFLY_API_URL + API}` as string,
           requestBody,
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${config.BEARER_TOKEN}`,
+              Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
             },
           }
         );
       } else {
         // ========= GET ============
         response = await axios.get(
-          `${config.MYSTIFLY_API_URL + API}` as string,
+          `${process.env.MYSTIFLY_API_URL + API}` as string,
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${config.BEARER_TOKEN}`,
+              Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
             },
           }
         );

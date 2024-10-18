@@ -1,7 +1,7 @@
 import NodeCache from "node-cache";
 import { v4 as uuidv4 } from "uuid";
 import { AppError } from "../errors/AppError";
-import { MakeRequest } from "../request/request";
+import { MakeRequest } from "../utils/request/request";
 
 abstract class AbstractServices {
   protected cache = new NodeCache({ stdTTL: 10 * 60, checkperiod: 120 }); // TTL = 10 mins, check every 120 seconds

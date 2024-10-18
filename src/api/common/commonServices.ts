@@ -1,7 +1,7 @@
 import { Request } from "express";
 import db from "../../core/database/db";
-import AbstractServices from "../../utils/abstracts/abstract.services";
 import { CommonModel } from "./commonModel";
+import AbstractServices from "../../core/abstract/abstract.services";
 
 export class CommonService extends AbstractServices {
   private models = new CommonModel(db);
