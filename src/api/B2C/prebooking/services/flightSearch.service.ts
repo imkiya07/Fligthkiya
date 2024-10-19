@@ -2,13 +2,13 @@ import { Request } from "express";
 import AbstractServices from "../../../../core/abstract/abstract.services";
 import db from "../../../../core/database/db";
 import { fSearchParams } from "../interfaces/preBooking.interface";
+import { PreBookingModels } from "../models/preBooking.models";
 import {
   filterByCarrierCode,
   filterByFlightNumber,
   filterByStops,
   FormatFlightSearch,
 } from "../utils/preBooking.utils";
-import { PreBookingModels } from "../models/preBooking.models";
 
 export class FlightSearchService extends AbstractServices {
   constructor() {
@@ -62,7 +62,12 @@ export class FlightSearchService extends AbstractServices {
 
     // API RESPONSE ERROR
     if (!flightsResponse?.Success) {
-      this.throwError(flightsResponse?.error?.Data, flightsResponse?.status);
+      this.throwError(
+        flightsResponse?.error?.Data ||
+          flightsResponse?.Message ||
+          flightsResponse?.Data?.Errors[0]?.Message,
+        flightsResponse?.status || 200
+      );
     }
 
     const formattedData = await FormatFlightSearch(flightsResponse?.Data, conn);

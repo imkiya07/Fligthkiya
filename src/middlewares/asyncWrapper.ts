@@ -30,6 +30,9 @@ export const wrapAsync = (
       await fn(req, res, next);
     } catch (error: any) {
       logErrorToFile(error);
+
+      console.log(error);
+
       const statusCode = error.statusCode || 500;
       const message = error.message || "An unexpected error occurred";
       console.error(message);
