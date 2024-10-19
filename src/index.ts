@@ -19,7 +19,7 @@ registerRoutes(app);
 
 // Main route
 app.get("/", (req: Request, res: Response) => {
-  res.send("Flight server is running... 10/18");
+  res.send("Flight server is running... 10/19");
 });
 
 // Route not found (404) handler

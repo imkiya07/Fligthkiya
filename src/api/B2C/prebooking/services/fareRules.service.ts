@@ -15,16 +15,16 @@ export class FareRules extends AbstractServices {
 
     const flight_id = req.params.flight_id;
 
-    const foundItem = cachedData?.results?.find(
-      (item) => item.flight_id === flight_id
+    const revalidationItem = this.cache.get<{ FareSourceCode: string }>(
+      `revalidation-${sessionId}`
     );
 
-    if (!foundItem) {
-      this.throwError("Invalid session id or flight id", 400);
+    if (!revalidationItem) {
+      this.throwError("Revalidation is required!", 400);
     }
 
     const reqBody = {
-      FareSourceCode: foundItem?.fareSourceCode,
+      FareSourceCode: revalidationItem?.FareSourceCode,
       Target: process.env.API_TARGET,
       ConversationId: "MY_SECRET",
     };
