@@ -3,6 +3,7 @@ import { adminRouter } from "../api/admin/AdminRouter";
 import { b2bRouter } from "../api/B2B/B2BRouter";
 import { B2CRoutes } from "../api/B2C/b2c.routes";
 import { CommonRouter } from "../api/common/common.routes";
+import { PaymentRoutes } from "../api/payments/payment.routes";
 
 export function registerRoutes(app: Express): void {
   // COMMON ROUTES
@@ -16,4 +17,7 @@ export function registerRoutes(app: Express): void {
 
   // B2C ROUTES
   app.use("/api/b2c", new B2CRoutes().router);
+
+  // PAYMENT ROUTES
+  app.use("/payment", new PaymentRoutes().router);
 }
