@@ -43,12 +43,6 @@ export class FlightBookService extends AbstractServices {
           FlightNumber:
             item.OperatingCarrierCode + "" + item.OperatingFlightNumber,
           DepartureDateTime: item.DepartureDateTime,
-          RequestSSRs: [
-            {
-              SSRCode: "Any",
-              FreeText: "Meal MOML",
-            },
-          ],
         };
       }
     );

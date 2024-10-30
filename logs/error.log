@@ -58,3 +58,40 @@ Error: Flights not found for the given search condition
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-10-30T16:26:08.705Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:19:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at checkSessionId (D:\PROJECTS\flight_kiya_server\dist\middlewares\checkSessionId.js:11:5)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+
+[2024-10-30T16:29:18.702Z] Host not responding - Unable to end the record.
+Error: Host not responding - Unable to end the record.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:19:15)
+    at PreBookingService.flightBook (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightBook.service.js:66:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-10-30T16:37:29.012Z] Unable to confirm - Request an alternate flight.
+Error: Unable to confirm - Request an alternate flight.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:19:15)
+    at PreBookingService.flightBook (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightBook.service.js:67:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-10-30T16:44:55.442Z] Host not responding - Unable to end the record.
+Error: Host not responding - Unable to end the record.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:19:15)
+    at PreBookingService.flightBook (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightBook.service.js:60:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

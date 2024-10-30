@@ -11,10 +11,6 @@ export class FareRules extends AbstractServices {
   async fareRules(req: Request) {
     const sessionId = req.get("sessionid") as string;
 
-    const cachedData = this.cache.get<IFlightCache>(sessionId);
-
-    const flight_id = req.params.flight_id;
-
     const revalidationItem = this.cache.get<{ FareSourceCode: string }>(
       `revalidation-${sessionId}`
     );

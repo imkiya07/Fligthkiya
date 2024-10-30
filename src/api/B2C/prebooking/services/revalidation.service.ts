@@ -34,13 +34,11 @@ export class Revalidation extends AbstractServices {
       ConversationId: "MY_SECRET",
     };
 
-
     const response = await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
       reqBody
     );
-
 
     // API RESPONSE ERROR
     if (!response?.Success) {

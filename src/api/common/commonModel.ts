@@ -6,19 +6,22 @@ export class CommonModel {
     this.db = db;
   }
 
-  getAllAirports(size: string = "20", search: string) {
-    return this.db("airports")
-      .select("id", "name", "city", "country", "iata")
-      .where((builder) => {
-        if (search) {
-          builder
-            .whereRaw("name LIKE ?", [`%${search}%`])
-            .orWhereRaw("city LIKE ?", [`%${search}%`])
-            .orWhereRaw("country LIKE ?", [`%${search}%`])
-            .orWhereRaw("iata LIKE ?", [`%${search}%`]);
-        }
-      })
-
-      .limit(Number(size));
+  getAllAirports(size = "20", search: string) {
+    return (
+      this.db("airports")
+        .select("id", "name", "city", "country", "iata")
+        .where((builder) => {
+          if (search) {
+            builder
+              .whereRaw("iata LIKE ?", [`%${search}%`])
+              .orWhereRaw("name LIKE ?", [`%${search}%`])
+              .orWhereRaw("city LIKE ?", [`%${search}%`])
+              .orWhereRaw("country LIKE ?", [`%${search}%`]);
+          }
+        })
+        // Sort results by giving priority to exact matches in the IATA code
+        .orderByRaw("CASE WHEN iata LIKE ? THEN 0 ELSE 1 END", [`${search}%`])
+        .limit(Number(size))
+    );
   }
 }
