@@ -60,7 +60,7 @@ export class CommonController extends AbstractController {
     });
   });
 
-  public dowloadAllLogs = this.wrapAsync(
+  public downloadAllLogs = this.wrapAsync(
     async (req: Request, res: Response) => {
       const filePath = path.resolve(__dirname, "../../../logs/all.log");
 

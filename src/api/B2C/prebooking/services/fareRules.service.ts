@@ -1,6 +1,5 @@
 import { Request } from "express";
 import AbstractServices from "../../../../core/abstract/abstract.services";
-import { IFlightCache } from "../interfaces/preBooking.interface";
 
 export class FareRules extends AbstractServices {
   constructor() {

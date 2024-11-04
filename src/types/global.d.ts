@@ -1,5 +1,7 @@
 // ./global.d.ts
 
+import { IAuthUser } from "../api/auth/authInterfaces";
+
 // Custom matchers interface for Jest
 interface CustomMatchers<R = unknown> {
   nullOrAny(classType: any): R;
@@ -8,7 +10,7 @@ interface CustomMatchers<R = unknown> {
 declare global {
   namespace Express {
     interface Request {
-      user: string; // User identifier
+      user: IAuthUser; // User identifier
       role_id: number; // Role ID for permissions
       agency_id: number; // Agency ID
       agency: number[]; // Array of agency IDs
