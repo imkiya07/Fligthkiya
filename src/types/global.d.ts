@@ -18,6 +18,7 @@ declare global {
       upFolder: string; // Upload folder path
       imgUrl: string[]; // Array of image URLs
       upFiles: string[]; // Array of uploaded file names
+      deviceId: string;
       image_files: {
         [fieldname: string]: string; // Object for image files with field names
       };

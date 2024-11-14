@@ -16,6 +16,12 @@ export class AuthServices extends AbstractServices {
     const { email, full_name, password, phone_number } =
       req.body as IRegistration;
 
+    const isUnique = await conn.isEmailUnique(email);
+
+    if (!isUnique) {
+      throw this.throwError("Email Address Already in Use", 400);
+    }
+
     const password_hash = await bcrypt.hash(password, 10);
 
     const nameParts = full_name.toLowerCase().trim().split(" ");
@@ -31,9 +37,21 @@ export class AuthServices extends AbstractServices {
       username,
     });
 
+    const userCard = {
+      user_id,
+      account_verified: 0,
+      full_name,
+      username,
+      email,
+      phone_number,
+    };
+
+    const token = generateToken(userCard);
+
     return {
       success: true,
       message: "User registration successfully",
+      token,
       data: { user_id, email, username, full_name, phone_number },
     };
   };

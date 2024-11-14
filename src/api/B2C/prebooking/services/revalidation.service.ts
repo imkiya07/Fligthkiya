@@ -14,9 +14,11 @@ export class Revalidation extends AbstractServices {
   async revalidated(req: Request) {
     const conn = new PreBookingModels(db);
 
-    const sessionId = req.get("sessionid") as string;
+    // const sessionId = req.get("sessionid") as string;
+    // const sessionId = req.cookies?.sessionId as string;
+    const deviceId = req.deviceId;
 
-    const cachedData = this.cache.get<IFlightCache>(sessionId);
+    const cachedData = this.cache.get<IFlightCache>(deviceId);
 
     const flight_id = req.params.flight_id;
 
@@ -45,14 +47,14 @@ export class Revalidation extends AbstractServices {
       this.throwError(response?.Message, 400);
     }
 
-    const formatedData = (await formatRevalidation(
+    const formattedData = (await formatRevalidation(
       response?.Data,
       conn
     )) as any;
 
-    this.cache.set(`revalidation-${sessionId}`, formatedData);
+    this.cache.set(`revalidation-${deviceId}`, formattedData);
 
-    const { FareSourceCode, ...data } = formatedData;
+    const { FareSourceCode, ...data } = formattedData;
 
     return {
       success: true,

@@ -17,12 +17,13 @@ export class FlightSearchService extends AbstractServices {
 
   async flightSearch(req: Request) {
     const conn = new PreBookingModels(db);
+    const deviceId = req.deviceId;
 
     // FILTER DATA
     if (req.query.filter && req.query.filter === "true") {
-      const cacheKey = req.headers.sessionid as string;
+      // const cacheKey = req.headers.sessionid as string;
 
-      const cachedData = cacheKey ? this.cache.get<any>(cacheKey) : null;
+      const cachedData = deviceId ? this.cache.get<any>(deviceId) : null;
 
       if (cachedData) {
         const { airlines, flight_numbers, stops, refundable } =
@@ -41,6 +42,7 @@ export class FlightSearchService extends AbstractServices {
         return {
           success: true,
           message: "Flight search results from cached",
+          deviceId,
           count: results?.length,
           results,
           filter: cachedData?.filter,
@@ -71,14 +73,13 @@ export class FlightSearchService extends AbstractServices {
     }
 
     const formattedData = await FormatFlightSearch(flightsResponse?.Data, conn);
-    const sessionId = "49013bca224f1728799949660"; // this.createSession();
 
-    this.cache.set(sessionId, formattedData);
+    this.cache.set(deviceId, formattedData);
 
     return {
       success: true,
       message: "Flight search results",
-      sessionId,
+      deviceId,
       ...formattedData,
     };
   }

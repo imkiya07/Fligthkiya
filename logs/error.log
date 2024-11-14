@@ -95,3 +95,19 @@ Error: Host not responding - Unable to end the record.
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-14T15:10:27.591Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:48:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-14T15:20:58.501Z] Email Address Already in Use
+Error: Email Address Already in Use
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.registrationUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:19:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

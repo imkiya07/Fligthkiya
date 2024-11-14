@@ -1,9 +1,11 @@
 import dotenv from "dotenv";
+import crypto from "crypto";
 import { NextFunction, Request, Response } from "express";
 import { app } from "./app";
 import { errorHandler } from "./middlewares/errorHandler";
 import { registerRoutes } from "./routes/routes";
 import requestLogger from "./core/utils/logger/reqLogger";
+import cookieParser from "cookie-parser";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -13,13 +15,32 @@ const PORT = process.env.PORT || 4001;
 
 app.use(errorHandler);
 app.use(requestLogger);
+app.use(cookieParser());
+
+app.use((req, res, next) => {
+  const userAgent = req.get("User-Agent") || "";
+  const acceptLanguage = req.get("Accept-Language") || "";
+  const acceptEncoding = req.get("Accept-Encoding") || "";
+
+  const fingerprintString = `${userAgent}-${acceptLanguage}-${acceptEncoding}`;
+  const uniqueIdentifier = crypto
+    .createHash("sha256")
+    .update(fingerprintString)
+    .digest("hex");
+
+  req.deviceId = uniqueIdentifier;
+
+  next();
+});
 
 // Register application routes
 registerRoutes(app);
 
 // Main route
 app.get("/", (req: Request, res: Response) => {
-  res.send("Flight server is running... 10/19");
+  const deviceId = req.deviceId;
+
+  res.send(`Flight server is running... ${deviceId}`);
 });
 
 // Route not found (404) handler

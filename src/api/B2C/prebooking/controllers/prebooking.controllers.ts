@@ -10,6 +10,14 @@ export class PreBookingControllers extends AbstractController {
 
   public flightSearch = this.wrapAsync(async (req: Request, res: Response) => {
     const data = await this.services.flightSearch(req);
+
+    res.cookie("deviceId", data?.deviceId, {
+      maxAge: 1800000, // 30 min
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Only use secure cookies in production
+      sameSite: "strict", // Prevents CSRF attacks
+    });
+
     res.json(data);
   });
 

@@ -9,6 +9,20 @@ export class AuthModel {
     this.db = db;
   }
 
+  async isEmailUnique(email: string): Promise<boolean> {
+    try {
+      const [existingEmail] = await this.db("users_info")
+        .select("email")
+        .where("email", email);
+
+      // Return true if email is unique, false if it already exists
+      return !existingEmail;
+    } catch (error) {
+      console.error("Error checking email uniqueness:", error);
+      throw new Error("Email uniqueness check failed");
+    }
+  }
+
   // Register a new user
   async registerUser(payload: IRegistrationDb) {
     try {
@@ -32,8 +46,7 @@ export class AuthModel {
           "username",
           "email",
           "phone_number",
-          "password_hash",
-          "address"
+          "password_hash"
         )
         .where({ email })
         .orWhere("username", email)
