@@ -111,3 +111,27 @@ Error: Email Address Already in Use
     at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:11:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-15T05:04:47.723Z] Invalid email or password
+Error: Invalid email or password
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:82:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-15T05:04:53.578Z] User does't exist
+Error: User does't exist
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:76:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-15T05:05:02.647Z] Invalid email or password
+Error: Invalid email or password
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:82:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

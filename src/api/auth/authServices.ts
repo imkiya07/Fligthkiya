@@ -1,9 +1,36 @@
-import bcrypt from "bcrypt";
+import crypto from "crypto";
 import { Request } from "express";
 import AbstractServices from "../../core/abstract/abstract.services";
 import { AuthModel } from "./AuthModel";
 import { IRegistration } from "./authInterfaces";
 import { generateToken } from "./authUtils";
+
+async function hashPassword1(password: string) {
+  const salt = crypto.randomBytes(16).toString("hex"); // Generate a random salt
+  const hash = crypto
+    .pbkdf2Sync(password, salt, 1000, 64, "sha512")
+    .toString("hex"); // Hash the password with the salt
+  return { salt, hash };
+}
+
+function verifyPassword1(password: string, hash: string) {
+  const salt = crypto.randomBytes(16).toString("hex"); // Generate a random salt
+  const hashToCompare = crypto
+    .pbkdf2Sync(password, salt, 1000, 64, "sha512")
+    .toString("hex");
+  return hash === hashToCompare;
+}
+
+// Function to hash the password
+function hashPassword(password: string) {
+  return crypto.createHash("sha256").update(password).digest("hex");
+}
+
+// Function to verify the password
+function verifyPassword(inputPassword: string, storedHash: string) {
+  const inputHash = hashPassword(inputPassword); // Hash the input password
+  return inputHash === storedHash; // Compare with the stored hash
+}
 
 export class AuthServices extends AbstractServices {
   constructor() {
@@ -22,7 +49,7 @@ export class AuthServices extends AbstractServices {
       throw this.throwError("Email Address Already in Use", 400);
     }
 
-    const password_hash = await bcrypt.hash(password, 10);
+    const password_hash = hashPassword(password);
 
     const nameParts = full_name.toLowerCase().trim().split(" ");
     const uniqueSuffix = Math.floor(10000 + Math.random() * 90000);
@@ -64,13 +91,19 @@ export class AuthServices extends AbstractServices {
       password: string;
     };
 
-    const response = await conn.loginUser(username, password);
+    const user = await conn.loginUser(username, password);
 
-    if (!response.success) {
-      this.throwError(response.error as string, 401);
+    if (!user) {
+      throw this.throwError("User does't exist", 404);
     }
 
-    const { password_hash, ...restData } = response?.data;
+    const { password_hash, ...restData } = user;
+
+    const verify = verifyPassword(password, password_hash);
+
+    if (!verify) {
+      throw this.throwError("Invalid email or password", 401);
+    }
 
     const token = generateToken(restData);
 

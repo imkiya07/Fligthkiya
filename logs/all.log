@@ -144,3 +144,16 @@
 2024-11-14T15:37:18.980Z [info]: [2024-11-14T15:37:18.979Z] POST /api/payment/create-payment-intent
 2024-11-14T15:41:20.165Z [info]: [2024-11-14T15:41:20.165Z] POST /api/b2c/search
 2024-11-14T15:43:21.565Z [info]: [2024-11-14T15:43:21.565Z] GET /api/b2c/revalidated/485b36ae-1aa8-4319-9c62-6192197b3fe9
+2024-11-14T15:44:17.544Z [info]: [2024-11-14T15:44:17.541Z] POST /api/b2c/search
+2024-11-14T15:45:12.270Z [info]: [2024-11-14T15:45:12.270Z] GET /api/b2c/revalidated/cff1894b-0425-482f-83d3-a33a97153254
+2024-11-14T15:55:36.422Z [info]: [2024-11-14T15:55:36.422Z] POST /api/payment/create-payment-intent
+2024-11-14T15:55:48.182Z [info]: [2024-11-14T15:55:48.182Z] POST /api/payment/create-payment-intent
+2024-11-14T15:55:56.113Z [info]: [2024-11-14T15:55:56.113Z] POST /api/payment/create-payment-intent
+2024-11-14T17:59:01.947Z [info]: [2024-11-14T17:59:01.943Z] GET /api/common/airports
+2024-11-14T17:59:02.474Z [info]: [2024-11-14T17:59:02.474Z] GET /favicon.ico
+2024-11-14T17:59:06.160Z [info]: [2024-11-14T17:59:06.160Z] GET /
+2024-11-15T05:03:56.125Z [info]: [2024-11-15T05:03:56.122Z] POST /api/auth/registration
+2024-11-15T05:04:39.679Z [info]: [2024-11-15T05:04:39.678Z] POST /api/auth/login
+2024-11-15T05:04:47.715Z [info]: [2024-11-15T05:04:47.715Z] POST /api/auth/login
+2024-11-15T05:04:53.575Z [info]: [2024-11-15T05:04:53.575Z] POST /api/auth/login
+2024-11-15T05:05:02.642Z [info]: [2024-11-15T05:05:02.642Z] POST /api/auth/login

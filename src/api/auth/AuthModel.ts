@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 import knex from "knex";
 import { IRegistrationDb } from "./authInterfaces";
 
@@ -38,7 +37,7 @@ export class AuthModel {
   // Login user
   async loginUser(email: string, password: string) {
     try {
-      const user = await this.db("users_info")
+      return await this.db("users_info")
         .select(
           "user_id",
           "account_verified",
@@ -51,13 +50,6 @@ export class AuthModel {
         .where({ email })
         .orWhere("username", email)
         .first();
-
-      if (user && (await bcrypt.compare(password, user.password_hash))) {
-        return { success: true, data: user };
-      } else {
-        // Password or email incorrect
-        return { success: false, error: "Invalid email or password" };
-      }
     } catch (error) {
       console.error("Error logging in user:", error);
       return { success: false, error: "Login failed" };
