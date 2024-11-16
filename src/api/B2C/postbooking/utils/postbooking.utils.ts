@@ -290,3 +290,15 @@ const formatOriginDestination = async (
 
   return originDestination;
 };
+
+export const cabinClasses = [
+  { code: "Y", description: "Economy Class" },
+  { code: "S", description: "Premium Economy Class" },
+  { code: "C", description: "Business Class" },
+  { code: "F", description: "First Class" },
+];
+
+export const getClassDescription = (code: string) => {
+  const cabin = cabinClasses.find((cabin) => cabin.code === code);
+  return cabin ? cabin.description : "Code not found";
+};

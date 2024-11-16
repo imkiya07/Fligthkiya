@@ -28,15 +28,15 @@ export class PreBookingModels {
     const cached = this.cache.get(iata);
 
     if (cached) {
-      return cached;
+      return cached as { name: string; city: string };
     }
 
     const data = await this.db("airports")
-      .select("name")
+      .select("name", "city")
       .where({ iata })
       .first();
-    this.cache.set(iata, data?.name);
-    return data?.name;
+    this.cache.set(iata, data);
+    return data as { name: string; city: string };
   };
 
   getAllFlights() {

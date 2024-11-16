@@ -8,10 +8,10 @@ export class FareRules extends AbstractServices {
 
   // FLIGHT SEARCH
   async fareRules(req: Request) {
-    const sessionId = req.get("sessionid") as string;
+    const deviceId = req.deviceId;
 
     const revalidationItem = this.cache.get<{ FareSourceCode: string }>(
-      `revalidation-${sessionId}`
+      `revalidation-${deviceId}`
     );
 
     if (!revalidationItem) {

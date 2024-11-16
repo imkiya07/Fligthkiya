@@ -1,8 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import { PreBookingModels } from "../models/preBooking.models";
 // FORMAT FLIGHT SEARCH RESPONSE
+const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
+
 export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
-  const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
   // FORMAT & FILTER DATA
   const filter: {
     airlines: any[];
@@ -51,8 +52,10 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
     formatFlightSegments.push({
       operating_airline,
       marketing_airline,
-      departure_airport,
-      arrival_airport,
+      departure_airport: departure_airport?.name,
+      departure_city: departure_airport?.city,
+      arrival_airport: arrival_airport?.name,
+      arrival_city: arrival_airport?.city,
       ...item,
     });
   }
@@ -210,23 +213,11 @@ const formatAirItinerary = (AirItineraryPricingInfo: any) => {
     ItinTotalFare,
   } = AirItineraryPricingInfo;
   const { BaseFare, EquivFare, TotalFare, TotalTax } = ItinTotalFare;
-  const {
-    BaggageInfo,
-    CabinBaggageInfo,
-    FareBasisCodes,
-    PassengerTypeQuantity,
-    PenaltiesInfo,
-    PassengerFare,
-  } = PTC_FareBreakdowns[0];
-  const {
-    BaseFare: passengerBaseFare,
-    EquivFare: passengerEquivFare,
-    TotalFare: passengerTotalFare,
-    Surcharges,
-    Taxes,
-  } = PassengerFare;
+
+  const formattedPtc = formatPtcData(PTC_FareBreakdowns);
 
   const formattedAirItnerary = {
+    formattedPtc,
     FareSourceCode,
     BaseFare,
     EquivFare,
@@ -236,13 +227,6 @@ const formatAirItinerary = (AirItineraryPricingInfo: any) => {
     FareInfos,
     FareType,
     IsRefundable,
-    BaggageInfo,
-    CabinBaggageInfo,
-    FareBasisCodes,
-    PassengerTypeQuantity,
-    PenaltiesInfo,
-    Surcharges,
-    Taxes,
   };
 
   return formattedAirItnerary;
@@ -273,12 +257,15 @@ const formatOriginDestination = async (
       );
 
       flightSegments.push({
-        departureAirport,
-        arrivalAirport,
+        departureAirport: departureAirport?.name,
+        departureCity: departureAirport?.city,
+        arrivalAirport: arrivalAirport?.name,
+        arrivalCity: arrivalAirport?.city,
         operating_airline,
         marketing_airline,
         ...resSegment,
         OperatingAirlineCode: OperatingAirline?.Code,
+        airline_img: imageBaseUrl + OperatingAirline?.Code + ".png",
         OperatingAirlineEquipment: OperatingAirline?.Equipment,
         OperatingAirlineFlightNumber: OperatingAirline?.FlightNumber,
         SeatsRemainingBelowMinimum: SeatsRemaining?.BelowMinimum,
@@ -291,3 +278,18 @@ const formatOriginDestination = async (
 
   return segments;
 };
+
+function formatPtcData(data: any[]) {
+  return data.map((item) => ({
+    passengerCode: item.PassengerTypeQuantity.Code,
+    passengerQuantity: item.PassengerTypeQuantity.Quantity,
+    BaseFare: item.PassengerFare.BaseFare,
+    EquivFare: item.PassengerFare.EquivFare,
+    Surcharges: item.PassengerFare.Surcharges,
+    TotalFare: item.PassengerFare.TotalFare,
+    BaggageInfo: item.BaggageInfo,
+    CabinBaggageInfo: item.CabinBaggageInfo,
+    FareBasisCodes: item.FareBasisCodes,
+    PenaltiesInfo: item.PenaltiesInfo,
+  }));
+}
