@@ -26,9 +26,9 @@ CREATE TABLE airports (
 
 CREATE TABLE airlines (
   al_id int NOT NULL AUTO_INCREMENT,
-  al_code varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  al_name varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  al_logo varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  al_code varchar(250),
+  al_name varchar(250),
+  al_logo varchar(255),
   PRIMARY KEY (al_id)
 );
 

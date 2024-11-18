@@ -10,7 +10,7 @@ export class AuthModel {
 
   async isEmailUnique(email: string): Promise<boolean> {
     try {
-      const [existingEmail] = await this.db("users_info")
+      const [existingEmail] = await this.db("users")
         .select("email")
         .where("email", email);
 
@@ -25,7 +25,7 @@ export class AuthModel {
   // Register a new user
   async registerUser(payload: IRegistrationDb) {
     try {
-      const [userId] = await this.db("users_info").insert(payload);
+      const [userId] = await this.db("users").insert(payload);
 
       return userId;
     } catch (error) {
@@ -37,7 +37,7 @@ export class AuthModel {
   // Login user
   async loginUser(email: string, password: string) {
     try {
-      return await this.db("users_info")
+      return await this.db("users")
         .select(
           "user_id",
           "account_verified",
@@ -59,7 +59,7 @@ export class AuthModel {
   // Verify user account (could be for email verification)
   async verifyAccount(userId: number) {
     try {
-      const result = await this.db("users_info")
+      const result = await this.db("users")
         .where({ user_id: userId })
         .update({ account_verified: 1 });
 
@@ -75,7 +75,7 @@ export class AuthModel {
   // Fetch user by ID
   async getUserById(userId: number) {
     try {
-      return await this.db("users_info")
+      return await this.db("users")
         .select(
           "full_name",
           "username",
