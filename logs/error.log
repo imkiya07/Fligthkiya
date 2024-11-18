@@ -135,3 +135,68 @@ Error: Invalid email or password
     at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-16T18:00:55.789Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:53:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-16T18:01:44.453Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:53:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-16T18:03:16.526Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:54:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-16T18:07:06.625Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:54:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-16T18:22:27.328Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
