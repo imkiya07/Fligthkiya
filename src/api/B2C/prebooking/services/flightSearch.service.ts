@@ -1,7 +1,10 @@
 import { Request } from "express";
 import AbstractServices from "../../../../core/abstract/abstract.services";
 import db from "../../../../core/database/db";
-import { fSearchParams } from "../interfaces/preBooking.interface";
+import {
+  fSearchParams,
+  IAirTravelersRequest,
+} from "../interfaces/preBooking.interface";
 import { PreBookingModels } from "../models/preBooking.models";
 import {
   filterByCarrierCode,
@@ -42,7 +45,6 @@ export class FlightSearchService extends AbstractServices {
         return {
           success: true,
           message: "Flight search results from cached",
-          deviceId,
           count: results?.length,
           results,
           filter: cachedData?.filter,
@@ -52,7 +54,7 @@ export class FlightSearchService extends AbstractServices {
 
     // SEARCH DATA
 
-    const reqBody = req.body;
+    const reqBody = req.body as IAirTravelersRequest;
     const flightsResponse = await this.Req.request(
       "POST",
       "/v2/Search/Flight",
@@ -79,7 +81,6 @@ export class FlightSearchService extends AbstractServices {
     return {
       success: true,
       message: "Flight search results",
-      deviceId,
       ...formattedData,
     };
   }

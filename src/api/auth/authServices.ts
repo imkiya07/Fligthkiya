@@ -5,22 +5,6 @@ import { AuthModel } from "./AuthModel";
 import { IRegistration } from "./authInterfaces";
 import { generateToken } from "./authUtils";
 
-async function hashPassword1(password: string) {
-  const salt = crypto.randomBytes(16).toString("hex"); // Generate a random salt
-  const hash = crypto
-    .pbkdf2Sync(password, salt, 1000, 64, "sha512")
-    .toString("hex"); // Hash the password with the salt
-  return { salt, hash };
-}
-
-function verifyPassword1(password: string, hash: string) {
-  const salt = crypto.randomBytes(16).toString("hex"); // Generate a random salt
-  const hashToCompare = crypto
-    .pbkdf2Sync(password, salt, 1000, 64, "sha512")
-    .toString("hex");
-  return hash === hashToCompare;
-}
-
 // Function to hash the password
 function hashPassword(password: string) {
   return crypto.createHash("sha256").update(password).digest("hex");

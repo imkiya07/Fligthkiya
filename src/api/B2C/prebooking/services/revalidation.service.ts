@@ -52,6 +52,7 @@ export class Revalidation extends AbstractServices {
       conn
     )) as any;
 
+    this.cache.set(`revalidateReqBody-${deviceId}`, reqBody);
     this.cache.set(`revalidation-${deviceId}`, formattedData);
 
     const { FareSourceCode, ...data } = formattedData;

@@ -17,6 +17,8 @@ export class PreBookingRoutes {
 
     this.router.get("/fare-rules/:flight_id", this.controllers.fareRules);
 
+    this.router.post("/booking", this.controllers.bookingRequest);
+
     this.router.post("/flight-book", this.controllers.flightBook);
 
     this.router.get("/order-ticket/:booking_ref", this.controllers.orderTicket);

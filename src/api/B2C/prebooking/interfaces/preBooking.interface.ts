@@ -50,3 +50,30 @@ interface CheckinBaggage {
   Type: string;
   Value: string;
 }
+
+interface IAirTraveler {
+  PassengerType: string; // e.g., "ADT" for adult
+  Gender: string; // e.g., "M" for male, "F" for female
+  PassengerName: {
+    PassengerTitle: string; // e.g., "MR", "MS", etc.
+    PassengerFirstName: string;
+    PassengerLastName: string;
+  };
+  DateOfBirth: string; // ISO 8601 date string
+  Passport: {
+    PassportNumber: string;
+    ExpiryDate: string; // ISO 8601 date string
+    Country: string; // Country code, e.g., "IN"
+  };
+  PassengerNationality: string; // Country code, e.g., "IN"
+  NationalID: string; // Country code, e.g., "IN"
+}
+
+export interface IAirTravelersRequest {
+  AirTravelers: IAirTraveler[];
+  CountryCode: string; // e.g., "91" for India
+  AreaCode: string; // e.g., "080"
+  PhoneNumber: string; // e.g., "87657897"
+  Email: string; // Email address
+  PostCode: string; // Postal code, e.g., "560028"
+}

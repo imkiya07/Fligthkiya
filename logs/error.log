@@ -200,3 +200,63 @@ Error: Revalidation is required!
     at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
     at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
 
+[2024-11-18T17:01:36.629Z] Revalidation is required!
+Error: Revalidation is required!
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.fareRules (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\fareRules.service.js:17:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:27:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-20T16:58:24.318Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-20T16:59:17.666Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-20T18:39:38.232Z] Invalid AirTripType. OneWay cannot have more than one OriginDestinationInformation.
+Error: Invalid AirTripType. OneWay cannot have more than one OriginDestinationInformation.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-20T18:40:18.726Z] Invalid combination of OriginLocationCode or destinationLocationCode for return AirTripType.
+Error: Invalid combination of OriginLocationCode or destinationLocationCode for return AirTripType.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-20T19:04:16.212Z] Cannot read properties of undefined (reading 'Data')
+TypeError: Cannot read properties of undefined (reading 'Data')
+    at PreBookingService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:32:69)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-20T19:06:45.658Z] An unexpected error occurred
+Error
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:33:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
+import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
 // FORMAT FLIGHT SEARCH RESPONSE
 const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
@@ -292,4 +294,44 @@ function formatPtcData(data: any[]) {
     FareBasisCodes: item.FareBasisCodes,
     PenaltiesInfo: item.PenaltiesInfo,
   }));
+}
+
+export function formatAirTravelersData(
+  input: IAirTravelersRequest,
+  OriginDestinationOptions: OriginDestinationOption[]
+): any {
+  const RequestedSegments = OriginDestinationOptions[0].FlightSegments.map(
+    (segment) => ({
+      Origin: segment.DepartureAirportLocationCode,
+      Destination: segment.ArrivalAirportLocationCode,
+      FlightNumber: `${segment.OperatingAirline.Code}${segment.FlightNumber}`,
+      RequestSSRs: [
+        {
+          SSRCode: "Any",
+          FreeText: "Meal MOML",
+        },
+      ],
+    })
+  );
+
+  return {
+    FareSourceCode:
+      "T054NjA1Sml2aklUWlpTY3R2elEyYkh2SHlZNjk2YjIxSmtrQXl1NkpSTWtmWWgvWE56VVdZOFM0dDJQS3Z5MXl2REdtMVVyV0QwYkkzbzF4RDg4N1pyd2dGcXV2RlJzajZvcDZnTWRJcjJSVEo1S0JpamhaQWRNNktVMWlLb1A=",
+    TravelerInfo: {
+      AirTravelers: input.AirTravelers.map((traveler) => ({
+        ...traveler,
+        SpecialServiceRequest: {
+          SeatPreference: "Any",
+          MealPreference: "Any",
+          RequestedSegments,
+        },
+      })),
+      CountryCode: input.CountryCode,
+      AreaCode: input.AreaCode,
+      PhoneNumber: input.PhoneNumber,
+      Email: input.Email,
+      PostCode: input.PostCode,
+    },
+    Target: "Test",
+  };
 }

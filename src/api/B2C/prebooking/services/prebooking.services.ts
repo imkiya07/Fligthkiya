@@ -2,6 +2,8 @@ import { Request } from "express";
 import Stripe from "stripe";
 import AbstractServices from "../../../../core/abstract/abstract.services";
 import { getClassDescription } from "../../postBooking/utils/postBooking.utils";
+import { IRevalidateRes } from "../interfaces/revalidateRes.interface";
+import { formatAirTravelersData } from "../utils/preBooking.utils";
 import { FareRules } from "./fareRules.service";
 import { FlightBookService } from "./flightBook.service";
 import { FlightSearchService } from "./flightSearch.service";
@@ -17,6 +19,47 @@ export class PreBookingService extends AbstractServices {
   revalidated = new Revalidation().revalidated;
   fareRules = new FareRules().fareRules;
   flightBook = new FlightBookService().flightBook;
+
+  // BOOKING REQUEST
+
+  bookingRequest = async (req: Request) => {
+    const deviceId = req.deviceId;
+
+    const revalidateReqBody = this.cache.get(`revalidateReqBody-${deviceId}`);
+
+    if (!revalidateReqBody) {
+      this.throwError("Revalidation is required!", 400);
+    }
+
+    const revalidationResponse = (await this.Req.request(
+      "POST",
+      "/v1/Revalidate/Flight",
+      revalidateReqBody
+    )) as IRevalidateRes;
+
+    console.log(revalidationResponse?.Success);
+
+    if (!revalidationResponse?.Success) {
+      throw this.throwError(revalidationResponse?.Data?.Errors[0], 400);
+    }
+
+    const { OriginDestinationOptions, RequiredFieldsToBook } =
+      revalidationResponse?.Data?.PricedItineraries[0];
+    const body = req.body;
+
+    const formatBookingBody = formatAirTravelersData(
+      body,
+      OriginDestinationOptions
+    );
+
+    return {
+      success: true,
+      message: "Ticket booking request successful!",
+      formatBookingBody,
+      revalidationResponse,
+      RequiredFieldsToBook,
+    };
+  };
 
   // ORDER TICKET
   orderTicket = async (req: Request) => {

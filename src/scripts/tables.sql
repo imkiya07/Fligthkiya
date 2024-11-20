@@ -84,6 +84,7 @@ CREATE TABLE users (
     netTotal decimal(10,1),
     paymentStatus enum("PENDING", "SUCCESS", "FAILED", "CANCEL") DEFAULT "PENDING",
     ticketStatus enum("PENDING", "ISSUED", "PAYMENT", "CANCEL_PENDING", "CANCELED") DEFAULT "PENDING",
+    revalidation_req_body JSON,
     paymentAt timestamp,
     cancelReqAt timestamp,
     canceledAt timestamp,
