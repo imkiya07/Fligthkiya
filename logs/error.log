@@ -260,3 +260,329 @@ Error
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-22T13:40:52.112Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:27:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T13:41:54.118Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:27:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T13:44:27.270Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:28:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T13:44:51.405Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:28:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T13:45:43.676Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:29:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T13:47:05.076Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingRequest.service.js:29:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:32:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T14:41:16.068Z] insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `orderNumber`, `revalidation_req_body`, `user_id`) values ('080', '91', 'apisupport@mystifly.com', '87657897', '560028', 'ORD-1732286476060-7371', '{\"FareSourceCode\":\"WEhVM21ackdMZTNyUjJkYThOQVJuU2dOQlBlclRYbmNsMXhNU212U3E4bVJCU1I4QlVqbVVqY1FCWEtqWTVrQTJHdHRoay9QVStYU3RsYU5uRVhjUEhFOHR5R1VpZ2JRRldrWWw4cVNGT0g0bWwvMEJ3Y01DUXM2ZXBVTDNLRzNWK09ZUzB4cXNyWlY0ZUNFM1k3R0pxM3kwcy9TakJQWkswbzE3aW0vYTZNPQ==\",\"Target\":\"Test\",\"ConversationId\":\"MY_SECRET\"}', 9) - Data too long for column 'orderNumber' at row 1
+Error: insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `orderNumber`, `revalidation_req_body`, `user_id`) values ('080', '91', 'apisupport@mystifly.com', '87657897', '560028', 'ORD-1732286476060-7371', '{\"FareSourceCode\":\"WEhVM21ackdMZTNyUjJkYThOQVJuU2dOQlBlclRYbmNsMXhNU212U3E4bVJCU1I4QlVqbVVqY1FCWEtqWTVrQTJHdHRoay9QVStYU3RsYU5uRVhjUEhFOHR5R1VpZ2JRRldrWWw4cVNGT0g0bWwvMEJ3Y01DUXM2ZXBVTDNLRzNWK09ZUzB4cXNyWlY0ZUNFM1k3R0pxM3kwcy9TakJQWkswbzE3aW0vYTZNPQ==\",\"Target\":\"Test\",\"ConversationId\":\"MY_SECRET\"}', 9) - Data too long for column 'orderNumber' at row 1
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2024-11-22T14:44:37.551Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-22T14:53:22.793Z] Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+TypeError: Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:41:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T14:55:08.778Z] Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+TypeError: Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:41:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T15:00:14.153Z] Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+TypeError: Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:41:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T15:14:17.276Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-22T15:14:44.346Z] Revalidation is required!
+Error: Revalidation is required!
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-11-22T15:32:15.483Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:33:50.422Z] Invalid email or password
+Error: Invalid email or password
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:69:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T15:33:57.248Z] Email Address Already in Use
+Error: Email Address Already in Use
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.registrationUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:30:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T15:34:27.805Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:34:33.229Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:38:02.670Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:38:15.164Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:38:27.577Z] Invalid session id or flight id
+Error: Invalid session id or flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:230:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:39:04.167Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:231:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T15:41:38.579Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:231:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:17:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T16:55:33.912Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:231:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T16:56:27.800Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:231:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:18:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-22T17:32:34.916Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T17:40:51.547Z] Invalid integer: 129713.00000000001
+Error: Invalid integer: 129713.00000000001
+    at generateV1Error (D:\PROJECTS\flight_kiya_server\node_modules\stripe\cjs\Error.js:11:20)
+    at res.toJSON.then.Error_js_1.StripeAPIError.message (D:\PROJECTS\flight_kiya_server\node_modules\stripe\cjs\RequestSender.js:108:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-22T17:46:14.800Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-22T17:49:25.798Z] update `booking_info` set `status` = 'PAYMENT_REQUEST' where `booking_id` = 1 - Unknown column 'booking_id' in 'where clause'
+Error: update `booking_info` set `status` = 'PAYMENT_REQUEST' where `booking_id` = 1 - Unknown column 'booking_id' in 'where clause'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2024-11-23T12:28:29.167Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-23T12:29:26.534Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-23T12:30:28.828Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

@@ -1,47 +1,70 @@
+import crypto from "crypto";
+
 import { Request } from "express";
 import { Stripe } from "stripe";
 import AbstractServices from "../../core/abstract/abstract.services";
-import { PassengerInfo } from "./payment.interface";
 import { getClassDescription } from "../B2C/postBooking/utils/postBooking.utils";
+import { IBookingReqBody } from "../B2C/preBooking/interfaces/bookingReqBody.interface";
+import { IRevalidateRes } from "../B2C/preBooking/interfaces/revalidateRes.interface";
+import { BookingModels } from "../B2C/preBooking/models/booking.models";
+import { PreBookingModels } from "../B2C/preBooking/models/preBooking.models";
+import { PreBookingService } from "../B2C/preBooking/services/preBooking.services";
+import {
+  formatAirTravelersData,
+  formatRevalidation,
+} from "../B2C/preBooking/utils/preBooking.utils";
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export class PaymentServices extends AbstractServices {
   constructor() {
     super();
   }
 
+  preBookingServices = new PreBookingService();
+
+  // PAYMENT INTENT OR PAYMENT REQUEST
   createPaymentIntent = async (req: Request) => {
-    const body = req.body as PassengerInfo[];
+    const flightId = req.body.flight_id as string;
+    const bookingId = req.params.id;
 
-    const deviceId = req.deviceId;
+    const conn = new PreBookingModels(this.db);
+    const bookingConn = new BookingModels(this.db);
 
-    const revalidationItem = this.cache.get<any>(`revalidation-${deviceId}`);
+    const revalidateReqBody = this.preBookingServices.getRevalidationBody(
+      req,
+      flightId
+    );
 
-    if (!revalidationItem) {
-      this.throwError("Revalidation is required!", 400);
-    }
+    const response = (await this.Req.request(
+      "POST",
+      "/v1/Revalidate/Flight",
+      revalidateReqBody
+    )) as IRevalidateRes;
 
-    console.log({ revalidationItem, deviceId });
+    const formattedData = await formatRevalidation(response?.Data, conn);
 
-    if (revalidationItem) {
-      const stripe = new Stripe(
-        "sk_test_51JyCktCw0Qr73TDTfCQ5UEpX4yeQwdn09fVhOfaRNGDmEKrjPAZDdt0vENe3wGbZixMmnjieuzD3feiVdfPHKUnc00lMoOoKXL"
-      );
-
-      const airportInfo = getFirstAndLastCity(revalidationItem?.flights as any);
+    if (response.Success && formattedData) {
+      const airportInfo = getFirstAndLastCity(formattedData?.flights as any);
       const cabinClass = getClassDescription(
-        revalidationItem?.flights[0]?.flightSegments[0]?.CabinClassCode
+        formattedData?.flights[0]?.flightSegments[0]?.CabinClassCode
       );
+
+      const unit_amount = +(
+        Number(formattedData.TotalFare.Amount) * 100
+      ).toFixed(2);
+
+      const hashBookingId = numberToHash(+bookingId);
 
       const session = await stripe.checkout.sessions.create({
         mode: "payment",
-        success_url: `${process.env.CL_BASE_URL}/success`,
-        cancel_url: `${process.env.CL_BASE_URL}/cancel`,
+        success_url: `${process.env.CL_BASE_URL}/pay/success/${hashBookingId}`,
+        cancel_url: `${process.env.CL_BASE_URL}/pay/cancel/${hashBookingId}`,
 
         line_items: [
           {
             price_data: {
-              currency: revalidationItem?.TotalFare.CurrencyCode,
-              unit_amount: Number(revalidationItem.TotalFare.Amount) * 100,
+              currency: formattedData?.TotalFare.CurrencyCode,
+              unit_amount,
               product_data: {
                 name: `${airportInfo?.firstDepartureCity} to ${airportInfo.lastArrivalCity}  - Flight Ticket`,
                 description: `${cabinClass} - Flight on 3rd Feb 2025, Departure at 10:00 AM`,
@@ -63,8 +86,68 @@ export class PaymentServices extends AbstractServices {
         ],
       });
 
+      await bookingConn.updateBookingStatus("PAYMENT_REQUEST", +bookingId);
+
       return { success: true, url: session?.url };
     }
+  };
+
+  paymentSuccess = async (req: Request) => {
+    const hashBookingId = req.params.id;
+    const bookingId = hashToNumber(hashBookingId);
+
+    const bookingConn = new BookingModels(this.db);
+    await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
+
+    const { passengerBody, revalidation_req_body } =
+      await bookingConn.getBookingBodyInfo(bookingId);
+
+    const passengerData = JSON.parse(passengerBody) as IBookingReqBody;
+    const revalidationReqBody = JSON.parse(revalidation_req_body);
+
+    const revalidationResponse = (await this.Req.request(
+      "POST",
+      "/v1/Revalidate/Flight",
+      revalidationReqBody
+    )) as IRevalidateRes;
+
+    if (!revalidationResponse?.Success) {
+      throw this.throwError(revalidationResponse?.Data?.Errors[0], 400);
+    }
+
+    const { OriginDestinationOptions, RequiredFieldsToBook } =
+      revalidationResponse?.Data?.PricedItineraries[0];
+
+    const formatBookingBody = formatAirTravelersData(
+      passengerData,
+      OriginDestinationOptions
+    );
+
+    const response = await this.Req.request(
+      "POST",
+      "/v1/Book/Flight",
+      formatBookingBody
+    );
+
+    // API RESPONSE ERROR
+    if (!response?.Success) {
+      this.throwError(response?.Message, 400);
+    }
+
+    return {
+      success: true,
+      message: "Flight booking successfully",
+      data: response?.Data,
+    };
+  };
+
+  paymentCancel = async (req: Request) => {
+    const hashBookingId = req.params.id;
+    const bookingId = hashToNumber(hashBookingId);
+
+    const bookingConn = new BookingModels(this.db);
+    await bookingConn.updateBookingPaymentStatus("CANCEL", +bookingId);
+    return { success: true, message: "Payment cancel" };
   };
 }
 
@@ -102,3 +185,17 @@ const getFirstAndLastCity = (
     arrival_airport,
   };
 };
+
+function numberToHash(number: number) {
+  const numberString = number.toString(); // Convert number to string
+  const hash = crypto
+    .createHash("sha256") // Use a cryptographic hash function
+    .update(numberString)
+    .digest("hex"); // Get the hash as a hexadecimal string
+  return hash;
+}
+
+function hashToNumber(hash: string) {
+  // Take the first 15 characters of the hash to prevent overflow
+  return Number(`0x${hash.slice(0, 15)}`);
+}

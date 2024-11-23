@@ -64,10 +64,4 @@ export class PreBookingControllers extends AbstractController {
     const data = await this.services.seatMap(req);
     res.json(data);
   });
-  public getPaymentIntent = this.wrapAsync(
-    async (req: Request, res: Response) => {
-      const data = await this.services.getPaymentIntent(req);
-      res.json(data);
-    }
-  );
 }

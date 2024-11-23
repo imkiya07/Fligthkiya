@@ -12,8 +12,12 @@ export class PaymentRoutes {
 
   private initializeRoutes() {
     this.router.post(
-      "/create-payment-intent",
+      "/create-payment-intent/:id",
       this.controller.createPaymentIntent
     );
+
+    this.router.post("/success", this.controller.createPaymentIntent);
+
+    this.router.post("/cancel", this.controller.createPaymentIntent);
   }
 }

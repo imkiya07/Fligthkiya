@@ -26,7 +26,5 @@ export class PreBookingRoutes {
     this.router.get("/trip-details/:booking_ref", this.controllers.tripDetails);
 
     this.router.get("/seat-map/:flight_id", this.controllers.seatMap);
-
-    this.router.get("/get-booking", this.controllers.getPaymentIntent);
   }
 }

@@ -1,4 +1,5 @@
 import knex from "knex";
+import { AppError } from "../../core/errors/AppError";
 import { IRegistrationDb } from "./authInterfaces";
 
 export class AuthModel {
@@ -29,15 +30,14 @@ export class AuthModel {
 
       return userId;
     } catch (error) {
-      console.error("Error registering user:", error);
-      return { success: false, error: "Registration failed" };
+      throw new AppError("Error registering user:", 400);
     }
   }
 
   // Login user
-  async loginUser(email: string, password: string) {
+  async getUserByEmail(email: string) {
     try {
-      return await this.db("users")
+      return (await this.db("users")
         .select(
           "user_id",
           "account_verified",
@@ -49,10 +49,17 @@ export class AuthModel {
         )
         .where({ email })
         .orWhere("username", email)
-        .first();
+        .first()) as {
+        user_id: number;
+        account_verified: number;
+        full_name: string;
+        username: string;
+        email: string;
+        phone_number: string;
+        password_hash: string;
+      };
     } catch (error) {
-      console.error("Error logging in user:", error);
-      return { success: false, error: "Login failed" };
+      throw new AppError("Error logging in user", 400);
     }
   }
 

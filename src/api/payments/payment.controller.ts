@@ -14,4 +14,16 @@ export class PaymentControllers extends AbstractController {
       res.json(data);
     }
   );
+
+  public paymentSuccess = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.paymentSuccess(req);
+      res.json(data);
+    }
+  );
+
+  public paymentCancel = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.paymentCancel(req);
+    res.json(data);
+  });
 }

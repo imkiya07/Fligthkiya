@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
+import { IFormattedRevalidation } from "../interfaces/formattedRevalidation.interface";
 // FORMAT FLIGHT SEARCH RESPONSE
 const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
 
@@ -173,6 +174,10 @@ export const filterByRefundable = (data: any, refundable: string) => {
 
 // FORMAT REVALIDATION RESPONSE
 export const formatRevalidation = async (Data: any, conn: PreBookingModels) => {
+  if (!Data) {
+    return;
+  }
+
   const TraceId = Data.TraceId;
   const PricedItineraries = Data.PricedItineraries;
 
@@ -200,7 +205,7 @@ export const formatRevalidation = async (Data: any, conn: PreBookingModels) => {
       IsPassportMandatory: item.IsPassportMandatory,
     };
 
-    return data;
+    return data as IFormattedRevalidation;
   }
 };
 
@@ -305,6 +310,7 @@ export function formatAirTravelersData(
       Origin: segment.DepartureAirportLocationCode,
       Destination: segment.ArrivalAirportLocationCode,
       FlightNumber: `${segment.OperatingAirline.Code}${segment.FlightNumber}`,
+      DepartureDateTime: segment.DepartureDateTime,
       RequestSSRs: [
         {
           SSRCode: "Any",

@@ -14,8 +14,6 @@ export class Revalidation extends AbstractServices {
   async revalidated(req: Request) {
     const conn = new PreBookingModels(db);
 
-    // const sessionId = req.get("sessionid") as string;
-    // const sessionId = req.cookies?.sessionId as string;
     const deviceId = req.deviceId;
 
     const cachedData = this.cache.get<IFlightCache>(deviceId);
@@ -27,7 +25,7 @@ export class Revalidation extends AbstractServices {
     );
 
     if (!foundItem) {
-      this.throwError("Invalid session id or flight id", 400);
+      this.throwError("Invalid flight id", 400);
     }
 
     const reqBody = {
@@ -53,6 +51,7 @@ export class Revalidation extends AbstractServices {
     )) as any;
 
     this.cache.set(`revalidateReqBody-${deviceId}`, reqBody);
+
     this.cache.set(`revalidation-${deviceId}`, formattedData);
 
     const { FareSourceCode, ...data } = formattedData;

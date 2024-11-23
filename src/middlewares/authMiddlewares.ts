@@ -12,8 +12,6 @@ export function authMiddleware(
 ): void {
   const authHeader = req.headers.authorization;
 
-  console.log({ authHeader });
-
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     res
       .status(401)

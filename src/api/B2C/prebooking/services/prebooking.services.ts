@@ -1,13 +1,15 @@
 import { Request } from "express";
-import Stripe from "stripe";
 import AbstractServices from "../../../../core/abstract/abstract.services";
-import { getClassDescription } from "../../postBooking/utils/postBooking.utils";
+import { IBookingReqBody } from "../interfaces/bookingReqBody.interface";
+import { IFlightCache } from "../interfaces/preBooking.interface";
 import { IRevalidateRes } from "../interfaces/revalidateRes.interface";
+import { BookingModels } from "../models/booking.models";
 import { formatAirTravelersData } from "../utils/preBooking.utils";
 import { FareRules } from "./fareRules.service";
 import { FlightBookService } from "./flightBook.service";
 import { FlightSearchService } from "./flightSearch.service";
 import { Revalidation } from "./revalidation.service";
+import { UserCreateWithTempPass } from "./userCreateTempPass.service";
 
 export class PreBookingService extends AbstractServices {
   constructor() {
@@ -21,9 +23,13 @@ export class PreBookingService extends AbstractServices {
   flightBook = new FlightBookService().flightBook;
 
   // BOOKING REQUEST
-
   bookingRequest = async (req: Request) => {
+    const body = req.body as IBookingReqBody;
+    const conn = new BookingModels(this.db);
     const deviceId = req.deviceId;
+
+    const createUser = new UserCreateWithTempPass();
+    const { token, user_id } = await createUser.createUserAndSendEmail(body);
 
     const revalidateReqBody = this.cache.get(`revalidateReqBody-${deviceId}`);
 
@@ -31,33 +37,51 @@ export class PreBookingService extends AbstractServices {
       this.throwError("Revalidation is required!", 400);
     }
 
-    const revalidationResponse = (await this.Req.request(
-      "POST",
-      "/v1/Revalidate/Flight",
-      revalidateReqBody
-    )) as IRevalidateRes;
+    const orderNumber = generateOrderNumber();
 
-    console.log(revalidationResponse?.Success);
+    const bookingReqPayload = {
+      user_id,
+      orderNumber,
+      CountryCode: body?.CountryCode,
+      AreaCode: body?.AreaCode,
+      PhoneNumber: body?.PhoneNumber,
+      Email: body?.Email,
+      PostCode: body?.PostCode,
+      revalidation_req_body: JSON.stringify(revalidateReqBody),
+      passenger_body: JSON.stringify(body),
+      status: "BOOKING_REQUEST",
+    };
 
-    if (!revalidationResponse?.Success) {
-      throw this.throwError(revalidationResponse?.Data?.Errors[0], 400);
-    }
+    const booking_id = await conn.insertBookingInfo(bookingReqPayload);
 
-    const { OriginDestinationOptions, RequiredFieldsToBook } =
-      revalidationResponse?.Data?.PricedItineraries[0];
-    const body = req.body;
+    const passengerData = body?.AirTravelers?.map((item) => {
+      return {
+        user_id,
+        booking_id,
+        PassengerType: item.PassengerType,
+        Gender: item.Gender,
+        DateOfBirth: item.DateOfBirth,
+        NationalID: item.NationalID,
+        PassengerNationality: item.PassengerNationality,
+        PassengerTitle: item.PassengerName.PassengerTitle,
+        PassengerFirstName: item.PassengerName.PassengerFirstName,
+        PassengerLastName: item.PassengerName.PassengerLastName,
+        PassportNumber: item?.Passport?.PassportNumber,
+        ExpiryDate: item?.Passport?.ExpiryDate,
+        Country: item?.Passport?.Country,
+      };
+    });
 
-    const formatBookingBody = formatAirTravelersData(
-      body,
-      OriginDestinationOptions
-    );
+    await conn.insertAirTravelers(passengerData);
 
     return {
       success: true,
-      message: "Ticket booking request successful!",
-      formatBookingBody,
-      revalidationResponse,
-      RequiredFieldsToBook,
+      message: "Temporary booking successfully",
+      data: {
+        user_id,
+        orderNumber,
+        token,
+      },
     };
   };
 
@@ -190,59 +214,27 @@ export class PreBookingService extends AbstractServices {
     };
   };
 
-  // PAYMENT INTENT
-  getPaymentIntent = async (req: Request) => {
+  // UTILS
+  getRevalidationBody = (req: Request, flight_id: string) => {
     const deviceId = req.deviceId;
 
-    const revalidationItem = this.cache.get<any>(`revalidation-${deviceId}`);
+    const cachedData = this.cache.get<IFlightCache>(deviceId);
 
-    if (!revalidationItem) {
-      this.throwError("Revalidation is required!", 400);
+    const foundItem = cachedData?.results?.find(
+      (item) => item.flight_id === flight_id
+    );
+
+    if (!foundItem) {
+      this.throwError("Invalid flight id", 400);
     }
 
-    if (revalidationItem) {
-      const stripe = new Stripe(
-        "sk_test_51JyCktCw0Qr73TDTfCQ5UEpX4yeQwdn09fVhOfaRNGDmEKrjPAZDdt0vENe3wGbZixMmnjieuzD3feiVdfPHKUnc00lMoOoKXL"
-      );
+    const reqBody = {
+      FareSourceCode: foundItem?.fareSourceCode,
+      Target: process.env.API_TARGET,
+      ConversationId: "MY_SECRET",
+    };
 
-      const airportInfo = getFirstAndLastCity(revalidationItem?.flights as any);
-      const cabinClass = getClassDescription(
-        revalidationItem?.flights[0]?.flightSegments[0]?.CabinClassCode
-      );
-
-      const session = await stripe.checkout.sessions.create({
-        mode: "payment",
-        success_url: `${process.env.CL_BASE_URL}/success`,
-        cancel_url: `${process.env.CL_BASE_URL}/cancel`,
-
-        line_items: [
-          {
-            price_data: {
-              currency: revalidationItem?.TotalFare.CurrencyCode,
-              unit_amount: Number(revalidationItem.TotalFare.Amount) * 100,
-              product_data: {
-                name: `${airportInfo?.firstDepartureCity} to ${airportInfo.lastArrivalCity}  - Flight Ticket`,
-                description: `${cabinClass} - Flight on 3rd Feb 2025, Departure at 10:00 AM`,
-                metadata: {
-                  passenger_name: "John Doe",
-                  booking_reference: "AB1234CD",
-                  ticket_number: "TK5678",
-                  flight_number: "NY123",
-                  departure_airport: airportInfo?.departure_airport,
-                  arrival_airport: airportInfo?.arrival_airport,
-                },
-                images: [
-                  "https://www.botomul.com/storage/files/bd/6/thumb-816x460-2d2294c943e212b69f0ff369cafa4810.png",
-                ],
-              },
-            },
-            quantity: 1,
-          },
-        ],
-      });
-
-      return { success: true, url: session?.url };
-    }
+    return reqBody;
   };
 }
 
@@ -280,3 +272,10 @@ const getFirstAndLastCity = (
     arrival_airport,
   };
 };
+
+function generateOrderNumber() {
+  const prefix = "ORD";
+  const timestamp = Date.now(); // Current timestamp in milliseconds
+
+  return `${prefix}-${timestamp}`;
+}

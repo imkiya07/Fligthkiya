@@ -6,12 +6,12 @@ import { IRegistration } from "./authInterfaces";
 import { generateToken } from "./authUtils";
 
 // Function to hash the password
-function hashPassword(password: string) {
+export function hashPassword(password: string) {
   return crypto.createHash("sha256").update(password).digest("hex");
 }
 
 // Function to verify the password
-function verifyPassword(inputPassword: string, storedHash: string) {
+export function verifyPassword(inputPassword: string, storedHash: string) {
   const inputHash = hashPassword(inputPassword); // Hash the input password
   return inputHash === storedHash; // Compare with the stored hash
 }
@@ -75,7 +75,7 @@ export class AuthServices extends AbstractServices {
       password: string;
     };
 
-    const user = await conn.loginUser(username, password);
+    const user = await conn.getUserByEmail(username);
 
     if (!user) {
       throw this.throwError("User does't exist", 404);

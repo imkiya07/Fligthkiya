@@ -85,10 +85,12 @@ CREATE TABLE users (
     paymentStatus enum("PENDING", "SUCCESS", "FAILED", "CANCEL") DEFAULT "PENDING",
     ticketStatus enum("PENDING", "ISSUED", "PAYMENT", "CANCEL_PENDING", "CANCELED") DEFAULT "PENDING",
     revalidation_req_body JSON,
+    passengerBody JSON,
     paymentAt timestamp,
     cancelReqAt timestamp,
     canceledAt timestamp,
-    createdAt timestamp DEFAULT CURRENT_TIMESTAMP
+    createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
+    status:VARCHAR(55)
 );
 
 
