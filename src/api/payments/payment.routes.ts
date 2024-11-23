@@ -16,8 +16,8 @@ export class PaymentRoutes {
       this.controller.createPaymentIntent
     );
 
-    this.router.post("/success", this.controller.createPaymentIntent);
+    this.router.post("/success/:session", this.controller.paymentSuccess);
 
-    this.router.post("/cancel", this.controller.createPaymentIntent);
+    this.router.post("/cancel/:session", this.controller.paymentCancel);
   }
 }

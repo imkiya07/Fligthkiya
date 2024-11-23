@@ -586,3 +586,203 @@ Error: Flights not found for the given search condition
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-23T13:21:11.270Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.getRevalidationBody (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:172:22)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:27:63)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T13:22:35.839Z] Do not know how to serialize a BigInt
+TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-23T13:24:28.006Z] Do not know how to serialize a BigInt
+TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-23T13:26:20.907Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:123:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:25:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:26:34.125Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:123:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:25:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:27:30.025Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:126:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:28:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:27:42.922Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:126:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:28:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:28:04.872Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:127:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:28:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:28:48.352Z] Invalid key length
+RangeError: Invalid key length
+    at Cipheriv.createCipherBase (node:internal/crypto/cipher:121:19)
+    at Cipheriv.createCipherWithIV (node:internal/crypto/cipher:133:3)
+    at new Cipheriv (node:internal/crypto/cipher:234:3)
+    at Object.createCipheriv (node:crypto:143:10)
+    at numberToHash (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:124:37)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:25:35)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-11-23T13:31:43.719Z] hashToNumber is not defined
+ReferenceError: hashToNumber is not defined
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:376:14)
+
+[2024-11-23T13:31:59.630Z] The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+    at Function.from (node:buffer:322:9)
+    at decryptNumber (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:135:85)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T13:32:01.111Z] The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+    at Function.from (node:buffer:322:9)
+    at decryptNumber (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:135:85)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T13:32:11.563Z] The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined
+    at Function.from (node:buffer:322:9)
+    at decryptNumber (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:135:85)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T17:31:21.551Z] error:1C800064:Provider routines::bad decrypt
+Error: error:1C800064:Provider routines::bad decrypt
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at decrypt (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:136:27)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T17:32:57.680Z] error:1C800064:Provider routines::bad decrypt
+Error: error:1C800064:Provider routines::bad decrypt
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at decrypt (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:136:27)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+
+[2024-11-23T17:32:59.153Z] error:1C800064:Provider routines::bad decrypt
+Error: error:1C800064:Provider routines::bad decrypt
+    at Decipheriv.final (node:internal/crypto/cipher:184:29)
+    at decrypt (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:136:27)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:70:31)
+    at D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+

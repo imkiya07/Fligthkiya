@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 import { Request } from "express";
 import { Stripe } from "stripe";
 import AbstractServices from "../../core/abstract/abstract.services";
@@ -53,12 +51,10 @@ export class PaymentServices extends AbstractServices {
         Number(formattedData.TotalFare.Amount) * 100
       ).toFixed(2);
 
-      const hashBookingId = numberToHash(+bookingId);
-
       const session = await stripe.checkout.sessions.create({
         mode: "payment",
-        success_url: `${process.env.CL_BASE_URL}/pay/success/${hashBookingId}`,
-        cancel_url: `${process.env.CL_BASE_URL}/pay/cancel/${hashBookingId}`,
+        success_url: `${process.env.CL_BASE_URL}/pay/success/${bookingId}`,
+        cancel_url: `${process.env.CL_BASE_URL}/pay/cancel/${bookingId}`,
 
         line_items: [
           {
@@ -93,14 +89,13 @@ export class PaymentServices extends AbstractServices {
   };
 
   paymentSuccess = async (req: Request) => {
-    const hashBookingId = req.params.id;
-    const bookingId = hashToNumber(hashBookingId);
+    const bookingId = req.params.session;
 
     const bookingConn = new BookingModels(this.db);
     await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
     const { passengerBody, revalidation_req_body } =
-      await bookingConn.getBookingBodyInfo(bookingId);
+      await bookingConn.getBookingBodyInfo(+bookingId);
 
     const passengerData = JSON.parse(passengerBody) as IBookingReqBody;
     const revalidationReqBody = JSON.parse(revalidation_req_body);
@@ -142,8 +137,7 @@ export class PaymentServices extends AbstractServices {
   };
 
   paymentCancel = async (req: Request) => {
-    const hashBookingId = req.params.id;
-    const bookingId = hashToNumber(hashBookingId);
+    const bookingId = req.params.session;
 
     const bookingConn = new BookingModels(this.db);
     await bookingConn.updateBookingPaymentStatus("CANCEL", +bookingId);
@@ -185,17 +179,3 @@ const getFirstAndLastCity = (
     arrival_airport,
   };
 };
-
-function numberToHash(number: number) {
-  const numberString = number.toString(); // Convert number to string
-  const hash = crypto
-    .createHash("sha256") // Use a cryptographic hash function
-    .update(numberString)
-    .digest("hex"); // Get the hash as a hexadecimal string
-  return hash;
-}
-
-function hashToNumber(hash: string) {
-  // Take the first 15 characters of the hash to prevent overflow
-  return Number(`0x${hash.slice(0, 15)}`);
-}
