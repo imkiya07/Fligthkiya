@@ -1,5 +1,7 @@
 import { Router } from "express";
+import { authMiddleware } from "../../middlewares/authMiddlewares";
 import { PreBookingRoutes } from "./preBooking/routes/preBooking.routes";
+import { B2cUsersRoute } from "./users/b2cUsers.routes";
 
 export class B2CRoutes {
   public router: Router;
@@ -11,5 +13,6 @@ export class B2CRoutes {
 
   private initializeRoutes() {
     this.router.use("/", new PreBookingRoutes().router);
+    this.router.use("/user", authMiddleware, new B2cUsersRoute().router);
   }
 }

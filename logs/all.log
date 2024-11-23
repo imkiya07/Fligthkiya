@@ -339,3 +339,9 @@
 2024-11-23T12:27:47.174Z [info]: [2024-11-23T12:27:47.170Z] POST /api/b2c/search?filter=true
 2024-11-23T12:28:46.119Z [info]: [2024-11-23T12:28:46.119Z] POST /api/b2c/search?filter=true
 2024-11-23T12:29:48.410Z [info]: [2024-11-23T12:29:48.410Z] POST /api/b2c/search?filter=true
+2024-11-23T13:15:11.202Z [info]: [2024-11-23T13:15:11.200Z] GET /api/b2c/user/bookings
+2024-11-23T13:15:22.816Z [info]: [2024-11-23T13:15:22.816Z] GET /api/b2c/user/bookings
+2024-11-23T13:16:06.498Z [info]: [2024-11-23T13:16:06.496Z] GET /api/b2c/user/bookings
+2024-11-23T13:16:19.428Z [info]: [2024-11-23T13:16:19.428Z] GET /api/b2c/user/bookings
+2024-11-23T13:16:24.537Z [info]: [2024-11-23T13:16:24.537Z] GET /api/b2c/user/bookings
+2024-11-23T13:17:07.914Z [info]: [2024-11-23T13:17:07.912Z] GET /api/b2c/user/bookings
