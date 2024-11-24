@@ -3,6 +3,7 @@ import {
   IAirTravelers,
   IBookingInfo,
 } from "../interfaces/bookingReqBody.interface";
+import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 
 export class BookingModels {
   private db;
@@ -30,8 +31,11 @@ export class BookingModels {
       .where("booking_id", booking_id);
   };
 
-  updateBookingStatus = async (status: string, booking_id: number) => {
-    await this.db("booking_info").update({ status }).where("id", booking_id);
+  updateBookingPayment = async (
+    payload: { baseFare: number; netTotal: number },
+    booking_id: number
+  ) => {
+    await this.db("booking_info").update(payload).where("id", booking_id);
   };
 
   updateBookingPaymentStatus = async (
@@ -45,11 +49,50 @@ export class BookingModels {
       .where("id", booking_id);
   };
 
+  updateBookingBookingStatus = async (
+    bookingStatus: "PENDING" | "CONFIRMED" | "FAILED",
+    booking_id: number
+  ) => {
+    const canceledAt = getCurrentTimestamp();
+
+    await this.db("booking_info")
+      .update({ bookingStatus, canceledAt })
+      .where("id", booking_id);
+  };
+
+  updateBookingConfirm = async (
+    payload: {
+      TraceId: string;
+      ticketStatus:
+        | "PENDING"
+        | "BOOKED"
+        | "ISSUED"
+        | "PAYMENT"
+        | "CANCEL_PENDING"
+        | "CANCELED";
+      TktTimeLimit: string;
+      pnrId: string;
+      bookingStatus: "PENDING" | "CONFIRMED" | "FAILED";
+    },
+    booking_id: number
+  ) => {
+    const date = new Date(payload?.TktTimeLimit);
+
+    const TktTimeLimit = date.toISOString().slice(0, 19).replace("T", " ");
+
+    await this.db("booking_info")
+      .update({ ...payload, TktTimeLimit })
+      .where("id", booking_id);
+  };
+
   getBookingBodyInfo = async (booking_id: number) => {
     return (await this.db("booking_info")
       .select("revalidation_req_body", "passengerBody")
       .where("id", booking_id)
-      .first()) as { passengerBody: string; revalidation_req_body: string };
+      .first()) as {
+      passengerBody: IAirTravelersRequest;
+      revalidation_req_body: string;
+    };
   };
 }
 

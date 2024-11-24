@@ -89,8 +89,7 @@ CREATE TABLE users (
     paymentAt timestamp,
     cancelReqAt timestamp,
     canceledAt timestamp,
-    createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
-    status:VARCHAR(55)
+    createdAt timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
 

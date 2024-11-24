@@ -48,7 +48,7 @@ export class PreBookingService extends AbstractServices {
       Email: body?.Email,
       PostCode: body?.PostCode,
       revalidation_req_body: JSON.stringify(revalidateReqBody),
-      passenger_body: JSON.stringify(body),
+      passengerBody: JSON.stringify(body),
       status: "BOOKING_REQUEST",
     };
 
@@ -79,6 +79,7 @@ export class PreBookingService extends AbstractServices {
       message: "Temporary booking successfully",
       data: {
         user_id,
+        booking_id,
         orderNumber,
         token,
       },

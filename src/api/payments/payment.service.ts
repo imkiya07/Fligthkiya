@@ -2,7 +2,6 @@ import { Request } from "express";
 import { Stripe } from "stripe";
 import AbstractServices from "../../core/abstract/abstract.services";
 import { getClassDescription } from "../B2C/postBooking/utils/postBooking.utils";
-import { IBookingReqBody } from "../B2C/preBooking/interfaces/bookingReqBody.interface";
 import { IRevalidateRes } from "../B2C/preBooking/interfaces/revalidateRes.interface";
 import { BookingModels } from "../B2C/preBooking/models/booking.models";
 import { PreBookingModels } from "../B2C/preBooking/models/preBooking.models";
@@ -11,6 +10,7 @@ import {
   formatAirTravelersData,
   formatRevalidation,
 } from "../B2C/preBooking/utils/preBooking.utils";
+import { IBookingResponse } from "./payment.interface";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export class PaymentServices extends AbstractServices {
@@ -22,21 +22,19 @@ export class PaymentServices extends AbstractServices {
 
   // PAYMENT INTENT OR PAYMENT REQUEST
   createPaymentIntent = async (req: Request) => {
-    const flightId = req.body.flight_id as string;
     const bookingId = req.params.id;
 
     const conn = new PreBookingModels(this.db);
     const bookingConn = new BookingModels(this.db);
 
-    const revalidateReqBody = this.preBookingServices.getRevalidationBody(
-      req,
-      flightId
+    const { revalidation_req_body } = await bookingConn.getBookingBodyInfo(
+      +bookingId
     );
 
     const response = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
-      revalidateReqBody
+      revalidation_req_body
     )) as IRevalidateRes;
 
     const formattedData = await formatRevalidation(response?.Data, conn);
@@ -82,7 +80,13 @@ export class PaymentServices extends AbstractServices {
         ],
       });
 
-      await bookingConn.updateBookingStatus("PAYMENT_REQUEST", +bookingId);
+      await bookingConn.updateBookingPayment(
+        {
+          netTotal: Number(formattedData.TotalFare.Amount),
+          baseFare: Number(formattedData.TotalFare.Amount),
+        },
+        +bookingId
+      );
 
       return { success: true, url: session?.url };
     }
@@ -97,37 +101,49 @@ export class PaymentServices extends AbstractServices {
     const { passengerBody, revalidation_req_body } =
       await bookingConn.getBookingBodyInfo(+bookingId);
 
-    const passengerData = JSON.parse(passengerBody) as IBookingReqBody;
-    const revalidationReqBody = JSON.parse(revalidation_req_body);
-
     const revalidationResponse = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
-      revalidationReqBody
+      revalidation_req_body
     )) as IRevalidateRes;
 
     if (!revalidationResponse?.Success) {
-      throw this.throwError(revalidationResponse?.Data?.Errors[0], 400);
+      await bookingConn.updateBookingBookingStatus("FAILED", +bookingId);
+      throw this.throwError(revalidationResponse?.Message, 400);
     }
 
-    const { OriginDestinationOptions, RequiredFieldsToBook } =
+    const { OriginDestinationOptions, AirItineraryPricingInfo } =
       revalidationResponse?.Data?.PricedItineraries[0];
 
     const formatBookingBody = formatAirTravelersData(
-      passengerData,
-      OriginDestinationOptions
+      passengerBody,
+      OriginDestinationOptions,
+      AirItineraryPricingInfo?.FareSourceCode
     );
 
-    const response = await this.Req.request(
+    const response = (await this.Req.request(
       "POST",
       "/v1/Book/Flight",
       formatBookingBody
-    );
+    )) as IBookingResponse;
 
     // API RESPONSE ERROR
     if (!response?.Success) {
       this.throwError(response?.Message, 400);
     }
+
+    const { TktTimeLimit, UniqueID, TraceId } = response?.Data;
+
+    await bookingConn.updateBookingConfirm(
+      {
+        bookingStatus: "CONFIRMED",
+        pnrId: UniqueID,
+        ticketStatus: "BOOKED",
+        TktTimeLimit,
+        TraceId,
+      },
+      +bookingId
+    );
 
     return {
       success: true,

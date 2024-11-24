@@ -16,3 +16,18 @@ export interface PassengerInfo {
   ExpiryDate: string; // ISO 8601 string format
   Country: string; // 2-letter country code
 }
+
+export interface IBookingResponse {
+  Data: {
+    ClientUTCOffset: number;
+    ConversationId: string;
+    Errors: any[];
+    Status: string;
+    Target: string;
+    TktTimeLimit: string;
+    TraceId: string;
+    UniqueID: string;
+  };
+  Success: boolean;
+  Message: string;
+}

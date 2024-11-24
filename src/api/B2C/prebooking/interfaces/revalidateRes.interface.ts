@@ -1,6 +1,7 @@
 export interface IRevalidateRes {
   Data: Data;
   Success: boolean;
+  Message: string;
 }
 
 export interface Data {
