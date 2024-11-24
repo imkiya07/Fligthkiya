@@ -933,3 +933,63 @@ Error: API version mismatch - Invalid FareSourceCode.
     at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-24T16:40:29.383Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+
+[2024-11-24T16:40:51.188Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+
+[2024-11-24T16:41:38.001Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:22:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+
+[2024-11-24T16:43:17.433Z] insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `status`, `user_id`) values ('080', '91', 'apisupport@mystifly.com', '87657897', '560028', 'ORD-1732466597428', '{\"AirTravelers\":[{\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"AreaCode\":\"080\",\"PhoneNumber\":\"87657897\",\"Email\":\"apisupport@mystifly.com\",\"PostCode\":\"560028\"}', '{\"FareSourceCode\":\"YTRnSk4waTREY2RKQWxrQ3k5cjZlT0cyZmEranUwc1VCQkpkM2RBOXBOYTc3S1I0ME9aNXpkMmtSbkRNQXhHS3M0VE1YajM1OHdDaW41TVNZckRNRlhFZHdvVTR2WElVZDBIMTRTRXNSOTBOS2ZmLzlHTGpqSlNBMmdlMmpPaDVXNW1ETm0zRlRNZ2VRRElES1pzdWxBPT0=\",\"Target\":\"Test\",\"ConversationId\":\"MY_SECRET\"}', 'BOOKING_REQUEST', 9) - Unknown column 'status' in 'field list'
+Error: insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `status`, `user_id`) values ('080', '91', 'apisupport@mystifly.com', '87657897', '560028', 'ORD-1732466597428', '{\"AirTravelers\":[{\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"AreaCode\":\"080\",\"PhoneNumber\":\"87657897\",\"Email\":\"apisupport@mystifly.com\",\"PostCode\":\"560028\"}', '{\"FareSourceCode\":\"YTRnSk4waTREY2RKQWxrQ3k5cjZlT0cyZmEranUwc1VCQkpkM2RBOXBOYTc3S1I0ME9aNXpkMmtSbkRNQXhHS3M0VE1YajM1OHdDaW41TVNZckRNRlhFZHdvVTR2WElVZDBIMTRTRXNSOTBOS2ZmLzlHTGpqSlNBMmdlMmpPaDVXNW1ETm0zRlRNZ2VRRElES1pzdWxBPT0=\",\"Target\":\"Test\",\"ConversationId\":\"MY_SECRET\"}', 'BOOKING_REQUEST', 9) - Unknown column 'status' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2024-11-24T17:39:28.214Z] Booking already exists with one or more same PAX and segment. You can request Ticket order for this MF28858024
+Error: Booking already exists with one or more same PAX and segment. You can request Ticket order for this MF28858024
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:82:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+

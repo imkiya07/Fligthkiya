@@ -57,5 +57,4 @@ export interface IBookingInfo {
   Email: string;
   PostCode: string;
   revalidation_req_body: string;
-  status: string;
 }

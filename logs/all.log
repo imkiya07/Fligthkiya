@@ -415,3 +415,14 @@
 2024-11-24T15:27:12.504Z [info]: [2024-11-24T15:27:12.504Z] POST /api/payment/success/3
 2024-11-24T15:27:32.246Z [info]: [2024-11-24T15:27:32.243Z] POST /api/payment/success/3
 2024-11-24T16:38:19.387Z [info]: [2024-11-24T16:38:19.382Z] POST /api/b2c/search?filter=true
+2024-11-24T16:40:29.373Z [info]: [2024-11-24T16:40:29.370Z] GET /api/b2c/revalidated/3e80cb8d-867d-4573-9171-18525c7e6d03
+2024-11-24T16:40:51.185Z [info]: [2024-11-24T16:40:51.185Z] GET /api/b2c/revalidated/3e80cb8d-867d-4573-9171-18525c7e6d03
+2024-11-24T16:41:37.998Z [info]: [2024-11-24T16:41:37.998Z] GET /api/b2c/revalidated/d02681fd-c979-4842-b93c-ccdf40e53248
+2024-11-24T16:41:42.706Z [info]: [2024-11-24T16:41:42.706Z] POST /api/b2c/search?filter=true
+2024-11-24T16:42:38.501Z [info]: [2024-11-24T16:42:38.501Z] GET /api/b2c/revalidated/4cdcd40d-c664-47d8-939a-e7817778f20e
+2024-11-24T16:43:17.410Z [info]: [2024-11-24T16:43:17.410Z] POST /api/b2c/booking
+2024-11-24T17:37:27.523Z [info]: [2024-11-24T17:37:27.520Z] POST /api/b2c/search?filter=true
+2024-11-24T17:38:19.573Z [info]: [2024-11-24T17:38:19.573Z] GET /api/b2c/revalidated/ab2db281-9413-46dd-afa9-85b8d2fc00ef
+2024-11-24T17:38:43.735Z [info]: [2024-11-24T17:38:43.735Z] POST /api/b2c/booking
+2024-11-24T17:39:03.802Z [info]: [2024-11-24T17:39:03.802Z] POST /api/payment/create-payment-intent/4
+2024-11-24T17:39:20.162Z [info]: [2024-11-24T17:39:20.162Z] POST /api/payment/success/4
