@@ -90,7 +90,7 @@ export class BookingModels {
       .select("revalidation_req_body", "passengerBody")
       .where("id", booking_id)
       .first()) as {
-      passengerBody: IAirTravelersRequest;
+      passengerBody: string;
       revalidation_req_body: string;
     };
   };

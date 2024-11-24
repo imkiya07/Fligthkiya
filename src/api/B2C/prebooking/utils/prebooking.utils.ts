@@ -287,7 +287,7 @@ const formatOriginDestination = async (
 };
 
 function formatPtcData(data: any[]) {
-  return data.map((item) => ({
+  return data?.map((item) => ({
     passengerCode: item.PassengerTypeQuantity.Code,
     passengerQuantity: item.PassengerTypeQuantity.Quantity,
     BaseFare: item.PassengerFare.BaseFare,
@@ -306,7 +306,7 @@ export function formatAirTravelersData(
   OriginDestinationOptions: OriginDestinationOption[],
   FareSourceCode: string
 ): any {
-  const RequestedSegments = OriginDestinationOptions[0].FlightSegments.map(
+  const RequestedSegments = OriginDestinationOptions[0].FlightSegments?.map(
     (segment) => ({
       Origin: segment.DepartureAirportLocationCode,
       Destination: segment.ArrivalAirportLocationCode,
@@ -324,7 +324,7 @@ export function formatAirTravelersData(
   return {
     FareSourceCode: FareSourceCode,
     TravelerInfo: {
-      AirTravelers: input.AirTravelers.map((traveler) => ({
+      AirTravelers: input.AirTravelers?.map((traveler) => ({
         ...traveler,
         SpecialServiceRequest: {
           SeatPreference: "Any",

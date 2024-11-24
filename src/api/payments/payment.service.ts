@@ -27,14 +27,14 @@ export class PaymentServices extends AbstractServices {
     const conn = new PreBookingModels(this.db);
     const bookingConn = new BookingModels(this.db);
 
-    const { revalidation_req_body } = await bookingConn.getBookingBodyInfo(
-      +bookingId
-    );
+    const bookingData = await bookingConn.getBookingBodyInfo(+bookingId);
+
+    if (!bookingData) throw this.throwError("Invalid booking id", 400);
 
     const response = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
-      revalidation_req_body
+      bookingData?.revalidation_req_body
     )) as IRevalidateRes;
 
     const formattedData = await formatRevalidation(response?.Data, conn);
@@ -98,13 +98,14 @@ export class PaymentServices extends AbstractServices {
     const bookingConn = new BookingModels(this.db);
     await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
-    const { passengerBody, revalidation_req_body } =
-      await bookingConn.getBookingBodyInfo(+bookingId);
+    const bookingData = await bookingConn.getBookingBodyInfo(+bookingId);
+
+    if (!bookingData) throw this.throwError("Invalid booking id", 400);
 
     const revalidationResponse = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
-      revalidation_req_body
+      JSON.parse(bookingData?.revalidation_req_body)
     )) as IRevalidateRes;
 
     if (!revalidationResponse?.Success) {
@@ -116,7 +117,7 @@ export class PaymentServices extends AbstractServices {
       revalidationResponse?.Data?.PricedItineraries[0];
 
     const formatBookingBody = formatAirTravelersData(
-      passengerBody,
+      JSON.parse(bookingData?.passengerBody),
       OriginDestinationOptions,
       AirItineraryPricingInfo?.FareSourceCode
     );

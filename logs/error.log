@@ -993,3 +993,42 @@ Error: Booking already exists with one or more same PAX and segment. You can req
     at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-24T17:57:23.147Z] Cannot destructure property 'revalidation_req_body' of '(intermediate value)' as it is undefined.
+TypeError: Cannot destructure property 'revalidation_req_body' of '(intermediate value)' as it is undefined.
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:24:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-24T17:58:35.424Z] Invalid booking id
+Error: Invalid booking id
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.createPaymentIntent (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:26:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-24T17:59:44.901Z] Invalid booking id
+Error: Invalid booking id
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:75:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-24T18:06:03.009Z] There should be atleast one traveller for booking
+Error: There should be atleast one traveller for booking
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:86:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
+[2024-11-24T18:18:52.030Z] Booking already exists with one or more same PAX and segment. You can request Ticket order for this MF28858024
+Error: Booking already exists with one or more same PAX and segment. You can request Ticket order for this MF28858024
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:86:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
+
