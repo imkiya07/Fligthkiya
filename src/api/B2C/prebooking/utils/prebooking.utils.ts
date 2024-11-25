@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
+import { IFormattedRevalidation } from "../interfaces/formattedRevalidation.interface";
 import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
-import { IFormattedRevalidation } from "../interfaces/formattedRevalidation.interface";
 // FORMAT FLIGHT SEARCH RESPONSE
 const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
 
@@ -338,6 +338,6 @@ export function formatAirTravelersData(
       Email: input.Email,
       PostCode: input.PostCode,
     },
-    Target: "Test",
+    Target: process.env.API_TARGET,
   };
 }

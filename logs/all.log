@@ -440,3 +440,5 @@
 2024-11-24T18:10:36.914Z [info]: [2024-11-24T18:10:36.912Z] POST /api/payment/success/2
 2024-11-24T18:11:16.257Z [info]: [2024-11-24T18:11:16.256Z] POST /api/payment/success/2
 2024-11-24T18:18:38.865Z [info]: [2024-11-24T18:18:38.863Z] POST /api/payment/success/2
+2024-11-24T18:19:11.191Z [info]: [2024-11-24T18:19:11.191Z] GET /api/b2c/user/bookings
+2024-11-24T18:19:36.825Z [info]: [2024-11-24T18:19:36.825Z] GET /api/b2c/user/bookings
