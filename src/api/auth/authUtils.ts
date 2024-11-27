@@ -20,6 +20,8 @@ export function verifyToken(token: string) {
   // Replace 'your-secret-key' with your actual secret key
   const secretKey = process.env.JWT_SECRET as string;
 
+  console.log({ secretKey });
+
   try {
     // Verify the token
     const decoded = jwt.verify(token, secretKey);

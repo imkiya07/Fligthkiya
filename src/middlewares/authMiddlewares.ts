@@ -1,8 +1,5 @@
+import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import { Request, Response, NextFunction } from "express";
-
-// Replace 'your-secret-key' with your actual secret key
-const secretKey = "your-secret-key";
 
 // Authentication middleware
 export function authMiddleware(
@@ -22,6 +19,7 @@ export function authMiddleware(
   const token = authHeader.split(" ")[1];
 
   try {
+    const secretKey = process.env.JWT_SECRET as string;
     // Verify the token
     const decoded = jwt.verify(token, secretKey);
 

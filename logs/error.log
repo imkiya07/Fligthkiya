@@ -1209,3 +1209,10 @@ Error: FareSourceCode is Expired
     at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-11-27T16:41:06.683Z] Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+TypeError: Cannot destructure property 'FareSourceCode' of 'formattedData' as it is undefined.
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:38:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
