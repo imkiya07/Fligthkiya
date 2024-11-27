@@ -442,3 +442,36 @@
 2024-11-24T18:18:38.865Z [info]: [2024-11-24T18:18:38.863Z] POST /api/payment/success/2
 2024-11-24T18:19:11.191Z [info]: [2024-11-24T18:19:11.191Z] GET /api/b2c/user/bookings
 2024-11-24T18:19:36.825Z [info]: [2024-11-24T18:19:36.825Z] GET /api/b2c/user/bookings
+2024-11-26T14:53:28.404Z [info]: [2024-11-26T14:53:28.401Z] POST /api/b2c/search?filter=true
+2024-11-26T14:54:51.757Z [info]: [2024-11-26T14:54:51.757Z] GET /api/b2c/revalidated/374456bb-d75f-4cc4-bef2-8bf9eb278a24
+2024-11-26T16:06:02.347Z [info]: [2024-11-26T16:06:02.345Z] POST /api/b2c/booking
+2024-11-26T16:06:36.448Z [info]: [2024-11-26T16:06:36.445Z] POST /api/b2c/booking
+2024-11-26T16:07:05.192Z [info]: [2024-11-26T16:07:05.189Z] POST /api/b2c/booking
+2024-11-26T16:17:25.740Z [info]: [2024-11-26T16:17:25.737Z] POST /api/b2c/booking
+2024-11-26T16:17:32.829Z [info]: [2024-11-26T16:17:32.829Z] POST /api/b2c/booking
+2024-11-26T16:17:42.208Z [info]: [2024-11-26T16:17:42.208Z] POST /api/b2c/booking
+2024-11-26T16:17:47.054Z [info]: [2024-11-26T16:17:47.054Z] POST /api/b2c/booking
+2024-11-26T16:18:00.708Z [error]: Expected double-quoted property name in JSON at position 637 (line 25 column 3)
+2024-11-26T16:18:18.727Z [info]: [2024-11-26T16:18:18.727Z] POST /api/b2c/booking
+2024-11-26T16:24:20.754Z [info]: [2024-11-26T16:24:20.752Z] POST /api/b2c/booking
+2024-11-26T16:24:27.485Z [info]: [2024-11-26T16:24:27.485Z] POST /api/b2c/booking
+2024-11-26T16:24:43.021Z [info]: [2024-11-26T16:24:43.021Z] POST /api/b2c/booking
+2024-11-26T16:24:50.413Z [info]: [2024-11-26T16:24:50.413Z] POST /api/b2c/booking
+2024-11-27T14:48:00.502Z [info]: [2024-11-27T14:48:00.500Z] POST /api/b2c/booking
+2024-11-27T14:48:06.203Z [info]: [2024-11-27T14:48:06.203Z] POST /api/b2c/booking
+2024-11-27T14:48:12.924Z [info]: [2024-11-27T14:48:12.924Z] POST /api/b2c/booking
+2024-11-27T14:48:17.186Z [info]: [2024-11-27T14:48:17.186Z] POST /api/b2c/booking
+2024-11-27T14:48:27.347Z [info]: [2024-11-27T14:48:27.347Z] POST /api/b2c/booking
+2024-11-27T14:48:31.757Z [info]: [2024-11-27T14:48:31.757Z] POST /api/b2c/booking
+2024-11-27T14:48:39.694Z [info]: [2024-11-27T14:48:39.693Z] POST /api/b2c/booking
+2024-11-27T14:48:48.111Z [error]: Expected double-quoted property name in JSON at position 560 (line 22 column 25)
+2024-11-27T14:49:03.612Z [info]: [2024-11-27T14:49:03.612Z] POST /api/b2c/booking
+2024-11-27T14:49:11.239Z [info]: [2024-11-27T14:49:11.239Z] POST /api/b2c/booking
+2024-11-27T14:57:27.727Z [info]: [2024-11-27T14:57:27.724Z] POST /api/payment/success/3
+2024-11-27T14:58:23.737Z [info]: [2024-11-27T14:58:23.734Z] POST /api/payment/success/3
+2024-11-27T15:12:17.970Z [info]: [2024-11-27T15:12:17.968Z] POST /api/payment/success/3
+2024-11-27T15:12:38.086Z [info]: [2024-11-27T15:12:38.084Z] POST /api/payment/success/3
+2024-11-27T15:12:49.618Z [info]: [2024-11-27T15:12:49.618Z] POST /api/payment/success/33
+2024-11-27T15:14:32.112Z [info]: [2024-11-27T15:14:32.110Z] POST /api/payment/success/3
+2024-11-27T15:14:38.955Z [info]: [2024-11-27T15:14:38.955Z] POST /api/payment/success/32
+2024-11-27T15:16:43.667Z [info]: [2024-11-27T15:16:43.665Z] POST /api/payment/success/3

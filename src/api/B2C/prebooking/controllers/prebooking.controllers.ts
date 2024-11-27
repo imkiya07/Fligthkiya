@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { AbstractController } from "../../../../core/abstract/abstractController";
 import { PreBookingService } from "../services/preBooking.services";
-
 export class PreBookingControllers extends AbstractController {
   private services = new PreBookingService();
   constructor() {
@@ -10,13 +9,6 @@ export class PreBookingControllers extends AbstractController {
 
   public flightSearch = this.wrapAsync(async (req: Request, res: Response) => {
     const data = await this.services.flightSearch(req);
-
-    res.cookie("deviceId", req.deviceId, {
-      maxAge: 1800000, // 30 min
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Only use secure cookies in production
-      sameSite: "strict", // Prevents CSRF attacks
-    });
 
     res.json(data);
   });
@@ -40,12 +32,6 @@ export class PreBookingControllers extends AbstractController {
       res.json(data);
     }
   );
-
-  // FLIGHT BOOK
-  public flightBook = this.wrapAsync(async (req: Request, res: Response) => {
-    const data = await this.services.flightBook(req);
-    res.json(data);
-  });
 
   // ORDER TICKET
   public orderTicket = this.wrapAsync(async (req: Request, res: Response) => {

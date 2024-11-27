@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response } from "express";
+import { Result, ValidationError, validationResult } from "express-validator";
 import fs from "fs";
 import path from "path";
+
+type Func = (req: Request, res: Response, next: NextFunction) => Promise<any>;
 
 // Helper function to log errors to the log file
 const logErrorToFile = (error: any) => {
@@ -22,11 +25,17 @@ const logErrorToFile = (error: any) => {
 };
 
 // ASYNC WRAPPER
-export const wrapAsync = (
-  fn: (req: Request, res: Response, next: NextFunction) => Promise<any>
-) => {
+export const wrapAsync = (fn: Func) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
+      const errors = validationResult(req);
+
+      /**
+       * throw error if there are any invalid inputs
+       */
+      if (!errors.isEmpty()) {
+        throw new ValidationErr(errors);
+      }
       await fn(req, res, next);
     } catch (error: any) {
       logErrorToFile(error);
@@ -51,3 +60,19 @@ export const wrapAsync = (
     }
   };
 };
+
+interface IError {
+  status: number;
+  type: string;
+}
+
+class ValidationErr extends Error implements IError {
+  status: number;
+  type: string;
+
+  constructor(error: Result<ValidationError>) {
+    super(error.array()[0].msg);
+    (this.status = 400),
+      (this.type = `Invalid input type for '${error.array()[0].type}'`);
+  }
+}

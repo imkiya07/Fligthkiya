@@ -1,15 +1,10 @@
 import { Request } from "express";
 import AbstractServices from "../../../../core/abstract/abstract.services";
-import { IBookingReqBody } from "../interfaces/bookingReqBody.interface";
 import { IFlightCache } from "../interfaces/preBooking.interface";
-import { IRevalidateRes } from "../interfaces/revalidateRes.interface";
-import { BookingModels } from "../models/booking.models";
-import { formatAirTravelersData } from "../utils/preBooking.utils";
+import { BookingRequestService } from "./bookingReq.service";
 import { FareRules } from "./fareRules.service";
-import { FlightBookService } from "./flightBook.service";
 import { FlightSearchService } from "./flightSearch.service";
 import { Revalidation } from "./revalidation.service";
-import { UserCreateWithTempPass } from "./userCreateTempPass.service";
 
 export class PreBookingService extends AbstractServices {
   constructor() {
@@ -20,70 +15,7 @@ export class PreBookingService extends AbstractServices {
   flightSearch = new FlightSearchService().flightSearch;
   revalidated = new Revalidation().revalidated;
   fareRules = new FareRules().fareRules;
-  flightBook = new FlightBookService().flightBook;
-
-  // BOOKING REQUEST
-  bookingRequest = async (req: Request) => {
-    const body = req.body as IBookingReqBody;
-    const conn = new BookingModels(this.db);
-    const deviceId = req.deviceId;
-
-    const createUser = new UserCreateWithTempPass();
-    const { token, user_id } = await createUser.createUserAndSendEmail(body);
-
-    const revalidateReqBody = this.cache.get(`revalidateReqBody-${deviceId}`);
-
-    if (!revalidateReqBody) {
-      this.throwError("Revalidation is required!", 400);
-    }
-
-    const orderNumber = generateOrderNumber();
-
-    const bookingReqPayload = {
-      user_id,
-      orderNumber,
-      CountryCode: body?.CountryCode,
-      AreaCode: body?.AreaCode,
-      PhoneNumber: body?.PhoneNumber,
-      Email: body?.Email,
-      PostCode: body?.PostCode,
-      revalidation_req_body: JSON.stringify(revalidateReqBody),
-      passengerBody: JSON.stringify(body),
-    };
-
-    const booking_id = await conn.insertBookingInfo(bookingReqPayload);
-
-    const passengerData = body?.AirTravelers?.map((item) => {
-      return {
-        user_id,
-        booking_id,
-        PassengerType: item.PassengerType,
-        Gender: item.Gender,
-        DateOfBirth: item.DateOfBirth,
-        NationalID: item.NationalID,
-        PassengerNationality: item.PassengerNationality,
-        PassengerTitle: item.PassengerName.PassengerTitle,
-        PassengerFirstName: item.PassengerName.PassengerFirstName,
-        PassengerLastName: item.PassengerName.PassengerLastName,
-        PassportNumber: item?.Passport?.PassportNumber,
-        ExpiryDate: item?.Passport?.ExpiryDate,
-        Country: item?.Passport?.Country,
-      };
-    });
-
-    await conn.insertAirTravelers(passengerData);
-
-    return {
-      success: true,
-      message: "Temporary booking successfully",
-      data: {
-        user_id,
-        booking_id,
-        orderNumber,
-        token,
-      },
-    };
-  };
+  bookingRequest = new BookingRequestService().bookingRequest;
 
   // ORDER TICKET
   orderTicket = async (req: Request) => {
@@ -236,46 +168,4 @@ export class PreBookingService extends AbstractServices {
 
     return reqBody;
   };
-}
-
-const getFirstAndLastCity = (
-  flights: {
-    flightSegments: {
-      departureCity: string;
-      arrivalCity: string;
-      departureAirport: string;
-      arrivalAirport: string;
-      FlightNumber: string;
-      MarketingAirlineCode: string;
-    }[];
-  }[]
-) => {
-  const firstDepartureCity = flights[0]?.flightSegments[0]?.departureCity;
-  const departure_airport = flights[0]?.flightSegments[0]?.departureAirport;
-  const flight_number =
-    flights[0]?.flightSegments[0]?.MarketingAirlineCode +
-    "" +
-    flights[0]?.flightSegments[0]?.FlightNumber;
-
-  // Last flight's last arrivalCity
-  const lastFlightSegments = flights[flights.length - 1]?.flightSegments;
-
-  const lastArrivalCity =
-    lastFlightSegments?.[lastFlightSegments.length - 1]?.arrivalCity;
-  const arrival_airport =
-    lastFlightSegments?.[lastFlightSegments.length - 1]?.arrivalAirport;
-
-  return {
-    firstDepartureCity,
-    lastArrivalCity,
-    departure_airport,
-    arrival_airport,
-  };
-};
-
-function generateOrderNumber() {
-  const prefix = "ORD";
-  const timestamp = Date.now(); // Current timestamp in milliseconds
-
-  return `${prefix}-${timestamp}`;
 }

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 // Function to generate a JWT token
 export function generateToken(payload: any) {
   // Replace 'your-secret-key' with your actual secret key
-  const secretKey = "your-secret-key";
+  const secretKey = process.env.JWT_SECRET as string;
 
   // Options for token (e.g., expiry)
   const options = {
@@ -18,7 +18,7 @@ export function generateToken(payload: any) {
 // Function to verify a JWT token
 export function verifyToken(token: string) {
   // Replace 'your-secret-key' with your actual secret key
-  const secretKey = "your-secret-key";
+  const secretKey = process.env.JWT_SECRET as string;
 
   try {
     // Verify the token

@@ -3,7 +3,6 @@ import {
   IAirTravelers,
   IBookingInfo,
 } from "../interfaces/bookingReqBody.interface";
-import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 
 export class BookingModels {
   private db;
@@ -93,6 +92,35 @@ export class BookingModels {
       passengerBody: string;
       revalidation_req_body: string;
     };
+  };
+
+  getBookingById = async (bookingId: number | string) => {
+    return await this.db("booking_info")
+      .select([
+        "booking_info.id",
+        "booking_info.orderNumber",
+        "booking_info.CountryCode",
+        "booking_info.AreaCode",
+        "booking_info.PhoneNumber",
+        "booking_info.Email",
+        "booking_info.bookingStatus",
+        "booking_info.pnrId",
+        "booking_info.baseFare",
+        "booking_info.taxAndCharge",
+        "booking_info.discount",
+        "booking_info.appliedCoupon",
+        "booking_info.netTotal",
+        "booking_info.paymentStatus",
+        "booking_info.ticketStatus",
+        "booking_info.paymentAt",
+        "booking_info.revalidation_req_body",
+        "booking_info.passengerBody",
+        "u.full_name",
+        "u.username",
+      ])
+      .leftJoin("users as u", "u.user_id", "booking_info.user_id")
+      .where("id", bookingId)
+      .first();
   };
 }
 

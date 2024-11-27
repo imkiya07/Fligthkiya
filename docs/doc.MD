@@ -32,7 +32,7 @@ OrderTicket
 
 TripDetails
 
-============== POSTBOOKING SERVICES ==============
+============== POST BOOKING SERVICES ==============
 
 PTR Services (VOID, Refund and Reissue)
 

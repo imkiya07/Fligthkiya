@@ -51,8 +51,8 @@ export class PaymentServices extends AbstractServices {
 
       const session = await stripe.checkout.sessions.create({
         mode: "payment",
-        success_url: `${process.env.CL_BASE_URL}/pay/success/${bookingId}`,
-        cancel_url: `${process.env.CL_BASE_URL}/pay/cancel/${bookingId}`,
+        success_url: `${process.env.CL_BASE_URL}/ticket/success/${bookingId}`,
+        cancel_url: `${process.env.CL_BASE_URL}/ticket/cancelled/${bookingId}`,
 
         line_items: [
           {
@@ -96,16 +96,18 @@ export class PaymentServices extends AbstractServices {
     const bookingId = req.params.session;
 
     const bookingConn = new BookingModels(this.db);
-    await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
+    // await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
-    const bookingData = await bookingConn.getBookingBodyInfo(+bookingId);
+    const bookingData = await bookingConn.getBookingById(bookingId);
 
     if (!bookingData) throw this.throwError("Invalid booking id", 400);
+
+    const { passengerBody, revalidation_req_body, ...data } = bookingData;
 
     const revalidationResponse = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
-      JSON.parse(bookingData?.revalidation_req_body)
+      JSON.parse(revalidation_req_body)
     )) as IRevalidateRes;
 
     if (!revalidationResponse?.Success) {
@@ -117,7 +119,7 @@ export class PaymentServices extends AbstractServices {
       revalidationResponse?.Data?.PricedItineraries[0];
 
     const formatBookingBody = formatAirTravelersData(
-      JSON.parse(bookingData?.passengerBody),
+      JSON.parse(passengerBody),
       OriginDestinationOptions,
       AirItineraryPricingInfo?.FareSourceCode
     );
@@ -149,7 +151,7 @@ export class PaymentServices extends AbstractServices {
     return {
       success: true,
       message: "Flight booking successfully",
-      data: response?.Data,
+      data: { ...data, pnrId: UniqueID },
     };
   };
 

@@ -1,9 +1,11 @@
 import { Router } from "express";
 import { PreBookingControllers } from "../controllers/preBooking.controllers";
+import { PreBookingValidator } from "../validators/preBooking.validators";
 
 export class PreBookingRoutes {
   public router: Router;
   private controllers = new PreBookingControllers();
+  private validator = new PreBookingValidator();
 
   constructor() {
     this.router = Router();
@@ -17,9 +19,11 @@ export class PreBookingRoutes {
 
     this.router.get("/fare-rules/:flight_id", this.controllers.fareRules);
 
-    this.router.post("/booking", this.controllers.bookingRequest);
-
-    this.router.post("/flight-book", this.controllers.flightBook);
+    this.router.post(
+      "/booking",
+      this.validator.bookingReq,
+      this.controllers.bookingRequest
+    );
 
     this.router.get("/order-ticket/:booking_ref", this.controllers.orderTicket);
 

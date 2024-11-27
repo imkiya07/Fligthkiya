@@ -1032,3 +1032,180 @@ Error: Booking already exists with one or more same PAX and segment. You can req
     at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:26:13
 
+[2024-11-26T16:06:02.357Z] validator is not iterable
+TypeError: validator is not iterable
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:27:38
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:47:12)
+
+[2024-11-26T16:06:36.491Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:29:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:35:13
+
+[2024-11-26T16:07:05.262Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:29:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:35:13
+
+2024-11-26T16:18:00.708Z [error]: Expected double-quoted property name in JSON at position 637 (line 25 column 3)
+[2024-11-26T16:24:27.491Z] AirTravelers must be an array with at least one element.
+Error: AirTravelers must be an array with at least one element.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-26T16:24:43.028Z] Email must be a valid email address.
+Error: Email must be a valid email address.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-26T16:24:50.415Z] PassengerType must be one of ADT, CHD, INF.
+Error: PassengerType must be one of ADT, CHD, INF.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T14:48:06.218Z] PassengerType must be one of ADT, CHD, INF.
+Error: PassengerType must be one of ADT, CHD, INF.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T14:48:12.930Z] Gender must be M or F.
+Error: Gender must be M or F.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T14:48:17.189Z] PassengerTitle must be MR, MRS, or MS.
+Error: PassengerTitle must be MR, MRS, or MS.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T14:48:27.353Z] Invalid value
+Error: Invalid value
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T14:48:39.698Z] Email must be a valid email address.
+Error: Email must be a valid email address.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2024-11-27T14:48:48.111Z [error]: Expected double-quoted property name in JSON at position 560 (line 22 column 25)
+[2024-11-27T14:49:03.623Z] Invalid value
+Error: Invalid value
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T15:12:18.545Z] Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\routes\preBooking.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\b2c.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\routes\routes.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+Error: Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\routes\preBooking.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\api\B2C\b2c.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\routes\routes.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+    at Client_SQLite3.initializeDriver (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:202:13)
+    at new Client (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:83:12)
+    at new Client_SQLite3 (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js:22:5)
+    at knex (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at BookingModels.getBookingById (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\models\booking.models.js:55:45)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:76:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-11-27T15:12:49.950Z] Invalid booking id
+Error: Invalid booking id
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:75:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-11-27T15:14:39.268Z] Invalid booking id
+Error: Invalid booking id
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:75:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-11-27T15:16:45.508Z] FareSourceCode is Expired
+Error: FareSourceCode is Expired
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:80:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
