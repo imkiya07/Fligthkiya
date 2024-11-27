@@ -57,5 +57,6 @@ export class PreBookingValidator {
       .isLength({ min: 6 })
       .withMessage("PhoneNumber must be at least 6 characters long."),
     body("Email").isEmail().withMessage("Email must be a valid email address."),
+    body("PostCode").isString().withMessage("PostCode is required."),
   ];
 }

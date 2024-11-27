@@ -1216,3 +1216,30 @@ TypeError: Cannot destructure property 'FareSourceCode' of 'formattedData' as it
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-11-27T16:49:49.200Z] PostCode cannot be null
+Error: PostCode cannot be null
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:87:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-11-27T16:54:50.490Z] PostCode is required.
+Error: PostCode is required.
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-11-27T16:54:58.285Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingReq.service.js:19:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+

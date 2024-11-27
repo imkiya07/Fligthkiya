@@ -483,3 +483,8 @@
 2024-11-27T16:46:18.681Z [info]: [2024-11-27T16:46:18.680Z] POST /api/payment/create-payment-intent/16
 2024-11-27T16:47:43.007Z [info]: [2024-11-27T16:47:43.005Z] POST /api/payment/create-payment-intent/16
 2024-11-27T16:48:18.578Z [info]: [2024-11-27T16:48:18.575Z] POST /api/payment/create-payment-intent/16
+2024-11-27T16:49:34.650Z [info]: [2024-11-27T16:49:34.648Z] POST /api/payment/success/16
+2024-11-27T16:50:35.046Z [info]: [2024-11-27T16:50:35.045Z] POST /api/payment/success/16
+2024-11-27T16:51:12.226Z [info]: [2024-11-27T16:51:12.223Z] POST /api/payment/success/16
+2024-11-27T16:54:50.465Z [info]: [2024-11-27T16:54:50.459Z] POST /api/b2c/booking
+2024-11-27T16:54:58.280Z [info]: [2024-11-27T16:54:58.280Z] POST /api/b2c/booking
