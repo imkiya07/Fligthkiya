@@ -1,3 +1,8 @@
+import {
+  AirItineraryPricingInfo,
+  OriginDestinationOption,
+} from "../B2C/preBooking/interfaces/revalidateRes.interface";
+
 export interface PassengerInfo {
   amount: number;
   currency: string;
@@ -30,4 +35,9 @@ export interface IBookingResponse {
   };
   Success: boolean;
   Message: string;
+}
+
+export interface ICachedRevalidation {
+  OriginDestinationOptions: OriginDestinationOption[];
+  AirItineraryPricingInfo: AirItineraryPricingInfo;
 }

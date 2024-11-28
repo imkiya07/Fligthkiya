@@ -10,7 +10,7 @@ import {
   formatAirTravelersData,
   formatRevalidation,
 } from "../B2C/preBooking/utils/preBooking.utils";
-import { IBookingResponse } from "./payment.interface";
+import { IBookingResponse, ICachedRevalidation } from "./payment.interface";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export class PaymentServices extends AbstractServices {
@@ -31,15 +31,18 @@ export class PaymentServices extends AbstractServices {
 
     if (!bookingData) throw this.throwError("Invalid booking id", 400);
 
-    const response = (await this.Req.request(
+    const revalidationResponse = (await this.Req.request(
       "POST",
       "/v1/Revalidate/Flight",
       bookingData?.revalidation_req_body
     )) as IRevalidateRes;
 
-    const formattedData = await formatRevalidation(response?.Data, conn);
+    const formattedData = await formatRevalidation(
+      revalidationResponse?.Data,
+      conn
+    );
 
-    if (response.Success && formattedData) {
+    if (revalidationResponse.Success && formattedData) {
       const airportInfo = getFirstAndLastCity(formattedData?.flights as any);
       const cabinClass = getClassDescription(
         formattedData?.flights[0]?.flightSegments[0]?.CabinClassCode
@@ -88,6 +91,14 @@ export class PaymentServices extends AbstractServices {
         +bookingId
       );
 
+      const { OriginDestinationOptions, AirItineraryPricingInfo } =
+        revalidationResponse?.Data?.PricedItineraries[0];
+
+      this.cache.set(`revalidationOriginDesAirItinerary-${bookingId}`, {
+        OriginDestinationOptions,
+        AirItineraryPricingInfo,
+      });
+
       return { success: true, url: session?.url };
     }
   };
@@ -96,7 +107,8 @@ export class PaymentServices extends AbstractServices {
     const bookingId = req.params.session;
 
     const bookingConn = new BookingModels(this.db);
-    // await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
+
+    await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
     const bookingData = await bookingConn.getBookingById(bookingId);
 
@@ -104,55 +116,56 @@ export class PaymentServices extends AbstractServices {
 
     const { passengerBody, revalidation_req_body, ...data } = bookingData;
 
-    const revalidationResponse = (await this.Req.request(
-      "POST",
-      "/v1/Revalidate/Flight",
-      JSON.parse(revalidation_req_body)
-    )) as IRevalidateRes;
-
-    if (!revalidationResponse?.Success) {
-      await bookingConn.updateBookingBookingStatus("FAILED", +bookingId);
-      throw this.throwError(revalidationResponse?.Message, 400);
+    if (data?.bookingStatus === "CONFIRMED") {
+      return { success: true, message: "Invoice details", data };
     }
 
-    const { OriginDestinationOptions, AirItineraryPricingInfo } =
-      revalidationResponse?.Data?.PricedItineraries[0];
-
-    const formatBookingBody = formatAirTravelersData(
-      JSON.parse(passengerBody),
-      OriginDestinationOptions,
-      AirItineraryPricingInfo?.FareSourceCode
+    const cachedRevalidation = this.cache.get<ICachedRevalidation>(
+      `revalidationOriginDesAirItinerary-${bookingId}`
     );
 
-    const response = (await this.Req.request(
-      "POST",
-      "/v1/Book/Flight",
-      formatBookingBody
-    )) as IBookingResponse;
+    if (cachedRevalidation) {
+      const formatBookingBody = formatAirTravelersData(
+        JSON.parse(passengerBody),
+        cachedRevalidation?.OriginDestinationOptions,
+        cachedRevalidation?.AirItineraryPricingInfo?.FareSourceCode
+      );
 
-    // API RESPONSE ERROR
-    if (!response?.Success) {
-      this.throwError(response?.Message, 400);
+      const response = (await this.Req.request(
+        "POST",
+        "/v1/Book/Flight",
+        formatBookingBody
+      )) as IBookingResponse;
+
+      // API RESPONSE ERROR
+      if (!response?.Success) {
+        this.throwError(response?.Message, 400);
+      }
+
+      const { TktTimeLimit, UniqueID, TraceId } = response?.Data;
+
+      await bookingConn.updateBookingConfirm(
+        {
+          bookingStatus: "CONFIRMED",
+          pnrId: UniqueID,
+          ticketStatus: "BOOKED",
+          TktTimeLimit,
+          TraceId,
+        },
+        +bookingId
+      );
+
+      return {
+        success: true,
+        message: "Flight booking successfully",
+        data: { ...data, pnrId: UniqueID },
+      };
+    } else {
+      this.throwError(
+        "The provided booking ID is invalid or the session has expired. Please contact us.",
+        400
+      );
     }
-
-    const { TktTimeLimit, UniqueID, TraceId } = response?.Data;
-
-    await bookingConn.updateBookingConfirm(
-      {
-        bookingStatus: "CONFIRMED",
-        pnrId: UniqueID,
-        ticketStatus: "BOOKED",
-        TktTimeLimit,
-        TraceId,
-      },
-      +bookingId
-    );
-
-    return {
-      success: true,
-      message: "Flight booking successfully",
-      data: { ...data, pnrId: UniqueID },
-    };
   };
 
   paymentCancel = async (req: Request) => {

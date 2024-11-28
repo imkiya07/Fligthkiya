@@ -488,3 +488,12 @@
 2024-11-27T16:51:12.226Z [info]: [2024-11-27T16:51:12.223Z] POST /api/payment/success/16
 2024-11-27T16:54:50.465Z [info]: [2024-11-27T16:54:50.459Z] POST /api/b2c/booking
 2024-11-27T16:54:58.280Z [info]: [2024-11-27T16:54:58.280Z] POST /api/b2c/booking
+2024-11-28T14:28:28.554Z [info]: [2024-11-28T14:28:28.552Z] POST /api/payment/success/16
+2024-11-28T14:41:18.726Z [info]: [2024-11-28T14:41:18.723Z] POST /api/b2c/search?filter=true
+2024-11-28T14:41:28.361Z [info]: [2024-11-28T14:41:28.361Z] POST /api/b2c/search?filter=true
+2024-11-28T14:41:53.085Z [info]: [2024-11-28T14:41:53.085Z] GET /api/b2c/revalidated/07e28f52-007d-4fef-96e2-92254ea0dc0e
+2024-11-28T14:43:38.647Z [info]: [2024-11-28T14:43:38.647Z] POST /api/b2c/search?filter=true
+2024-11-28T14:44:38.881Z [info]: [2024-11-28T14:44:38.881Z] GET /api/b2c/revalidated/baec59a0-85d3-4d00-94f0-70894002c411
+2024-11-28T14:44:51.597Z [info]: [2024-11-28T14:44:51.597Z] POST /api/b2c/booking
+2024-11-28T14:45:31.267Z [info]: [2024-11-28T14:45:31.267Z] POST /api/payment/create-payment-intent/24
+2024-11-28T14:46:01.084Z [info]: [2024-11-28T14:46:01.084Z] POST /api/payment/success/24
