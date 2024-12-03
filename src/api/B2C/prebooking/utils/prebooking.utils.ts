@@ -99,11 +99,14 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
 
     const airline_name = await conn.getAirline(pricedItem.ValidatingCarrier);
 
+    const coreFlightInfo = getCoreFlightInfo(segments);
+
     results.push({
       flight_id: uuidv4(),
       airline: pricedItem.ValidatingCarrier,
       airline_name,
       airline_img: imageBaseUrl + pricedItem.ValidatingCarrier + ".png",
+      ...coreFlightInfo,
       segments,
       fares,
       penaltiesData,
@@ -340,4 +343,39 @@ export function formatAirTravelersData(
     },
     Target: process.env.API_TARGET,
   };
+}
+
+// ============ HELPER UTILS
+
+const getCoreFlightInfo = (segments: any[]) => {
+  const result = {
+    departureAirportCode: segments[0]?.DepartureAirportLocationCode,
+    departureAirportName: segments[0]?.departure_airport,
+    arrivalAirportCode:
+      segments[segments.length - 1]?.ArrivalAirportLocationCode,
+    arrivalAirportName: segments[segments?.length - 1]?.arrival_airport,
+    DepartureDateTime: segments[0]?.DepartureDateTime,
+    ArrivalDateTime: segments[segments?.length - 1]?.ArrivalDateTime,
+    stoppage: segments?.length - 1,
+    stoppageAirports: segments
+      ?.slice(1)
+      ?.map((flight: any) => flight.DepartureAirportLocationCode),
+    layoverTime: calculateLayoverTime(segments),
+  };
+
+  return result;
+};
+// Function to calculate the total layover time
+function calculateLayoverTime(data: any[]) {
+  let totalLayoverMinutes = 0;
+
+  for (let i = 0; i < data.length - 1; i++) {
+    const currentArrival = new Date(data[i]?.ArrivalDateTime).getTime(); // Get timestamp
+    const nextDeparture = new Date(data[i + 1]?.DepartureDateTime).getTime(); // Get timestamp
+    totalLayoverMinutes += (nextDeparture - currentArrival) / (1000 * 60); // Convert milliseconds to minutes
+  }
+
+  const hours = Math.floor(totalLayoverMinutes / 60);
+  const minutes = totalLayoverMinutes % 60;
+  return `${hours} hours and ${minutes} minutes`;
 }

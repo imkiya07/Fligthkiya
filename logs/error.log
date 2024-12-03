@@ -1272,3 +1272,7 @@ Error: Invalid flight id
     at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
     at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
 
+[2024-12-03T17:01:24.334Z] select `id`, `name`, `city`, `country`, `iata` from `airports` where (iata LIKE '%cxb%' or name LIKE '%cxb%' or city LIKE '%cxb%' or country LIKE '%cxb%') order by CASE WHEN iata LIKE 'cxb%' THEN 0 ELSE 1 END limit 25 - read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
