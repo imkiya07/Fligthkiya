@@ -1,11 +1,11 @@
-import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import crypto from "crypto";
+import dotenv from "dotenv";
 import { NextFunction, Request, Response } from "express";
 import { app } from "./app";
+import requestLogger from "./core/utils/logger/reqLogger";
 import { errorHandler } from "./middlewares/errorHandler";
 import { registerRoutes } from "./routes/routes";
-import requestLogger from "./core/utils/logger/reqLogger";
-import cookieParser from "cookie-parser";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -38,9 +38,13 @@ registerRoutes(app);
 
 // Main route
 app.get("/", (req: Request, res: Response) => {
-  const deviceId = req.deviceId;
+  res.send(`Flight server is running... ${process.env.NODE_ENV}`);
+});
 
-  res.send(`Flight server is running... ${deviceId}`);
+app.get("/env", (req: Request, res: Response) => {
+  const env = process.env;
+
+  res.json(env);
 });
 
 // Route not found (404) handler
