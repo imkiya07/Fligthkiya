@@ -86,11 +86,12 @@ export class BookingModels {
 
   getBookingBodyInfo = async (booking_id: number) => {
     return (await this.db("booking_info")
-      .select("revalidation_req_body", "passengerBody")
+      .select("revalidation_req_body", "passengerBody", "orderNumber")
       .where("id", booking_id)
       .first()) as {
       passengerBody: string;
       revalidation_req_body: string;
+      orderNumber: string;
     };
   };
 

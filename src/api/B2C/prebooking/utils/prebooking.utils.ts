@@ -55,6 +55,7 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
     formatFlightSegments.push({
       operating_airline,
       marketing_airline,
+      flight_no: item?.MarketingCarriercode + item?.MarketingFlightNumber,
       departure_airport: departure_airport?.name,
       departure_city: departure_airport?.city,
       arrival_airport: arrival_airport?.name,
@@ -349,6 +350,8 @@ export function formatAirTravelersData(
 
 const getCoreFlightInfo = (segments: any[]) => {
   const result = {
+    flightNo:
+      segments[0]?.MarketingCarriercode + segments[0]?.MarketingFlightNumber,
     departureAirportCode: segments[0]?.DepartureAirportLocationCode,
     departureAirportName: segments[0]?.departure_airport,
     arrivalAirportCode:

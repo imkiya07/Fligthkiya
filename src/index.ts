@@ -50,6 +50,7 @@ app.get("/env", (req: Request, res: Response) => {
   res.json(env);
 });
 
+// booking mail
 app.get("/booking-mail", async (req: Request, res: Response) => {
   const htmlTemplate = fs.readFileSync(
     path.join(__dirname, "email-template.html"),
@@ -77,6 +78,7 @@ app.get("/booking-mail", async (req: Request, res: Response) => {
   res.json({ success: true, message: "Node mailer" });
 });
 
+// payment confirm mail
 app.get("/pay-confirm-mail", async (req: Request, res: Response) => {
   const htmlTemplate = fs.readFileSync(
     path.join(__dirname, "payment-confirmation.html"),
@@ -95,6 +97,34 @@ app.get("/pay-confirm-mail", async (req: Request, res: Response) => {
     from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
     to: "nazmulhosenm668@gmail.com",
     subject: "Flight Kiya Payment Confirmed",
+    // text: `Hello,\n\nYour temporary password is: Hello1234 \n\nPlease log in and change your password as soon as possible.\n\nThank you.`,
+    html: htmlTemplate,
+  };
+
+  await transporter.sendMail(mailOptions);
+
+  res.json({ success: true, message: "Node mailer" });
+});
+
+// temporary password mail
+app.get("/temp-pass-mail", async (req: Request, res: Response) => {
+  const htmlTemplate = fs.readFileSync(
+    path.join(__dirname, "temporary-password.html"),
+    "utf-8"
+  );
+
+  const transporter = nodemailer.createTransport({
+    service: "Gmail", // Or another SMTP service
+    auth: {
+      user: process.env.EMAIL_SEND_EMAIL_ID,
+      pass: process.env.EMAIL_SEND_PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
+    to: "nazmulhosenm668@gmail.com",
+    subject: "Flight Kiya Temporary Password",
     // text: `Hello,\n\nYour temporary password is: Hello1234 \n\nPlease log in and change your password as soon as possible.\n\nThank you.`,
     html: htmlTemplate,
   };

@@ -60,12 +60,21 @@ export class Revalidation extends AbstractServices {
       arrivalAirportName: foundItem?.arrivalAirportName,
       DepartureDateTime: foundItem?.DepartureDateTime,
       ArrivalDateTime: foundItem?.ArrivalDateTime,
+      flightNo: foundItem?.flightNo,
       ...formattedData,
     };
 
     this.cache.set(`revalidateReqBody-${deviceId}`, reqBody);
 
     this.cache.set(`revalidation-${deviceId}`, revalidationResponse);
+
+    const { OriginDestinationOptions, AirItineraryPricingInfo } =
+      response?.Data?.PricedItineraries[0];
+
+    this.cache.set(`revalidationOriginDesAirItinerary-${deviceId}`, {
+      OriginDestinationOptions,
+      AirItineraryPricingInfo,
+    });
 
     const { FareSourceCode, ...data } = revalidationResponse;
 

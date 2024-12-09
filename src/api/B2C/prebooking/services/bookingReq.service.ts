@@ -74,8 +74,8 @@ export class BookingRequestService extends AbstractServices {
 }
 
 function generateOrderNumber() {
-  const prefix = "BK";
+  const prefix = "FL";
   const timestamp = Date.now(); // Current timestamp in milliseconds
 
-  return `${prefix}-${timestamp}`;
+  return `${prefix}${timestamp}`;
 }
