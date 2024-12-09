@@ -50,11 +50,24 @@ export class Revalidation extends AbstractServices {
       conn
     )) as any;
 
+    const revalidationResponse = {
+      airline: foundItem?.airline,
+      airline_name: foundItem?.airline_name,
+      airline_img: foundItem?.airline_img,
+      departureAirportCode: foundItem?.departureAirportCode,
+      departureAirportName: foundItem?.departureAirportName,
+      arrivalAirportCode: foundItem?.arrivalAirportCode,
+      arrivalAirportName: foundItem?.arrivalAirportName,
+      DepartureDateTime: foundItem?.DepartureDateTime,
+      ArrivalDateTime: foundItem?.ArrivalDateTime,
+      ...formattedData,
+    };
+
     this.cache.set(`revalidateReqBody-${deviceId}`, reqBody);
 
-    this.cache.set(`revalidation-${deviceId}`, formattedData);
+    this.cache.set(`revalidation-${deviceId}`, revalidationResponse);
 
-    const { FareSourceCode, ...data } = formattedData;
+    const { FareSourceCode, ...data } = revalidationResponse;
 
     return {
       success: true,

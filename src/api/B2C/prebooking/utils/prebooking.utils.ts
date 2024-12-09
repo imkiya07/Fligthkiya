@@ -4,7 +4,7 @@ import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
 // FORMAT FLIGHT SEARCH RESPONSE
-const imageBaseUrl = "https://fk-api.adbiyas.com/public/airlines/";
+const imageBaseUrl = "https://flightkiya.cosmelic.com/public/airlines/";
 
 export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
   // FORMAT & FILTER DATA

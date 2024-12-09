@@ -1,7 +1,10 @@
+const fs = require("fs");
+const path = require("path");
 import cookieParser from "cookie-parser";
 import crypto from "crypto";
 import dotenv from "dotenv";
 import { NextFunction, Request, Response } from "express";
+import nodemailer from "nodemailer";
 import { app } from "./app";
 import requestLogger from "./core/utils/logger/reqLogger";
 import { errorHandler } from "./middlewares/errorHandler";
@@ -45,6 +48,60 @@ app.get("/env", (req: Request, res: Response) => {
   const env = process.env;
 
   res.json(env);
+});
+
+app.get("/booking-mail", async (req: Request, res: Response) => {
+  const htmlTemplate = fs.readFileSync(
+    path.join(__dirname, "email-template.html"),
+    "utf-8"
+  );
+
+  const transporter = nodemailer.createTransport({
+    service: "Gmail", // Or another SMTP service
+    auth: {
+      user: process.env.EMAIL_SEND_EMAIL_ID,
+      pass: process.env.EMAIL_SEND_PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
+    to: "nazmulhosenm668@gmail.com",
+    subject: "Flight Kiya Booking ID: FL8844AYU3343",
+    // text: `Hello,\n\nYour temporary password is: Hello1234 \n\nPlease log in and change your password as soon as possible.\n\nThank you.`,
+    html: htmlTemplate,
+  };
+
+  await transporter.sendMail(mailOptions);
+
+  res.json({ success: true, message: "Node mailer" });
+});
+
+app.get("/pay-confirm-mail", async (req: Request, res: Response) => {
+  const htmlTemplate = fs.readFileSync(
+    path.join(__dirname, "payment-confirmation.html"),
+    "utf-8"
+  );
+
+  const transporter = nodemailer.createTransport({
+    service: "Gmail", // Or another SMTP service
+    auth: {
+      user: process.env.EMAIL_SEND_EMAIL_ID,
+      pass: process.env.EMAIL_SEND_PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
+    to: "nazmulhosenm668@gmail.com",
+    subject: "Flight Kiya Payment Confirmed",
+    // text: `Hello,\n\nYour temporary password is: Hello1234 \n\nPlease log in and change your password as soon as possible.\n\nThank you.`,
+    html: htmlTemplate,
+  };
+
+  await transporter.sendMail(mailOptions);
+
+  res.json({ success: true, message: "Node mailer" });
 });
 
 // Route not found (404) handler
