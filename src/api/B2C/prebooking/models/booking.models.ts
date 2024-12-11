@@ -15,7 +15,7 @@ export class BookingModels {
   };
 
   deleteAirTravelers = async (booking_id: number) => {
-    await this.db("air_travelers").delete().where("booking_id", booking_id);
+    await this.db("air_travelers").delete().where("id", booking_id);
   };
 
   insertBookingInfo = async (payload: IBookingInfo) => {
@@ -25,9 +25,7 @@ export class BookingModels {
   };
 
   updateBookingInfo = async (payload: any, booking_id: number) => {
-    await this.db("booking_info")
-      .update(payload)
-      .where("booking_id", booking_id);
+    await this.db("booking_info").update(payload).where("id", booking_id);
   };
 
   updateBookingPayment = async (

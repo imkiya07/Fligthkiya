@@ -276,7 +276,7 @@ export class PaymentServices extends AbstractServices {
 
     return {
       success: true,
-      message: "Flight booking successfully",
+      message: "Mail send successfully",
     };
   };
 

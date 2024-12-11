@@ -1292,3 +1292,36 @@ Error: Flights not found for the given search condition
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-12-11T15:47:50.930Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-11T15:49:04.880Z] Flights not found for the given search condition
+Error: Flights not found for the given search condition
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:47:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-11T15:50:53.657Z] select `name` from `airlines` where `iata` = 'AI' limit 1 - read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
+[2024-12-11T15:55:04.013Z] update `booking_info` set `airline` = 'AI', `flight_no` = 'AI', `departure_datetime` = '2025-02-05T01:45:00' where `booking_id` = 38 - Unknown column 'booking_id' in 'WHERE'
+Error: update `booking_info` set `airline` = 'AI', `flight_no` = 'AI', `departure_datetime` = '2025-02-05T01:45:00' where `booking_id` = 38 - Unknown column 'booking_id' in 'WHERE'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
