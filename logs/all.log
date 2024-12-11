@@ -561,3 +561,6 @@
 2024-12-09T18:46:39.514Z [info]: [2024-12-09T18:46:39.514Z] POST /api/b2c/booking
 2024-12-09T18:47:08.633Z [info]: [2024-12-09T18:47:08.633Z] POST /api/payment/create-payment-intent/37
 2024-12-09T18:47:29.103Z [info]: [2024-12-09T18:47:29.103Z] POST /api/payment/success/37
+2024-12-11T14:02:02.887Z [info]: [2024-12-11T14:02:02.885Z] GET /api/b2c/user/bookings
+2024-12-11T14:02:24.433Z [info]: [2024-12-11T14:02:24.433Z] GET /api/b2c/user/bookings
+2024-12-11T15:12:14.838Z [info]: [2024-12-11T15:12:14.836Z] GET /api/b2c/trip-details/MF28505124

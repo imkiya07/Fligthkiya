@@ -24,14 +24,19 @@ export class BookingModels {
     return id;
   };
 
-  updateBookingInfo = async (payload: IBookingInfo, booking_id: number) => {
+  updateBookingInfo = async (payload: any, booking_id: number) => {
     await this.db("booking_info")
       .update(payload)
       .where("booking_id", booking_id);
   };
 
   updateBookingPayment = async (
-    payload: { baseFare: number; netTotal: number },
+    payload: {
+      baseFare: number;
+      netTotal: number;
+      origin: string;
+      destination: string;
+    },
     booking_id: number
   ) => {
     await this.db("booking_info").update(payload).where("id", booking_id);
@@ -116,6 +121,7 @@ export class BookingModels {
         "booking_info.paymentAt",
         "booking_info.revalidation_req_body",
         "booking_info.passengerBody",
+        "booking_info.departure_datetime",
         "u.full_name",
         "u.username",
       ])

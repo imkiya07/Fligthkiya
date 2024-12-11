@@ -22,7 +22,12 @@ export class B2cUsersModel {
         "appliedCoupon",
         "netTotal",
         "paymentStatus",
-        "ticketStatus"
+        "ticketStatus",
+        "origin",
+        "destination",
+        "airline",
+        "flight_no",
+        "departure_datetime"
       )
       .where("user_id", userId);
   };

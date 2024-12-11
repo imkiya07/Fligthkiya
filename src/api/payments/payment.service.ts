@@ -93,9 +93,16 @@ export class PaymentServices extends AbstractServices {
         {
           netTotal: Number(formattedData.TotalFare.Amount),
           baseFare: Number(formattedData.TotalFare.Amount),
+          origin: airportInfo?.firstDepartureCity,
+          destination: airportInfo.lastArrivalCity,
         },
         +bookingId
       );
+
+      this.cache.set(`amount-set-to-${bookingId}`, {
+        amount: formattedData.TotalFare.Amount,
+        currency: formattedData?.TotalFare.CurrencyCode,
+      });
 
       // const { OriginDestinationOptions, AirItineraryPricingInfo } =
       //   revalidationResponse?.Data?.PricedItineraries[0];
@@ -109,6 +116,7 @@ export class PaymentServices extends AbstractServices {
     }
   };
 
+  // PAYMENT SUCCESSFUL SERVICE
   paymentSuccess = async (req: Request) => {
     const bookingId = req.params.session;
 
@@ -191,31 +199,20 @@ export class PaymentServices extends AbstractServices {
         return item?.ItineraryInfo?.ReservationItems;
       });
 
-      // mail send
-      const transporter = nodemailer.createTransport({
-        service: "Gmail", // Or another SMTP service
-        auth: {
-          user: process.env.EMAIL_SEND_EMAIL_ID,
-          pass: process.env.EMAIL_SEND_PASSWORD,
+      await bookingConn.updateBookingInfo(
+        {
+          airline:
+            itineraries[0]?.OperatingAirlineCode ||
+            itineraries[0]?.MarketingAirlineCode,
+          flight_no:
+            itineraries[0]?.OperatingAirlineCode ||
+            itineraries[0]?.MarketingAirlineCode +
+              "" +
+              itineraries[0]?.FlightNumber,
+          departure_datetime: itineraries[0]?.DepartureDateTime,
         },
-      });
-
-      const mailOptions = {
-        from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
-        to: req?.user?.email,
-        subject: "Flight Kiya Booking Confirmed",
-        html: getPaymentConfirmTemplate(
-          req?.user?.full_name,
-          bookingData?.orderNumber,
-          UniqueID,
-          `${restItinerary?.Origin} to ${restItinerary?.Destination}`,
-          "2025-04-03T17:25:00",
-          "USD",
-          1200
-        ),
-      };
-
-      await transporter.sendMail(mailOptions);
+        +bookingId
+      );
 
       return {
         success: true,
@@ -235,6 +232,52 @@ export class PaymentServices extends AbstractServices {
         400
       );
     }
+  };
+
+  // PAYMENT SUCCESSFUL EMAIL SEND
+  paymentSuccessMailSend = async (req: Request) => {
+    const bookingId = req.params.session;
+
+    const bookingConn = new BookingModels(this.db);
+
+    await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
+
+    const bookingData = await bookingConn.getBookingById(bookingId);
+
+    if (!bookingData) throw this.throwError("Invalid booking id", 400);
+
+    const cachedData = this.cache.get<any>(`amount-set-to-${bookingId}`);
+
+    // mail send
+    const transporter = nodemailer.createTransport({
+      service: "Gmail", // Or another SMTP service
+      auth: {
+        user: process.env.EMAIL_SEND_EMAIL_ID,
+        pass: process.env.EMAIL_SEND_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
+      to: req?.user?.email,
+      subject: "Flight Kiya Booking Confirmed",
+      html: getPaymentConfirmTemplate(
+        req?.user?.full_name,
+        bookingData?.orderNumber,
+        bookingData?.pnrId,
+        `${bookingData?.origin} to ${bookingData?.destination}`,
+        bookingData?.departure_datetime,
+        cachedData?.currency,
+        cachedData?.amount
+      ),
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return {
+      success: true,
+      message: "Flight booking successfully",
+    };
   };
 
   paymentCancel = async (req: Request) => {

@@ -18,6 +18,11 @@ export class PaymentRoutes {
 
     this.router.post("/success/:session", this.controller.paymentSuccess);
 
+    this.router.post(
+      "/success-mail/:session",
+      this.controller.paymentSuccessMailSend
+    );
+
     this.router.post("/cancel/:session", this.controller.paymentCancel);
   }
 }
