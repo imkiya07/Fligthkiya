@@ -3,6 +3,7 @@ import { IFormattedRevalidation } from "../interfaces/formattedRevalidation.inte
 import { IAirTravelersRequest } from "../interfaces/preBooking.interface";
 import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
+import { getFlights } from "./dataFormatUtils";
 // FORMAT FLIGHT SEARCH RESPONSE
 const imageBaseUrl = "https://flightkiya.cosmelic.com/public/airlines/";
 
@@ -101,6 +102,7 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
     const airline_name = await conn.getAirline(pricedItem.ValidatingCarrier);
 
     const coreFlightInfo = getCoreFlightInfo(segments);
+    const flights = getFlights(segments);
 
     results.push({
       flight_id: uuidv4(),
@@ -108,6 +110,7 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
       airline_name,
       airline_img: imageBaseUrl + pricedItem.ValidatingCarrier + ".png",
       ...coreFlightInfo,
+      flights,
       segments,
       fares,
       penaltiesData,
@@ -286,6 +289,8 @@ const formatOriginDestination = async (
 
     segments.push({ flightSegments });
   }
+
+  // const flights = getFlights(segments);
 
   return segments;
 };

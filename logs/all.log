@@ -576,3 +576,17 @@
 2024-12-11T15:57:58.723Z [info]: [2024-12-11T15:57:58.723Z] POST /api/payment/success-mail/38
 2024-12-11T15:58:15.741Z [info]: [2024-12-11T15:58:15.741Z] GET /api/b2c/user/bookings
 2024-12-11T15:59:25.821Z [info]: [2024-12-11T15:59:25.821Z] GET /api/b2c/trip-details/MF29007924
+2024-12-17T16:03:38.683Z [info]: [2024-12-17T16:03:38.680Z] POST /api/b2c/search
+2024-12-17T16:04:57.304Z [info]: [2024-12-17T16:04:57.304Z] POST /api/b2c/search
+2024-12-17T16:06:52.217Z [info]: [2024-12-17T16:06:52.217Z] POST /api/b2c/search
+2024-12-17T16:07:14.784Z [info]: [2024-12-17T16:07:14.784Z] POST /api/b2c/search
+2024-12-17T16:08:04.610Z [info]: [2024-12-17T16:08:04.610Z] POST /api/b2c/search
+2024-12-17T16:12:50.522Z [info]: [2024-12-17T16:12:50.522Z] POST /api/b2c/search
+2024-12-17T16:15:59.380Z [info]: [2024-12-17T16:15:59.380Z] POST /api/b2c/search
+2024-12-18T16:38:12.203Z [info]: [2024-12-18T16:38:12.200Z] POST /api/b2c/search
+2024-12-18T16:55:50.180Z [info]: [2024-12-18T16:55:50.178Z] POST /api/b2c/search
+2024-12-18T17:07:12.980Z [info]: [2024-12-18T17:07:12.978Z] POST /api/b2c/search?filter=true
+2024-12-18T17:08:18.929Z [info]: [2024-12-18T17:08:18.929Z] POST /api/b2c/search?filter=true
+2024-12-18T17:08:25.684Z [info]: [2024-12-18T17:08:25.684Z] POST /api/b2c/search?filter=true
+2024-12-18T17:08:39.773Z [info]: [2024-12-18T17:08:39.773Z] POST /api/b2c/search?filter=true
+2024-12-18T17:09:28.243Z [info]: [2024-12-18T17:09:28.243Z] POST /api/b2c/search?filter=true

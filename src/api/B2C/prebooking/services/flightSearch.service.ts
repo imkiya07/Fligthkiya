@@ -22,11 +22,10 @@ export class FlightSearchService extends AbstractServices {
     const conn = new PreBookingModels(db);
     const deviceId = req.deviceId;
 
+    const cacheKey = JSON.stringify(req.body);
     // FILTER DATA
     if (req.query.filter && req.query.filter === "true") {
-      // const cacheKey = req.headers.sessionid as string;
-
-      const cachedData = deviceId ? this.cache.get<any>(deviceId) : null;
+      const cachedData = deviceId ? this.cache.get<any>(cacheKey) : null;
 
       if (cachedData) {
         const { airlines, flight_numbers, stops, refundable } =
@@ -76,7 +75,7 @@ export class FlightSearchService extends AbstractServices {
 
     const formattedData = await FormatFlightSearch(flightsResponse?.Data, conn);
 
-    this.cache.set(deviceId, formattedData);
+    this.cache.set(cacheKey, formattedData);
 
     return {
       success: true,

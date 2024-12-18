@@ -122,6 +122,18 @@ export class PaymentServices extends AbstractServices {
 
     const deviceId = req.deviceId;
 
+    const paymentSuccessCacheKey = `${deviceId}-flightBookingData-${bookingId}`;
+
+    const paymentSuccessCachedData = this.cache.get(paymentSuccessCacheKey);
+
+    if (paymentSuccessCacheKey) {
+      return {
+        success: true,
+        message: "Payment success data from cached",
+        data: paymentSuccessCachedData,
+      };
+    }
+
     const bookingConn = new BookingModels(this.db);
 
     await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
@@ -130,10 +142,15 @@ export class PaymentServices extends AbstractServices {
 
     if (!bookingData) throw this.throwError("Invalid booking id", 400);
 
-    const { passengerBody, revalidation_req_body, ...data } = bookingData;
+    const { passengerBody, revalidation_req_body, ...restBookingData } =
+      bookingData;
 
-    if (data?.bookingStatus === "CONFIRMED") {
-      return { success: true, message: "Invoice details", data };
+    if (restBookingData?.bookingStatus === "CONFIRMED") {
+      return {
+        success: true,
+        message: "Invoice details",
+        data: restBookingData,
+      };
     }
 
     const cachedRevalidation = this.cache.get<ICachedRevalidation>(
@@ -214,17 +231,21 @@ export class PaymentServices extends AbstractServices {
         +bookingId
       );
 
+      const data = {
+        ...restBookingData,
+        pnrId: UniqueID,
+        BookingCreatedOn,
+        ...restItinerary,
+        itineraries,
+        passengerInfos,
+      };
+
+      this.cache.set(paymentSuccessCacheKey, data);
+
       return {
         success: true,
         message: "Flight booking successfully",
-        data: {
-          ...data,
-          pnrId: UniqueID,
-          BookingCreatedOn,
-          ...restItinerary,
-          itineraries,
-          passengerInfos,
-        },
+        data,
       };
     } else {
       this.throwError(
@@ -237,6 +258,13 @@ export class PaymentServices extends AbstractServices {
   // PAYMENT SUCCESSFUL EMAIL SEND
   paymentSuccessMailSend = async (req: Request) => {
     const bookingId = req.params.session;
+
+    const mailSendCacheKay = `${bookingId}-emailSend`;
+    const alreadyMailSend = this.cache.get(mailSendCacheKay);
+
+    if (alreadyMailSend) {
+      return { success: false, message: "Mail already send" };
+    }
 
     const bookingConn = new BookingModels(this.db);
 
@@ -273,6 +301,8 @@ export class PaymentServices extends AbstractServices {
     };
 
     await transporter.sendMail(mailOptions);
+
+    this.cache.set(mailSendCacheKay, true);
 
     return {
       success: true,
