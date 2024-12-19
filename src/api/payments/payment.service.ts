@@ -126,7 +126,7 @@ export class PaymentServices extends AbstractServices {
 
     const paymentSuccessCachedData = this.cache.get(paymentSuccessCacheKey);
 
-    if (paymentSuccessCacheKey) {
+    if (paymentSuccessCachedData) {
       return {
         success: true,
         message: "Payment success data from cached",

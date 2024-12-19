@@ -5,14 +5,14 @@ export const getFlights = (segments: any[]) => {
       if (!acc[leg]) {
         acc[leg] = {
           legIndicator: leg,
-          departure_airport: segment.departure_airport,
-          departure_city: segment.departure_city,
-          DepartureAirportLocationCode: segment.DepartureAirportLocationCode,
-          departure_date_time: segment.DepartureDateTime,
-          arrival_airport: segment.arrival_airport,
-          arrival_city: segment.arrival_city,
-          ArrivalAirportLocationCode: segment.ArrivalAirportLocationCode,
+          DepartureDateTime: segment.DepartureDateTime,
           ArrivalDateTime: segment.ArrivalDateTime,
+          DepartureAirportLocationCode: segment.DepartureAirportLocationCode,
+          ArrivalAirportLocationCode: segment.ArrivalAirportLocationCode,
+          departure_airport: segment.departure_airport,
+          arrival_airport: segment.arrival_airport,
+          departure_city: segment.departure_city,
+          arrival_city: segment.arrival_city,
           totalJourneyDuration: 0,
           totalStops: 0,
         };
