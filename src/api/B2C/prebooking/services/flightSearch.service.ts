@@ -76,6 +76,7 @@ export class FlightSearchService extends AbstractServices {
     const formattedData = await FormatFlightSearch(flightsResponse?.Data, conn);
 
     this.cache.set(cacheKey, formattedData);
+    this.cache.set(deviceId, formattedData);
 
     return {
       success: true,
