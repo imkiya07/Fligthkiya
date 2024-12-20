@@ -5,7 +5,6 @@ import { Stripe } from "stripe";
 import AbstractServices from "../../core/abstract/abstract.services";
 import { getClassDescription } from "../B2C/postBooking/utils/postBooking.utils";
 import { BookingModels } from "../B2C/preBooking/models/booking.models";
-import { PreBookingModels } from "../B2C/preBooking/models/preBooking.models";
 import { PreBookingService } from "../B2C/preBooking/services/preBooking.services";
 import { formatAirTravelersData } from "../B2C/preBooking/utils/preBooking.utils";
 import { IBookingResponse, ICachedRevalidation } from "./payment.interface";
@@ -24,23 +23,9 @@ export class PaymentServices extends AbstractServices {
 
     const bookingId = req.params.id;
 
-    const conn = new PreBookingModels(this.db);
     const bookingConn = new BookingModels(this.db);
 
     const bookingData = await bookingConn.getBookingBodyInfo(+bookingId);
-
-    // if (!bookingData) throw this.throwError("Invalid booking id", 400);
-
-    // const revalidationResponse = (await this.Req.request(
-    //   "POST",
-    //   "/v1/Revalidate/Flight",
-    //   bookingData?.revalidation_req_body
-    // )) as IRevalidateRes;
-
-    // const formattedData = await formatRevalidation(
-    //   revalidationResponse?.Data,
-    //   conn
-    // );
 
     const deviceId = req.deviceId;
 
@@ -100,17 +85,9 @@ export class PaymentServices extends AbstractServices {
       );
 
       this.cache.set(`amount-set-to-${bookingId}`, {
-        amount: formattedData.TotalFare.Amount,
+        amount: Number(formattedData.TotalFare.Amount),
         currency: formattedData?.TotalFare.CurrencyCode,
       });
-
-      // const { OriginDestinationOptions, AirItineraryPricingInfo } =
-      //   revalidationResponse?.Data?.PricedItineraries[0];
-
-      // this.cache.set(`revalidationOriginDesAirItinerary-${bookingId}`, {
-      //   OriginDestinationOptions,
-      //   AirItineraryPricingInfo,
-      // });
 
       return { success: true, url: session?.url };
     }
@@ -259,6 +236,10 @@ export class PaymentServices extends AbstractServices {
   paymentSuccessMailSend = async (req: Request) => {
     const bookingId = req.params.session;
 
+    const deviceId = req.deviceId;
+
+    const paymentSuccessCacheKey = `${deviceId}-flightBookingData-${bookingId}`;
+
     const mailSendCacheKay = `${bookingId}-emailSend`;
     const alreadyMailSend = this.cache.get(mailSendCacheKay);
 
@@ -270,12 +251,7 @@ export class PaymentServices extends AbstractServices {
 
     await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
-    const bookingData = await bookingConn.getBookingById(bookingId);
-
-    if (!bookingData) throw this.throwError("Invalid booking id", 400);
-
-    const cachedData = this.cache.get<any>(`amount-set-to-${bookingId}`);
-
+    const paymentSuccessCachedData = this.cache.get(paymentSuccessCacheKey);
     // mail send
     const transporter = nodemailer.createTransport({
       service: "Gmail", // Or another SMTP service
@@ -288,16 +264,8 @@ export class PaymentServices extends AbstractServices {
     const mailOptions = {
       from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
       to: req?.user?.email,
-      subject: "Flight Kiya Booking Confirmed",
-      html: getPaymentConfirmTemplate(
-        req?.user?.full_name,
-        bookingData?.orderNumber,
-        bookingData?.pnrId,
-        `${bookingData?.origin} to ${bookingData?.destination}`,
-        bookingData?.departure_datetime,
-        cachedData?.currency,
-        cachedData?.amount
-      ),
+      subject: "Your Flight Booking Confirmation",
+      html: generateEmailTemplate(paymentSuccessCachedData),
     };
 
     await transporter.sendMail(mailOptions);
@@ -379,127 +347,160 @@ const dateFormat = (dateString: string) => {
   return formattedDate;
 };
 
-const getPaymentConfirmTemplate = (
-  full_name: string,
-  bookingId: string,
-  pnr: string,
-  route: string,
-  departureDate: string,
-  currency: string,
-  amount: number
-) => {
-  return `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment Confirmation</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f6f6f6;
-        color: #333;
-      }
-      .email-container {
-        max-width: 600px;
-        margin: 20px auto;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .header {
-        background-color: #28a745;
-        text-align: center;
-        padding: 20px;
-      }
-      .header img {
-        max-width: 100px;
-        margin-bottom: 10px;
-      }
-      .header h1 {
-        color: #fff;
-        font-size: 24px;
-        margin: 0;
-      }
-      .content {
-        padding: 20px;
-      }
-      .content h2 {
-        color: #333;
-        font-size: 20px;
-        margin-top: 0;
-      }
-      .content p {
-        margin: 10px 0;
-        line-height: 1.5;
-      }
-      .button {
-        text-align: center;
-        margin: 20px 0;
-      }
-      .button a {
-        background-color: #28a745;
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .footer {
-        background-color: #f6f6f6;
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-        color: #999;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="email-container">
-      <div class="header">
-        <img
-          src="https://i.ibb.co.com/XCb5P7Z/flightkiya.jpg"
-          alt="Flight Kiya Logo"
-        />
-        <h1>Flight Kiya</h1>
-      </div>
-      <div class="content">
-        <h2>Thank you for your payment!</h2>
-        <p>Dear ${full_name},</p>
-        <p>
-          We have successfully received your payment for the following booking:
-        </p>
-        <p>
-          Booking ID: <strong>${bookingId}</strong><br />
-          PNR: <strong>${pnr}</strong><br />
-          Route: <strong>${route}</strong><br />
-          Flight Date: <strong>${departureDate}</strong>
-        </p>
-        <p>The total amount paid: <strong>${currency} ${amount}</strong></p>
-        <p>
-          Your flight ticket has been confirmed. You can now download your
-          ticket using the link below.
-        </p>
-        <div class="button">
-          <a href="https://example.com/download-ticket" target="_blank"
-            >Download Ticket</a
-          >
-        </div>
-        <p>
-          If you need assistance, please contact us by calling at
-          <strong>+880-9557-111-888</strong> or sending mail to
-          <a href="mailto:info@flightkiya.com">info@flightkiya.com</a>.
-        </p>
-      </div>
-      <div class="footer">
-        <p>&copy; 2024 Flight Kiya. All rights reserved.</p>
-        <p>901 Motijheel City Centre, Level 25-D-1, Dhaka 1000, Bangladesh</p>
-      </div>
+export function generateEmailTemplate(data: any) {
+  const itinerariesHtml = data.itineraries
+    .map(
+      (flight: any, index: number) => `
+    <tr>
+
+    <td>${flight.DepartureAirportLocationCode} → ${
+        flight.ArrivalAirportLocationCode
+      }</td>
+    <td>${flight.MarketingAirlineCode}</td>
+    <td>${flight.DepartureDateTime} (Terminal ${
+        flight.DepartureTerminal || "N/A"
+      })</td>
+    <td>${flight.ArrivalDateTime} (Terminal ${
+        flight.ArrivalTerminal || "N/A"
+      })</td>
+      <td>${calculateDuration(
+        flight.DepartureDateTime,
+        flight.ArrivalDateTime
+      )}</td>
+    </tr>
+  `
+    )
+    .join("");
+
+  const passengerDetailsHtml = data?.passengerInfos
+    .map(
+      (passenger: any, index: number) => `
+    <div style="margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+      <h3 style="color: #0056b3;">Passenger ${index + 1}</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><strong>Full Name:</strong>
+        ${passenger.PaxName.PassengerTitle}
+         ${passenger.PaxName.PassengerFirstName} ${
+        passenger.PaxName.PassengerLastName
+      }</li>
+        <li><strong>Gender:</strong> ${
+          passenger.Gender === "M" ? "Male" : "Female"
+        }</li>
+        <li><strong>Passenger Type:</strong> ${
+          passenger.PassengerType === "ADT" ? "Adult" : "Child"
+        }</li>
+        <li><strong>Date of Birth:</strong> ${new Date(
+          passenger.DateOfBirth
+        ).toLocaleDateString()}</li>
+        <li><strong>Passport Number:</strong> ${passenger.PassportNumber}</li>
+      </ul>
     </div>
-  </body>
-</html>
-`;
-};
+  `
+    )
+    .join("");
+
+  return `
+    <html>
+    <head>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f9;
+          color: #333;
+        }
+        .container {
+            max-width: 650px; 
+            margin: 10px auto; 
+            background: #ffffff; 
+            border: 1px solid #dddddd; 
+            border-radius: 5px; 
+            padding: 10px; 
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+          color: #0056b3;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 10px 0;
+        }
+        table th, table td {
+          border: 1px solid #ddd;
+          padding: 5px;
+          text-align: left;
+        }
+        table th {
+          background: #0056b3;
+          color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Booking Confirmation</h1>
+        <p>Dear ${data.full_name},</p>
+        <p>Your flight booking was successful. Below are the details:</p>
+
+        <h3>Booking Details</h3>
+        <ul>
+          <li><strong>Order Number:</strong> ${data.orderNumber}</li>
+          <li><strong>PNR:</strong> ${data.pnrId}</li>
+          <li><strong>Payment Status:</strong> ${data.paymentStatus}</li>
+          <li><strong>Booking Status:</strong> ${data.BookingStatus}</li>
+          <li><strong>Created On:</strong> ${data.BookingCreatedOn}</li>
+        </ul>
+
+        <h3>Flight Itineraries</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Flight</th>
+              <th>Airline</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${itinerariesHtml}
+          </tbody>
+        </table>
+
+
+        <div>
+          <h3>Passenger Details</h3>
+          ${passengerDetailsHtml}
+        </div>
+
+
+        <div style="text-align: center; margin-top: 10px;">
+          <p style="font-size: 14px; color: #777;">
+            Thank you for choosing our service. If you have any questions, contact us at
+            <a href="mailto:flightkiya@gmail.com" style="color: #0073e6; text-decoration: none;">nazmulhosenm668@gmail.com</a>.
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+}
+
+export function calculateDuration(departure: string, arrival: string): string {
+  const departureDate = new Date(departure);
+  const arrivalDate = new Date(arrival);
+
+  // Convert dates to milliseconds for arithmetic operations
+  const differenceInMilliseconds =
+    arrivalDate.getTime() - departureDate.getTime();
+
+  // Convert milliseconds to hours and minutes
+  const totalMinutes = Math.floor(differenceInMilliseconds / (1000 * 60));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  return `${hours}h ${minutes}m`;
+}

@@ -5,7 +5,7 @@ import { OriginDestinationOption } from "../interfaces/revalidateRes.interface";
 import { PreBookingModels } from "../models/preBooking.models";
 import { getFlights } from "./dataFormatUtils";
 // FORMAT FLIGHT SEARCH RESPONSE
-const imageBaseUrl = "https://flightkiya.cosmelic.com/public/airlines/";
+export const imageBaseUrl = "https://flightkiya.cosmelic.com/public/airlines/";
 
 export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
   // FORMAT & FILTER DATA

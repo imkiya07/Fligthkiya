@@ -1,10 +1,14 @@
-export const getFlights = (segments: any[]) => {
+import { imageBaseUrl } from "./preBooking.utils";
+
+export const getFlights = (segments: any) => {
   const groupedData = Object.values(
     segments.reduce((acc: any, segment: any) => {
       const leg = segment.legIndicator;
       if (!acc[leg]) {
         acc[leg] = {
           legIndicator: leg,
+          airline: segment.marketing_airline,
+          airline_img: imageBaseUrl + segment.marketing_airline + ".png",
           DepartureDateTime: segment.DepartureDateTime,
           ArrivalDateTime: segment.ArrivalDateTime,
           DepartureAirportLocationCode: segment.DepartureAirportLocationCode,
@@ -16,9 +20,11 @@ export const getFlights = (segments: any[]) => {
           totalJourneyDuration: 0,
           totalStops: 0,
         };
+      } else {
+        // Update the ArrivalAirportLocationCode to reflect the last segment's arrival
+        acc[leg].ArrivalAirportLocationCode =
+          segment.ArrivalAirportLocationCode;
       }
-      acc[leg].arrival_airport = segment.arrival_airport;
-      acc[leg].ArrivalDateTime = segment.ArrivalDateTime;
       acc[leg].totalJourneyDuration += segment.JourneyDuration;
       acc[leg].totalStops += segment.stops;
       return acc;
