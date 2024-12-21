@@ -1385,3 +1385,157 @@ Error: Booking may be already ordered for ticket or ticketed or cancelled.
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:31:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-12-21T14:40:29.363Z] Undefined binding(s) detected for keys [0] when compiling RAW query: username like ?
+Error: Undefined binding(s) detected for keys [0] when compiling RAW query: username like ?
+    at Raw.toSQL (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\raw.js:110:13)
+    at unwrapRaw (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\formatter\wrappingFormatter.js:116:19)
+    at QueryCompiler_MySQL.whereRaw (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\query\querycompiler.js:1129:7)
+    at QueryCompiler_MySQL.whereRaw (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\mysql\query\mysql-querycompiler.js:200:18)
+    at QueryCompiler_MySQL.where (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\query\querycompiler.js:584:34)
+    at QueryCompiler_MySQL.toSQL (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\query\querycompiler.js:75:29)
+    at compileCallback (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\formatter\formatterUtils.js:13:19)
+    at rawOrFn (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\formatter\wrappingFormatter.js:225:7)
+    at QueryCompiler_MySQL.whereWrapped (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\query\querycompiler.js:1095:17)
+    at QueryCompiler_MySQL.where (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\query\querycompiler.js:584:34)
+
+[2024-12-21T14:42:01.555Z] Password is required
+Error: Password is required
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-12-21T14:44:06.020Z] Password must contain at least one uppercase letter
+Error: Password must contain at least one uppercase letter
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-12-21T14:44:17.615Z] Password must contain at least one uppercase letter
+Error: Password must contain at least one uppercase letter
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-12-21T14:46:58.806Z] Username must be alphanumeric
+Error: Username must be alphanumeric
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:32:23
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-12-21T14:47:29.314Z] Invalid email or password
+Error: Invalid email or password
+    at AdminAuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AdminAuthServices.loginAdmin (D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.service.js:27:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.controller.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-21T15:05:31.791Z] Cannot destructure property 'verified' of 'undefined' as it is undefined.
+TypeError: Cannot destructure property 'verified' of 'undefined' as it is undefined.
+    at AdminUsersModels.getAllUsers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.model.js:6:37)
+    at AdminUsersServices.allUsers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.service.js:18:37)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-12-21T15:08:56.591Z] Cannot destructure property 'verified' of 'undefined' as it is undefined.
+TypeError: Cannot destructure property 'verified' of 'undefined' as it is undefined.
+    at AdminUsersModels.getAllUsers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.model.js:6:37)
+    at AdminUsersServices.allUsers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.service.js:18:37)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:346:12)
+
+[2024-12-21T15:24:04.425Z] Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-21T15:24:55.490Z] Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-21T15:25:32.843Z] Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-21T15:25:56.122Z] Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-21T15:26:06.422Z] Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Timeout'
+    |     property '_idlePrev' -> object with constructor 'TimersList'
+    --- property '_idleNext' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:271:14)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:16:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+

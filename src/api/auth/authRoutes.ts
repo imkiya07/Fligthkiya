@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { AuthController } from "./authController";
 import { authMiddleware } from "../../middlewares/authMiddlewares";
+import { AdminAuthValidator } from "../admin/auth/adminAuth.validator";
+import { AuthController } from "./authController";
 
 export class AuthRoutes {
   public router: Router;
   private controller: AuthController;
+  private validator = new AdminAuthValidator();
 
   constructor() {
     this.router = Router();
@@ -15,6 +17,11 @@ export class AuthRoutes {
   private initializeRoutes() {
     this.router.post("/registration", this.controller.registrationUser);
     this.router.post("/login", this.controller.loginUser);
+    this.router.post(
+      "/admin-login",
+      this.validator.loginAdmin,
+      this.controller.loginAdmin
+    );
     this.router.get(
       "/refresh-token",
       authMiddleware,

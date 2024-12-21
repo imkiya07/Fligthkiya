@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import { Request } from "express";
 import AbstractServices from "../../core/abstract/abstract.services";
+import { AdminAuthModels } from "../admin/auth/adminAuth.model";
 import { AuthModel } from "./AuthModel";
 import { IRegistration } from "./authInterfaces";
 import { generateToken } from "./authUtils";
@@ -92,6 +93,37 @@ export class AuthServices extends AbstractServices {
     const token = generateToken(restData);
 
     return { success: true, token, data: restData };
+  };
+
+  /**
+   * @LoginAdmin
+   */
+  loginAdmin = async (req: Request) => {
+    const body = req.body as { username: string; password: string };
+
+    const conn = new AdminAuthModels(this.db);
+
+    const admin = await conn.getAdminUser(body.username);
+
+    if (!admin) {
+      throw this.throwError("Invalid username or password", 401);
+    }
+
+    const { password_hash, ...restData } = admin;
+
+    const verify = verifyPassword(body.password, password_hash);
+
+    if (!verify) {
+      throw this.throwError("Invalid email or password", 401);
+    }
+
+    const token = generateToken(restData);
+
+    return {
+      success: true,
+      message: "Admin login successfully",
+      data: { token, ...restData },
+    };
   };
 
   refreshToken = async (req: Request) => {

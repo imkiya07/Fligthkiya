@@ -25,6 +25,12 @@ export class AuthController extends AbstractController {
   });
 
   // Use an arrow function
+  public loginAdmin = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.loginAdmin(req);
+    res.json(data);
+  });
+
+  // Use an arrow function
   public refreshToken = this.wrapAsync(async (req: Request, res: Response) => {
     const data = await this.services.refreshToken(req);
     res.json(data);
