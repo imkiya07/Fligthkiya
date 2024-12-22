@@ -12,4 +12,18 @@ export class B2cUsersController extends AbstractController {
     const data = await this.services.getBookings(req);
     res.json(data);
   });
+
+  public addCancelBooking = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.addCancelBooking(req);
+      res.json(data);
+    }
+  );
+
+  public getCancelBooking = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.getCancelBooking(req);
+      res.json(data);
+    }
+  );
 }

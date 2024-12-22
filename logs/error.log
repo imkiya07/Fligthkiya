@@ -1539,3 +1539,132 @@ TypeError: Converting circular structure to JSON
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-12-22T15:02:02.351Z] insert into `refund_or_void_requests` (`booking_id`, `reason`, `remarks`, `request_type`, `user_id`) values (12345, 'Customer canceled the booking.', 'Refund requested due to personal reasons.', 'REFUND', 15) - Cannot add or update a child row: a foreign key constraint fails (`cosmelic_fk`.`refund_or_void_requests`, CONSTRAINT `refund_or_void_requests_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking_info` (`id`) ON DELETE CASCADE)
+Error: insert into `refund_or_void_requests` (`booking_id`, `reason`, `remarks`, `request_type`, `user_id`) values (12345, 'Customer canceled the booking.', 'Refund requested due to personal reasons.', 'REFUND', 15) - Cannot add or update a child row: a foreign key constraint fails (`cosmelic_fk`.`refund_or_void_requests`, CONSTRAINT `refund_or_void_requests_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking_info` (`id`) ON DELETE CASCADE)
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2024-12-22T15:05:45.263Z] Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+Error: Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+    at Client_SQLite3.initializeDriver (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:202:13)
+    at new Client (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:83:12)
+    at new Client_SQLite3 (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js:22:5)
+    at knex (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at B2cUsersModel.getUpdateBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.models.js:16:51)
+    at B2cUsersServices.getCancelBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.services.js:36:37)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:19:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-12-22T15:05:54.974Z] Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+Error: Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+    at Client_SQLite3.initializeDriver (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:202:13)
+    at new Client (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:83:12)
+    at new Client_SQLite3 (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js:22:5)
+    at knex (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at B2cUsersModel.getUpdateBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.models.js:16:51)
+    at B2cUsersServices.getCancelBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.services.js:36:37)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:19:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+
+[2024-12-22T15:06:32.888Z] Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+Error: Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+    at Client_SQLite3.initializeDriver (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:202:13)
+    at new Client (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:83:12)
+    at new Client_SQLite3 (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js:22:5)
+    at knex (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at B2cUsersModel.getUpdateBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.models.js:30:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async B2cUsersServices.getCancelBooking (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.services.js:37:26)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:19:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+

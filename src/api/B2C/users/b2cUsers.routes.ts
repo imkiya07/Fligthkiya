@@ -12,5 +12,7 @@ export class B2cUsersRoute {
 
   private initializeRoutes() {
     this.router.get("/bookings", this.controllers.getBookings);
+    this.router.post("/cancel-booking-req", this.controllers.addCancelBooking);
+    this.router.get("/cancel-booking-req", this.controllers.getCancelBooking);
   }
 }
