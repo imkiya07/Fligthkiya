@@ -87,6 +87,12 @@ export class BookingModels {
       .where("id", booking_id);
   };
 
+  updateBookingTicketStatus = async (status: string, booking_id: number) => {
+    await this.db("booking_info")
+      .update("ticketStatus", status)
+      .where("id", booking_id);
+  };
+
   getBookingBodyInfo = async (booking_id: number) => {
     return (await this.db("booking_info")
       .select("revalidation_req_body", "passengerBody", "orderNumber")

@@ -1,6 +1,7 @@
 import { Request } from "express";
 import AbstractServices from "../../../../core/abstract/abstract.services";
 import { IFlightCache } from "../interfaces/preBooking.interface";
+import { BookingModels } from "../models/booking.models";
 import { BookingRequestService } from "./bookingReq.service";
 import { FareRules } from "./fareRules.service";
 import { FlightSearchService } from "./flightSearch.service";
@@ -19,7 +20,11 @@ export class PreBookingService extends AbstractServices {
 
   // ORDER TICKET
   orderTicket = async (req: Request) => {
-    const { booking_ref } = req.params;
+    const bookingId = req.params.id;
+
+    const conn = new BookingModels(this.db);
+
+    const { booking_ref } = req.body as { booking_ref: string };
 
     if (!booking_ref) {
       this.throwError("Booking reference is missing", 400);
@@ -36,6 +41,8 @@ export class PreBookingService extends AbstractServices {
     if (!response?.Success) {
       this.throwError(response?.Message, 400);
     }
+
+    await conn.updateBookingTicketStatus("ORDERED_TICKET", +bookingId);
 
     return {
       success: true,

@@ -1,7 +1,6 @@
 import { Request } from "express";
 import AbstractServices from "../../../core/abstract/abstract.services";
-import { hashPassword, verifyPassword } from "../../auth/authServices";
-import { generateToken } from "../../auth/authUtils";
+import { hashPassword } from "../../auth/authServices";
 import { IAddAdminBody, IAdminUserDb } from "./adminAuth.interface";
 import { AdminAuthModels } from "./adminAuth.model";
 

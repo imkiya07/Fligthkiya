@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { authMiddleware } from "../../../../middlewares/authMiddlewares";
 import { PreBookingControllers } from "../controllers/preBooking.controllers";
 import { PreBookingValidator } from "../validators/preBooking.validators";
 
@@ -25,7 +26,11 @@ export class PreBookingRoutes {
       this.controllers.bookingRequest
     );
 
-    this.router.get("/order-ticket/:booking_ref", this.controllers.orderTicket);
+    this.router.post(
+      "/order-ticket/:id",
+      authMiddleware,
+      this.controllers.orderTicket
+    );
 
     this.router.get("/trip-details/:booking_ref", this.controllers.tripDetails);
 

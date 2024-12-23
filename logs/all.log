@@ -701,3 +701,5 @@
 2024-12-22T15:19:18.939Z [info]: [2024-12-22T15:19:18.939Z] GET /api/b2c/user/cancel-booking-req?limit=10&skip=20&req_type=REFUND&status=pending
 2024-12-22T15:19:37.188Z [info]: [2024-12-22T15:19:37.188Z] GET /api/b2c/user/cancel-booking-req?limit=10&req_type=REFUND&status=pending&skip=0
 2024-12-22T15:19:53.972Z [info]: [2024-12-22T15:19:53.972Z] GET /api/admin/users/cancel-req?limit=10&req_type=REFUND&status=pending&skip=0
+2024-12-22T15:20:32.567Z [info]: [2024-12-22T15:20:32.565Z] POST /api/b2c/search?filter=true
+2024-12-22T15:21:30.677Z [info]: [2024-12-22T15:21:30.677Z] GET /api/b2c/revalidated/7f281d91-a027-41f0-b35f-7464a6568977
