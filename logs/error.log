@@ -1668,3 +1668,50 @@ Require stack:
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:19:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-12-26T17:23:27.437Z] Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.service.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.controller.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\admin.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\routes\routes.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+Error: Knex: run
+$ npm install sqlite3 --save
+Cannot find module 'sqlite3'
+Require stack:
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\index.js
+- D:\PROJECTS\flight_kiya_server\node_modules\knex\knex.js
+- D:\PROJECTS\flight_kiya_server\dist\core\database\db.js
+- D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.service.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.controller.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\auth\adminAuth.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\api\admin\admin.routes.js
+- D:\PROJECTS\flight_kiya_server\dist\routes\routes.js
+- D:\PROJECTS\flight_kiya_server\dist\index.js
+    at Client_SQLite3.initializeDriver (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:202:13)
+    at new Client (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\client.js:83:12)
+    at new Client_SQLite3 (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\dialects\sqlite3\index.js:22:5)
+    at knex (D:\PROJECTS\flight_kiya_server\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at AdminUsersModels.getTravelers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.model.js:112:56)
+    at AdminUsersServices.getTravelers (D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.service.js:75:24)
+    at D:\PROJECTS\flight_kiya_server\dist\api\admin\users\adminUsers.controller.js:31:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+

@@ -36,6 +36,7 @@ export class BookingRequestService extends AbstractServices {
       PostCode: body?.PostCode,
       revalidation_req_body: JSON.stringify(revalidateReqBody),
       passengerBody: JSON.stringify(body),
+      bookingStatus: "BIP",
     };
 
     const booking_id = await conn.insertBookingInfo(bookingReqPayload);

@@ -5,11 +5,11 @@ import crypto from "crypto";
 import dotenv from "dotenv";
 import { NextFunction, Request, Response } from "express";
 import nodemailer from "nodemailer";
-import { generateEmailTemplate } from "./api/payments/payment.service";
 import { app } from "./app";
 import requestLogger from "./core/utils/logger/reqLogger";
 import { errorHandler } from "./middlewares/errorHandler";
 import { registerRoutes } from "./routes/routes";
+import { generateEmailTemplate } from "./api/payments/payment.utils";
 
 // Load environment variables from .env file
 dotenv.config();

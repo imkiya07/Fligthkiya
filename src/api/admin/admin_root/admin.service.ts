@@ -1,5 +1,6 @@
 import { Request } from "express";
 import AbstractServices from "../../../core/abstract/abstract.services";
+import { IRefundReqBody, IReissueBody } from "./admin.interface";
 
 export class AdminServices extends AbstractServices {
   constructor() {
@@ -55,125 +56,76 @@ export class AdminServices extends AbstractServices {
    * @voidRequest
    */
   voidRequest = async (req: Request) => {
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
-  };
+    const reqBody = req.body as IRefundReqBody;
 
-  /**
-   * @voidRequestQuote
-   */
-  voidRequestQuote = async (req: Request) => {
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
+    try {
+      const response = await this.Req.request("POST", "/Void", reqBody);
+
+      if (response?.Success) {
+        return {
+          success: true,
+          message: "Successfully ticket voided",
+          data: response?.Data,
+        };
+      } else {
+        throw new Error(response?.Message);
+      }
+    } catch (error: any) {
+      return {
+        success: false,
+        message: "Failed void ticket",
+        error: error?.message,
+      };
+    }
   };
 
   /**
    * @reissueRequest
    */
   reissueRequest = async (req: Request) => {
-    const payload = {
-      ptrType: "ReissueQuote",
-      mFRef: "MF15170620",
-      AllowChildPassenger: true,
-      reissueQuoteRequestType: "Segment",
-      passengers: [
-        {
-          firstName: "Alex",
-          lastName: "Tan",
-          title: "MR",
-          eTicket: "1234580095753",
-          passengerType: "ADT",
-        },
-      ],
-      originDestinations: [
-        {
-          originLocationCode: "JFK",
-          destinationLocationCode: "IST",
-          cabinPreference: "Y",
-          departureDateTime: "2020-10-15",
-          flightNumber: 12,
-          airlineCode: "TK",
-        },
-        {
-          originLocationCode: "IST",
-          destinationLocationCode: "LHR",
-          cabinPreference: "Y",
-          departureDateTime: "2020-10-16",
-          flightNumber: 1979,
-          airlineCode: "TK",
-        },
-      ],
-    };
+    const reissue = req.body as IReissueBody;
 
-    const response = await this.Req.request("POST", "/api/Refund", payload);
+    try {
+      const response = await this.Req.request("POST", "/Reissue", reissue);
 
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
-  };
-
-  /**
-   * @reissueRequestQuote
-   */
-  reissueRequestQuote = async (req: Request) => {
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
+      return {
+        success: true,
+        message: "Admin created successfully",
+        response,
+      };
+    } catch (error: any) {
+      return {
+        success: false,
+        message: "Failed reissue",
+        error: error?.message,
+      };
+    }
   };
 
   /**
    * @refundRequest
    */
   refundRequest = async (req: Request) => {
-    const payload = {
-      ptrType: "Refund",
-      mFRef: "MF15171620",
-      passengers: [
-        {
-          firstName: "Alex",
-          lastName: "Tan",
-          title: "Miss",
-          eTicket: "3673876689999",
-          passengerType: "ADT",
-        },
-      ],
-      AdditionalNote: "Proceed direct Cancellation as per penalty",
-    };
-    const response = await this.Req.request("POST", "/api/Refund", payload);
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
-  };
+    const reissue = req.body as IRefundReqBody;
 
-  /**
-   * @refundRequestQuote
-   */
-  refundRequestQuote = async (req: Request) => {
-    const payload = {
-      ptrType: "Refund",
-      mFRef: "MF15171620",
-      passengers: [
-        {
-          firstName: "Alex",
-          lastName: "Tan",
-          title: "Miss",
-          eTicket: "3673876689999",
-          passengerType: "ADT",
-        },
-      ],
-      AdditionalNote: "Proceed direct Cancellation as per penalty",
-    };
-    const response = await this.Req.request("POST", "/api/Refund", payload);
-    return {
-      success: true,
-      message: "Admin created successfully",
-    };
+    try {
+      const response = await this.Req.request("POST", "/Refund", reissue);
+
+      if (response?.Success) {
+        return {
+          success: true,
+          message: "Admin created successfully",
+          data: response?.Data,
+        };
+      } else {
+        throw Error(response?.Message);
+      }
+    } catch (error: any) {
+      return {
+        success: false,
+        message: "Failed reissue",
+        error: error?.message,
+      };
+    }
   };
 }

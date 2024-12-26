@@ -38,4 +38,9 @@ export class AdminUsersController extends AbstractController {
       res.json(data);
     }
   );
+
+  public getTravelers = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.getTravelers(req);
+    res.json(data);
+  });
 }

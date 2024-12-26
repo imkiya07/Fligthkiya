@@ -74,7 +74,7 @@ export class BookingModels {
         | "CANCELED";
       TktTimeLimit: string;
       pnrId: string;
-      bookingStatus: "PENDING" | "CONFIRMED" | "FAILED";
+      bookingStatus: "PENDING" | "CONFIRMED" | "FAILED" | "TIP" | "BIP";
     },
     booking_id: number
   ) => {

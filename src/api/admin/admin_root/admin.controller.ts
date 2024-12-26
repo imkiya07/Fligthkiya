@@ -30,23 +30,9 @@ export class AdminController extends AbstractController {
     res.json(data);
   });
 
-  public voidRequestQuote = this.wrapAsync(
-    async (req: Request, res: Response) => {
-      const data = await this.services.voidRequestQuote(req);
-      res.json(data);
-    }
-  );
-
   public reissueRequest = this.wrapAsync(
     async (req: Request, res: Response) => {
       const data = await this.services.reissueRequest(req);
-      res.json(data);
-    }
-  );
-
-  public reissueRequestQuote = this.wrapAsync(
-    async (req: Request, res: Response) => {
-      const data = await this.services.reissueRequestQuote(req);
       res.json(data);
     }
   );
@@ -55,11 +41,4 @@ export class AdminController extends AbstractController {
     const data = await this.services.refundRequest(req);
     res.json(data);
   });
-
-  public refundRequestQuote = this.wrapAsync(
-    async (req: Request, res: Response) => {
-      const data = await this.services.refundRequestQuote(req);
-      res.json(data);
-    }
-  );
 }

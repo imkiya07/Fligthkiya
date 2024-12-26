@@ -93,4 +93,17 @@ export class AdminUsersServices extends AbstractServices {
       message: "Updated successfully",
     };
   };
+
+  getTravelers = async (req: Request) => {
+    const conn = new AdminUsersModels(this.db);
+    const { limit, skip } = req.query as { limit: string; skip: string };
+
+    const data = await conn.getTravelers(+limit, +skip);
+
+    return {
+      success: true,
+      message: "All travelers",
+      ...data,
+    };
+  };
 }

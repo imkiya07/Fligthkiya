@@ -177,4 +177,51 @@ export class AdminUsersModels {
       .where("booking_info.user_id", userId)
       .orderBy("booking_info.id", "desc");
   };
+
+  getTravelers = async (limit: number = 0, skip: number = 20) => {
+    // Query for paginated data
+    const travelers = await this.db("air_travelers")
+      .leftJoin("users", "users.user_id", "=", "air_travelers.user_id")
+      .leftJoin(
+        "booking_info",
+        "booking_info.id",
+        "=",
+        "air_travelers.booking_id"
+      )
+      .select(
+        "PassengerID",
+        "orderNumber",
+        "full_name as user_full_name",
+        "PassengerType",
+        "air_travelers.Gender",
+        "PassengerFirstName",
+        "PassengerLastName",
+        "DateOfBirth",
+        "PassengerNationality",
+        "NationalID",
+        "PassportNumber",
+        "ExpiryDate",
+        "air_travelers.Country"
+      )
+      .orderBy("PassengerID", "desc")
+      .limit(limit)
+      .offset(skip);
+
+    // Query for total count
+    const countResult = (await this.db("air_travelers")
+      .leftJoin("users", "users.user_id", "=", "air_travelers.user_id")
+      .leftJoin(
+        "booking_info",
+        "booking_info.id",
+        "=",
+        "air_travelers.booking_id"
+      )
+      .count("PassengerID as totalCount")
+      .first()) as { totalCount: number };
+
+    return {
+      count: countResult.totalCount,
+      data: travelers,
+    };
+  };
 }
