@@ -717,3 +717,12 @@
 2024-12-26T17:47:06.288Z [info]: [2024-12-26T17:47:06.286Z] POST /api/admin/reissue
 2024-12-26T17:47:16.488Z [info]: [2024-12-26T17:47:16.488Z] POST /api/admin/refund
 2024-12-26T17:48:12.419Z [info]: [2024-12-26T17:48:12.417Z] POST /api/admin/refund
+2024-12-26T17:49:25.029Z [info]: [2024-12-26T17:49:25.027Z] POST /api/admin/void
+2024-12-27T14:49:52.774Z [info]: [2024-12-27T14:49:52.772Z] POST /api/b2c/search?filter=true
+2024-12-27T14:50:37.854Z [info]: [2024-12-27T14:50:37.854Z] GET /api/b2c/revalidated/a78d215a-6a6a-4ea9-bb78-e3928fca796c
+2024-12-27T14:55:20.584Z [info]: [2024-12-27T14:55:20.582Z] POST /api/b2c/search?filter=true
+2024-12-27T14:56:27.176Z [info]: [2024-12-27T14:56:27.176Z] GET /api/b2c/revalidated/0b4d4044-91fc-47ff-b99c-33210da34295
+2024-12-28T14:59:18.663Z [info]: [2024-12-28T14:59:18.661Z] POST /api/b2c/search?filter=true
+2024-12-28T15:00:29.772Z [info]: [2024-12-28T15:00:29.772Z] GET /api/b2c/revalidated/819f794a-514b-4a44-8f5b-66dbb7ce7071
+2024-12-28T15:01:32.184Z [info]: [2024-12-28T15:01:32.184Z] POST /api/b2c/booking
+2024-12-28T15:02:00.957Z [info]: [2024-12-28T15:02:00.957Z] POST /api/payment/success/68

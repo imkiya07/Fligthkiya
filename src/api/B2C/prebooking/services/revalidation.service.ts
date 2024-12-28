@@ -68,6 +68,10 @@ export class Revalidation extends AbstractServices {
 
     this.cache.set(`revalidation-${deviceId}`, revalidationResponse);
 
+    if (!response?.Data?.PricedItineraries) {
+      throw this.throwError("Revalidation failed. Please try again.", 400);
+    }
+
     const { OriginDestinationOptions, AirItineraryPricingInfo } =
       response?.Data?.PricedItineraries[0];
 
