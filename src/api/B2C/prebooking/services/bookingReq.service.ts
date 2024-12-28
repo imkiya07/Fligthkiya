@@ -1,5 +1,7 @@
 import { Request } from "express";
+import nodemailer from "nodemailer";
 import AbstractServices from "../../../../core/abstract/abstract.services";
+import { bookingRequestTemplate } from "../../../../core/common/emailTemplate";
 import { IBookingReqBody } from "../interfaces/bookingReqBody.interface";
 import { BookingModels } from "../models/booking.models";
 import { UserCreateWithTempPass } from "./userCreateTempPass.service";
@@ -60,6 +62,23 @@ export class BookingRequestService extends AbstractServices {
     });
 
     await conn.insertAirTravelers(passengerData);
+
+    const transporter = nodemailer.createTransport({
+      service: "Gmail", // Or another SMTP service
+      auth: {
+        user: process.env.EMAIL_SEND_EMAIL_ID,
+        pass: process.env.EMAIL_SEND_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
+      to: body?.Email,
+      subject: "Flight Booking Request Successful",
+      html: bookingRequestTemplate(bookingReqPayload, passengerData),
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return {
       success: true,

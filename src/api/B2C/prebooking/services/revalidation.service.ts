@@ -72,20 +72,26 @@ export class Revalidation extends AbstractServices {
       throw this.throwError("Revalidation failed. Please try again.", 400);
     }
 
-    const { OriginDestinationOptions, AirItineraryPricingInfo } =
-      response?.Data?.PricedItineraries[0];
+    const itineraryData = response?.Data?.PricedItineraries[0];
 
-    this.cache.set(`revalidationOriginDesAirItinerary-${deviceId}`, {
-      OriginDestinationOptions,
-      AirItineraryPricingInfo,
-    });
+    if (
+      itineraryData?.OriginDestinationOptions &&
+      itineraryData?.AirItineraryPricingInfo
+    ) {
+      this.cache.set(`revalidationOriginDesAirItinerary-${deviceId}`, {
+        OriginDestinationOptions: itineraryData?.OriginDestinationOptions,
+        AirItineraryPricingInfo: itineraryData?.AirItineraryPricingInfo,
+      });
 
-    const { FareSourceCode, ...data } = revalidationResponse;
+      const { FareSourceCode, ...data } = revalidationResponse;
 
-    return {
-      success: true,
-      message: "Flight revalidation",
-      data,
-    };
+      return {
+        success: true,
+        message: "Flight revalidation",
+        data,
+      };
+    } else {
+      throw this.throwError("Revalidation failed. Please try again.", 400);
+    }
   }
 }

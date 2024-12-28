@@ -1737,3 +1737,65 @@ Error: Pending Need - Awaiting carrier response - Booking Unconfirmed
     at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2024-12-28T15:16:15.110Z] Pending Need - Awaiting carrier response - Booking Unconfirmed
+Error: Pending Need - Awaiting carrier response - Booking Unconfirmed
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:106:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2024-12-28T15:33:57.711Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+
+[2024-12-28T18:10:10.384Z] Revalidation is required!
+Error: Revalidation is required!
+    at BookingRequestService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingReq.service.js:21:22)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at middleware (D:\PROJECTS\flight_kiya_server\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[2024-12-28T18:12:46.792Z] select `name` from `airlines` where `iata` = 'EK' limit 1 - read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
+[2024-12-28T18:13:05.306Z] connect ETIMEDOUT
+Error: connect ETIMEDOUT
+    at Connection._handleTimeoutError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:205:17)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2024-12-28T18:15:26.764Z] No recipients defined
+Error: No recipients defined
+    at SMTPConnection._formatError (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:807:19)
+    at SMTPConnection._setEnvelope (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:1045:34)
+    at SMTPConnection.send (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:629:14)
+    at sendMessage (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-transport\index.js:228:28)
+    at D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-transport\index.js:286:25
+    at SMTPConnection._actionAUTHComplete (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:1600:9)
+    at SMTPConnection.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:554:26)
+    at SMTPConnection._processResponse (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:991:20)
+    at SMTPConnection._onData (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:772:14)
+    at SMTPConnection._onSocketData (D:\PROJECTS\flight_kiya_server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+
+[2024-12-28T18:18:54.609Z] Cannot destructure property 'OriginDestinationOptions' of '(intermediate value)' as it is undefined.
+TypeError: Cannot destructure property 'OriginDestinationOptions' of '(intermediate value)' as it is undefined.
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:54:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+

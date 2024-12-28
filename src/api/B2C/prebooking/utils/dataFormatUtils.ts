@@ -8,7 +8,10 @@ export const getFlights = (segments: any) => {
         acc[leg] = {
           legIndicator: leg,
           airline: segment.marketing_airline,
-          airline_img: imageBaseUrl + segment.marketing_airline + ".png",
+          airline_img:
+            imageBaseUrl +
+            (segment?.OperatingCarrierCode || segment?.MarketingCarriercode) +
+            ".png",
           DepartureDateTime: segment.DepartureDateTime,
           ArrivalDateTime: segment.ArrivalDateTime,
           DepartureAirportLocationCode: segment.DepartureAirportLocationCode,
