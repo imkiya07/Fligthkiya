@@ -31,7 +31,7 @@ export function bookingRequestTemplate(booking: any, passengers: any[]) {
             justify-content: center;
         }
         .header img {
-            min-width: 60px;
+            max-width: 60px;
             border-radius: 5px;
             margin-right: 10px;
         }

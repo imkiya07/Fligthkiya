@@ -7,6 +7,8 @@ export const getFlights = (segments: any) => {
       if (!acc[leg]) {
         acc[leg] = {
           legIndicator: leg,
+          airline_code:
+            segment?.OperatingCarrierCode || segment?.MarketingCarriercode,
           airline: segment.marketing_airline,
           airline_img:
             imageBaseUrl +
@@ -21,7 +23,8 @@ export const getFlights = (segments: any) => {
           departure_city: segment.departure_city,
           arrival_city: segment.arrival_city,
           totalJourneyDuration: 0,
-          totalStops: 0,
+          // totalStops: 0,
+          totalStops: -1,
         };
       } else {
         // Update the ArrivalAirportLocationCode to reflect the last segment's arrival
@@ -29,7 +32,8 @@ export const getFlights = (segments: any) => {
           segment.ArrivalAirportLocationCode;
       }
       acc[leg].totalJourneyDuration += segment.JourneyDuration;
-      acc[leg].totalStops += segment.stops;
+      // acc[leg].totalStops += segment.stops;
+      acc[leg].totalStops += 1;
       return acc;
     }, {})
   );

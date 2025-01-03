@@ -11,6 +11,9 @@ export type fSearchParams = {
   flight_numbers: string;
   stops: string;
   refundable: string;
+  fastest: string;
+  earliest: string;
+  cheapest: string;
 };
 
 export interface IFlightCache {

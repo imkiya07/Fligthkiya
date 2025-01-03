@@ -1799,3 +1799,26 @@ TypeError: Cannot destructure property 'OriginDestinationOptions' of '(intermedi
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2025-01-03T05:32:50.905Z] select `name` from `airlines` where `iata` = 'EK' limit 1 - read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
+[2025-01-03T05:39:32.224Z] Cannot read properties of undefined (reading 'some')
+TypeError: Cannot read properties of undefined (reading 'some')
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\utils\preBooking.utils.js:88:66
+    at Array.filter (<anonymous>)
+    at filterByCarrierCode (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\utils\preBooking.utils.js:88:21)
+    at PreBookingService.flightSearch (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\flightSearch.service.js:25:81)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:11:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+
+[2025-01-03T06:27:11.980Z] Invalid integer: NaN
+Error: Invalid integer: NaN
+    at generateV1Error (D:\PROJECTS\flight_kiya_server\node_modules\stripe\cjs\Error.js:11:20)
+    at res.toJSON.then.Error_js_1.StripeAPIError.message (D:\PROJECTS\flight_kiya_server\node_modules\stripe\cjs\RequestSender.js:108:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+

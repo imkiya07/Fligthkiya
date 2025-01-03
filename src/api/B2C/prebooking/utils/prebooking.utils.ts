@@ -11,11 +11,9 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
   // FORMAT & FILTER DATA
   const filter: {
     airlines: any[];
-    flight_numbers: string[];
     stops: number[];
   } = {
     airlines: [],
-    flight_numbers: [],
     stops: [],
   };
 
@@ -43,12 +41,10 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
       filter.airlines.push({
         value: item?.OperatingCarrierCode,
         label: operating_airline,
+        airline_img: imageBaseUrl + operating_airline + ".png",
       });
     }
 
-    if (!filter.flight_numbers.includes(item?.OperatingFlightNumber)) {
-      filter.flight_numbers.push(item?.OperatingFlightNumber);
-    }
     if (!filter.stops.includes(item?.stops)) {
       filter.stops.push(item?.stops);
     }
@@ -104,6 +100,23 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
     const coreFlightInfo = getCoreFlightInfo(segments);
     const flights = getFlights(segments);
 
+    // Calculate layover time for each segment
+    for (let i = 1; i < segments.length; i++) {
+      const previousArrival = new Date(segments[i - 1].ArrivalDateTime) as any;
+      const currentDeparture = new Date(segments[i].DepartureDateTime) as any;
+
+      const layoverTimeInMinutes =
+        (currentDeparture - previousArrival) / (1000 * 60); // Difference in minutes
+      const layoverHours = Math.floor(layoverTimeInMinutes / 60);
+      const layoverMinutes = layoverTimeInMinutes % 60;
+
+      // Format the layover time
+      const formattedLayoverTime = `${layoverHours}h ${layoverMinutes}m`;
+
+      // Add layover time to the current segment
+      segments[i].LayoverTime = formattedLayoverTime;
+    }
+
     results.push({
       flight_id: uuidv4(),
       airline: pricedItem.ValidatingCarrier,
@@ -126,26 +139,11 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
 export const filterByCarrierCode = (data: any, carrierCode: string) => {
   if (carrierCode) {
     return data.filter((flight: any) =>
-      flight.originDestinations.some((destination: any) =>
+      flight.flights.some((destination: any) =>
         carrierCode
           .replace(" ", "")
           .split(",")
-          .includes(destination.OperatingCarrierCode)
-      )
-    );
-  }
-  return data;
-};
-
-// FILTER BY FLIGHT NUMBERS
-export const filterByFlightNumber = (data: any, flightNumber: string) => {
-  if (flightNumber) {
-    return data.filter((flight: any) =>
-      flight.originDestinations.some((destination: any) =>
-        flightNumber
-          .replace(" ", "")
-          .split(",")
-          .includes(destination.OperatingFlightNumber)
+          .includes(destination.airline_code)
       )
     );
   }
@@ -164,6 +162,40 @@ export const filterByStops = (data: any, stops: string) => {
       )
     );
   }
+  return data;
+};
+
+// Sort the data by total journey duration
+export const sortDataByDuration = (data: any[]) => {
+  data.sort((a, b) => {
+    const totalDurationA = a.flights.reduce(
+      (sum: any, flight: any) => sum + flight.totalJourneyDuration,
+      0
+    );
+    const totalDurationB = b.flights.reduce(
+      (sum: any, flight: any) => sum + flight.totalJourneyDuration,
+      0
+    );
+    return totalDurationA - totalDurationB;
+  });
+
+  return data;
+};
+
+export const sortDataEarliest = (data: any[]) => {
+  data.sort((a, b) => {
+    const dateA = new Date(a.DepartureDateTime).getTime();
+    const dateB = new Date(b.DepartureDateTime).getTime();
+    return dateA - dateB; // Difference in milliseconds
+  });
+  return data;
+};
+
+export const sortDataCheapest = (data: any[]) => {
+  data.sort(
+    (a, b) => parseFloat(a.fares.TotalFare) - parseFloat(b.fares.TotalFare)
+  );
+
   return data;
 };
 

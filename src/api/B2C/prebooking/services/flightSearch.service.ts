@@ -8,9 +8,11 @@ import {
 import { PreBookingModels } from "../models/preBooking.models";
 import {
   filterByCarrierCode,
-  filterByFlightNumber,
   filterByStops,
   FormatFlightSearch,
+  sortDataByDuration,
+  sortDataCheapest,
+  sortDataEarliest,
 } from "../utils/preBooking.utils";
 
 export class FlightSearchService extends AbstractServices {
@@ -28,18 +30,24 @@ export class FlightSearchService extends AbstractServices {
       const cachedData = deviceId ? this.cache.get<any>(cacheKey) : null;
 
       if (cachedData) {
-        const { airlines, flight_numbers, stops, refundable } =
+        const { airlines, stops, refundable, fastest, earliest, cheapest } =
           req.query as fSearchParams;
+
+        const bolFastest = fastest === "true";
+        const bolEarliest = earliest === "true";
+        const bolCheapest = cheapest === "true";
 
         let results = cachedData?.results;
 
         results = airlines ? filterByCarrierCode(results, airlines) : results;
 
-        results = flight_numbers
-          ? filterByFlightNumber(results, flight_numbers)
-          : results;
-
         results = stops ? filterByStops(results, stops) : results;
+
+        results = Boolean(bolFastest) ? sortDataByDuration(results) : results;
+
+        results = Boolean(bolEarliest) ? sortDataEarliest(results) : results;
+
+        results = Boolean(bolCheapest) ? sortDataCheapest(results) : results;
 
         return {
           success: true,

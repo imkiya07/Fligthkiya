@@ -40,7 +40,9 @@ export class PaymentServices extends AbstractServices {
       );
 
       const unit_amount = +(
-        Number(formattedData.TotalFare.Amount) * 100
+        (Number(formattedData.TotalFare.Amount) +
+          Number(formattedData.TotalTax.Amount)) *
+        100
       ).toFixed(2);
 
       const session = await stripe.checkout.sessions.create({
