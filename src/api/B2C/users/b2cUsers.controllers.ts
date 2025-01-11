@@ -26,4 +26,54 @@ export class B2cUsersController extends AbstractController {
       res.json(data);
     }
   );
+
+  public updateUserProfile = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.updateUserProfile(req);
+      res.json(data);
+    }
+  );
+
+  public getProfileInfo = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.getProfileInfo(req);
+      res.json(data);
+    }
+  );
+
+  public sendVerificationEmail = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.sendVerificationEmail(req);
+      res.json(data);
+    }
+  );
+
+  public verifyProfile = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.verifyProfile(req);
+    res.json(data);
+  });
+
+  // Update profile picture
+  public updateProfilePicture = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const { user_id } = req; // Extract user_id from request
+      const imgUrl = req.imgUrl; // Get file path from multer
+
+      if (!imgUrl) {
+        res.status(400).json({
+          success: false,
+          message: "No file uploaded",
+        });
+        return;
+      }
+
+      const data = await this.services.updateProfilePicture(user_id, imgUrl);
+
+      if (!data.success) {
+        res.status(404).json(data);
+      } else {
+        res.json(data);
+      }
+    }
+  );
 }

@@ -4,7 +4,6 @@ import { dbConfig as config } from "../config/knexfile";
 
 dotenv.config();
 
-// Set up the environment configuration (development/production)
 const environment = process.env.NODE_ENV || "development";
 const dbConfig = config[environment];
 

@@ -1,3 +1,5 @@
+import { ITravellersBody } from "../../travelers/travelers.interfaces";
+
 export interface IBookingContact {
   CountryCode: string;
   AreaCode: string;
@@ -11,6 +13,7 @@ export interface IBookingReqBody extends IBookingContact {
 }
 
 export interface AirTraveler {
+  travelerId?: number;
   PassengerType: string;
   Gender: string;
   PassengerName: PassengerName;
@@ -51,10 +54,23 @@ export interface IAirTravelers {
 export interface IBookingInfo {
   user_id: number;
   orderNumber: string;
-  CountryCode: string;
-  AreaCode: string;
   PhoneNumber: string;
   Email: string;
-  PostCode: string;
-  revalidation_req_body: string;
+  revalidation_req_body?: string;
+}
+
+export interface IPdfData {
+  orderNumber: string;
+  PhoneNumber: string;
+  Email: string;
+  airline_name: string;
+  departureAirportCode: string;
+  departureAirportName: string;
+  arrivalAirportCode: string;
+  arrivalAirportName: string;
+  DepartureDateTime: string;
+  ArrivalDateTime: string;
+  flightNo: string;
+  ticketStatus: string;
+  passengerData: ITravellersBody[];
 }

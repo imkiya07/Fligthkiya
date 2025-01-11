@@ -25,6 +25,13 @@ export class AdminUsersController extends AbstractController {
     }
   );
 
+  public updateBookings = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.updateBookings(req);
+      res.json(data);
+    }
+  );
+
   public getCancelBookingReq = this.wrapAsync(
     async (req: Request, res: Response) => {
       const data = await this.services.getCancelBookingReq(req);

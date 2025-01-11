@@ -35,6 +35,33 @@ export function authMiddleware(
 }
 
 // Authentication middleware
+export function optionalAuthMiddleware(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  const authHeader = req.headers.authorization;
+
+  if (authHeader) {
+    const token = authHeader.split(" ")[1];
+
+    if (token) {
+      const secretKey = process.env.JWT_SECRET as string;
+      // Verify the token
+      const decoded = jwt.verify(token, secretKey);
+
+      // Attach the decoded payload to the request object (e.g., req.user)
+      (req as any).user = decoded;
+      req.user_id = req.user.user_id;
+
+      // Proceed to the next middleware or route handler
+    }
+  }
+
+  next();
+}
+
+// Authentication middleware
 export function adminAuthCheck(
   req: Request,
   res: Response,

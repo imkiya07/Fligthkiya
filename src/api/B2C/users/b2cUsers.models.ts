@@ -12,9 +12,8 @@ export class B2cUsersModel {
       .select(
         "id",
         "orderNumber",
-        "CountryCode",
         "Email",
-        "bookingStatus",
+        "ticketStatus",
         "pnrId",
         "TktTimeLimit",
         "BaseFare",
@@ -30,7 +29,8 @@ export class B2cUsersModel {
         "flight_no",
         "departure_datetime"
       )
-      .where("user_id", userId);
+      .where("user_id", userId)
+      .orderBy("id", "desc");
   };
 
   getUpdateBooking = async (
@@ -43,6 +43,7 @@ export class B2cUsersModel {
     const data = await this.db("refund_or_void_requests as t")
       .select(
         "t.id",
+        "pnrId",
         "request_type",
         "reason",
         "remarks",
@@ -55,15 +56,9 @@ export class B2cUsersModel {
         "users.email",
         "phone_number",
         "orderNumber",
-        "CountryCode",
-        "AreaCode",
         "PhoneNumber",
         "b.Email",
-        "PostCode",
-        "bookingStatus",
-        "IsPriceChange",
-        "IsScheduleChange",
-        "pnrId",
+        "ticketStatus",
         "TktTimeLimit",
         "baseFare",
         "taxAndCharge",

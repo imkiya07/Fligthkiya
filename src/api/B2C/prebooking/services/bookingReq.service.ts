@@ -1,9 +1,15 @@
 import { Request } from "express";
-import nodemailer from "nodemailer";
+import path from "path";
 import AbstractServices from "../../../../core/abstract/abstract.services";
-import { bookingRequestTemplate } from "../../../../core/common/emailTemplate";
-import { IBookingReqBody } from "../interfaces/bookingReqBody.interface";
+import { EmailSend } from "../../../../core/common/emailSender";
+import { ITravellersBody } from "../../travelers/travelers.interfaces";
+import { AirTravelersModel } from "../../travelers/travelers.models";
+import {
+  IBookingReqBody,
+  IPdfData,
+} from "../interfaces/bookingReqBody.interface";
 import { BookingModels } from "../models/booking.models";
+import { BookingPDFService } from "../utils/bookingReqPdfSend";
 import { UserCreateWithTempPass } from "./userCreateTempPass.service";
 
 export class BookingRequestService extends AbstractServices {
@@ -15,38 +21,46 @@ export class BookingRequestService extends AbstractServices {
     const body = req.body as IBookingReqBody;
 
     const conn = new BookingModels(this.db);
+    const bookingConn = new AirTravelersModel(this.db);
     const deviceId = req.deviceId;
 
     const revalidateReqBody = this.cache.get(`revalidateReqBody-${deviceId}`);
 
-    if (!revalidateReqBody) {
+    const revalidationData = this.cache.get<any>(`revalidation-${deviceId}`);
+
+    if (!revalidateReqBody || !revalidationData) {
       this.throwError("Revalidation is required!", 400);
     }
 
     const createUser = new UserCreateWithTempPass();
-    const { token, user_id } = await createUser.createUserAndSendEmail(body);
+
+    let userId = req?.user_id;
+    let token;
+    if (!req?.user_id) {
+      const loginInfo = await createUser.createUserAndSendEmail(body);
+      userId = loginInfo?.user_id;
+      token = loginInfo?.token;
+    }
 
     const orderNumber = generateOrderNumber();
 
     const bookingReqPayload = {
-      user_id,
+      user_id: userId,
       orderNumber,
-      CountryCode: body?.CountryCode,
-      AreaCode: body?.AreaCode,
       PhoneNumber: body?.PhoneNumber,
       Email: body?.Email,
-      PostCode: body?.PostCode,
-      revalidation_req_body: JSON.stringify(revalidateReqBody),
+      // revalidation_req_body: "JSON.stringify(revalidateReqBody)",
       passengerBody: JSON.stringify(body),
-      bookingStatus: "BIP",
+      ticketStatus: "BOOKING_IN_PROGRESS",
     };
 
     const booking_id = await conn.insertBookingInfo(bookingReqPayload);
 
-    const passengerData = body?.AirTravelers?.map((item) => {
-      return {
-        user_id,
-        booking_id,
+    const passengerData: ITravellersBody[] = [];
+
+    for (const item of body?.AirTravelers) {
+      const travelerPayload: ITravellersBody = {
+        user_id: userId,
         PassengerType: item.PassengerType,
         Gender: item.Gender,
         DateOfBirth: item.DateOfBirth,
@@ -59,32 +73,48 @@ export class BookingRequestService extends AbstractServices {
         ExpiryDate: item?.Passport?.ExpiryDate,
         Country: item?.Passport?.Country,
       };
-    });
 
-    await conn.insertAirTravelers(passengerData);
+      passengerData.push(travelerPayload);
 
-    const transporter = nodemailer.createTransport({
-      service: "Gmail", // Or another SMTP service
-      auth: {
-        user: process.env.EMAIL_SEND_EMAIL_ID,
-        pass: process.env.EMAIL_SEND_PASSWORD,
-      },
-    });
+      const traveller_id =
+        item?.travelerId || (await bookingConn.createTraveler(travelerPayload));
 
-    const mailOptions = {
-      from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
-      to: body?.Email,
-      subject: "Flight Booking Request Successful",
-      html: bookingRequestTemplate(bookingReqPayload, passengerData),
+      await this.db("booking_travellers").insert({
+        booking_id,
+        traveller_id,
+      });
+    }
+
+    const pdfData: IPdfData = {
+      orderNumber,
+      airline_name: revalidationData?.airline_name,
+      arrivalAirportCode: revalidationData?.arrivalAirportCode,
+      arrivalAirportName: revalidationData?.arrivalAirportName,
+      ArrivalDateTime: revalidationData?.ArrivalDateTime,
+      departureAirportCode: revalidationData?.departureAirportCode,
+      departureAirportName: revalidationData?.departureAirportName,
+      DepartureDateTime: revalidationData?.DepartureDateTime,
+      flightNo: revalidationData?.flightNo,
+      Email: bookingReqPayload?.Email,
+      PhoneNumber: bookingReqPayload?.PhoneNumber,
+      ticketStatus: bookingReqPayload?.ticketStatus,
+      passengerData,
     };
 
-    await transporter.sendMail(mailOptions);
+    const pdfPath = path.join(__dirname, "example.pdf");
+
+    await BookingPDFService.generateProfessionalPDF(pdfData, pdfPath);
+    await EmailSend.sendEmailWithPDF(
+      pdfPath,
+      body?.Email,
+      "Ticket booking request"
+    );
 
     return {
       success: true,
       message: "Temporary booking successfully",
       data: {
-        user_id,
+        user_id: userId,
         booking_id,
         orderNumber,
         token,

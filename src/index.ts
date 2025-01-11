@@ -1,15 +1,15 @@
-const fs = require("fs");
-const path = require("path");
 import cookieParser from "cookie-parser";
 import crypto from "crypto";
 import dotenv from "dotenv";
 import { NextFunction, Request, Response } from "express";
 import nodemailer from "nodemailer";
+import { generateEmailTemplate } from "./api/payments/payment.utils";
 import { app } from "./app";
 import requestLogger from "./core/utils/logger/reqLogger";
 import { errorHandler } from "./middlewares/errorHandler";
 import { registerRoutes } from "./routes/routes";
-import { generateEmailTemplate } from "./api/payments/payment.utils";
+import express from "express";
+import path from "path";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -20,6 +20,8 @@ const PORT = process.env.PORT || 4001;
 app.use(errorHandler);
 app.use(requestLogger);
 app.use(cookieParser());
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use((req, res, next) => {
   const userAgent = req.get("User-Agent") || "";

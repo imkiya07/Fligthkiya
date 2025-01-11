@@ -24,5 +24,7 @@ export class PaymentRoutes {
     );
 
     this.router.post("/cancel/:session", this.controller.paymentCancel);
+
+    this.router.get("/app-pay-intent/:id", this.controller.appsPaymentIntent);
   }
 }

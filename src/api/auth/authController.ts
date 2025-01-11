@@ -35,4 +35,18 @@ export class AuthController extends AbstractController {
     const data = await this.services.refreshToken(req);
     res.json(data);
   });
+
+  // Use an arrow function
+  public requestPasswordReset = this.wrapAsync(
+    async (req: Request, res: Response) => {
+      const data = await this.services.requestPasswordReset(req);
+      res.json(data);
+    }
+  );
+
+  // Use an arrow function
+  public resetPassword = this.wrapAsync(async (req: Request, res: Response) => {
+    const data = await this.services.resetPassword(req);
+    res.json(data);
+  });
 }

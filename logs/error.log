@@ -1822,3 +1822,487 @@ Error: Invalid integer: NaN
     at res.toJSON.then.Error_js_1.StripeAPIError.message (D:\PROJECTS\flight_kiya_server\node_modules\stripe\cjs\RequestSender.js:108:62)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
 
+[2025-01-10T07:17:45.443Z] Email Address Already in Use
+Error: Email Address Already in Use
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.registrationUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:31:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T09:41:58.721Z] select `id` from `users` where `user_id` = 30 limit 1 - Unknown column 'id' in 'field list'
+Error: select `id` from `users` where `user_id` = 30 limit 1 - Unknown column 'id' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T10:37:47.512Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:50:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T10:52:48.216Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:49:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T10:53:57.377Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:38:33
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+
+[2025-01-10T10:54:55.726Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:49:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T10:55:54.937Z] Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\response.js:278:15)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:49:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T11:02:25.021Z] User does't exist
+Error: User does't exist
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:65:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T13:08:33.580Z] insert into `air_travelers` (`Country`, `DateOfBirth`, `ExpiryDate`, `Gender`, `NationalID`, `PassengerFirstName`, `PassengerLastName`, `PassengerNationality`, `PassengerTitle`, `PassengerType`, `PassportNumber`, `user_id`) values ('United States', '1990-05-15', '2030-05-15', 'Male', '123456789', 'John', 'Doe', 'American', 'Mr.', 'Adult', 'A12345678', 30) - Data too long for column 'Country' at row 1
+Error: insert into `air_travelers` (`Country`, `DateOfBirth`, `ExpiryDate`, `Gender`, `NationalID`, `PassengerFirstName`, `PassengerLastName`, `PassengerNationality`, `PassengerTitle`, `PassengerType`, `PassportNumber`, `user_id`) values ('United States', '1990-05-15', '2030-05-15', 'Male', '123456789', 'John', 'Doe', 'American', 'Mr.', 'Adult', 'A12345678', 30) - Data too long for column 'Country' at row 1
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T13:09:21.308Z] insert into `air_travelers` (`Country`, `DateOfBirth`, `ExpiryDate`, `Gender`, `NationalID`, `PassengerFirstName`, `PassengerLastName`, `PassengerNationality`, `PassengerTitle`, `PassengerType`, `PassportNumber`, `user_id`) values ('United States', '1990-05-15', '2030-05-15', 'Male', '123456789', 'John', 'Doe', 'American', 'Mr.', 'Adult', 'A12345678', 30) - Data too long for column 'Gender' at row 1
+Error: insert into `air_travelers` (`Country`, `DateOfBirth`, `ExpiryDate`, `Gender`, `NationalID`, `PassengerFirstName`, `PassengerLastName`, `PassengerNationality`, `PassengerTitle`, `PassengerType`, `PassportNumber`, `user_id`) values ('United States', '1990-05-15', '2030-05-15', 'Male', '123456789', 'John', 'Doe', 'American', 'Mr.', 'Adult', 'A12345678', 30) - Data too long for column 'Gender' at row 1
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T16:37:15.209Z] Email Address Already in Use
+Error: Email Address Already in Use
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.registrationUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:33:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:11:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T16:38:42.371Z] The "path" argument must be of type string. Received null
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received null
+    at Object.basename (node:path:819:5)
+    at removeFile (D:\PROJECTS\flight_kiya_server\dist\core\multer\multer.js:50:85)
+    at B2cUsersServices.updateProfilePicture (D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.services.js:111:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\users\b2cUsers.controllers.js:49:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T16:41:51.320Z] insert into `verify_tokens` (`reset_expires`, `reset_token`, `user_id`) values (1736530911313, 'c72a96a2fb02c5428a6622389d0c5da8c8f80ade', 31) - Incorrect datetime value: '1736530911313' for column 'reset_expires' at row 1
+Error: insert into `verify_tokens` (`reset_expires`, `reset_token`, `user_id`) values (1736530911313, 'c72a96a2fb02c5428a6622389d0c5da8c8f80ade', 31) - Incorrect datetime value: '1736530911313' for column 'reset_expires' at row 1
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T16:59:30.051Z] insert into `verify_tokens` (`reset_expires`, `reset_token`, `user_id`) values ('2025-01-10 23:59:30', '66832', 31) - Duplicate entry '31' for key 'verify_tokens.PRIMARY'
+Error: insert into `verify_tokens` (`reset_expires`, `reset_token`, `user_id`) values ('2025-01-10 23:59:30', '66832', 31) - Duplicate entry '31' for key 'verify_tokens.PRIMARY'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T17:09:54.396Z] Invalid email or password
+Error: Invalid email or password
+    at AuthServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at AuthServices.loginUser (D:\PROJECTS\flight_kiya_server\dist\api\auth\authServices.js:79:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\auth\authController.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T17:40:32.522Z] update `users` set `is_verified` = true where `user_id` = 31 - Unknown column 'is_verified' in 'field list'
+Error: update `users` set `is_verified` = true where `user_id` = 31 - Unknown column 'is_verified' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:30:25.194Z] insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values (DEFAULT, '91', 'nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533825179', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'AreaCode' in 'field list'
+Error: insert into `booking_info` (`AreaCode`, `CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values (DEFAULT, '91', 'nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533825179', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'AreaCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:31:00.115Z] insert into `booking_info` (`CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('91', 'nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533860106', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'CountryCode' in 'field list'
+Error: insert into `booking_info` (`CountryCode`, `Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('91', 'nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533860106', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'CountryCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:31:25.237Z] insert into `booking_info` (`Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533885232', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'PostCode' in 'field list'
+Error: insert into `booking_info` (`Email`, `PhoneNumber`, `PostCode`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', '560028', 'BIP', 'FL1736533885232', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'PostCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:31:52.492Z] insert into `booking_info` (`Email`, `PhoneNumber`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', 'BIP', 'FL1736533912483', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'bookingStatus' in 'field list'
+Error: insert into `booking_info` (`Email`, `PhoneNumber`, `bookingStatus`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', 'BIP', 'FL1736533912483', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 31) - Unknown column 'bookingStatus' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:32:41.792Z] insert into `booking_info` (`Email`, `PhoneNumber`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `ticketStatus`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', 'FL1736533961782', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 'BOOKING_IN_PROGRESS', 31) - Check constraint 'booking_info_chk_1' is violated.
+Error: insert into `booking_info` (`Email`, `PhoneNumber`, `orderNumber`, `passengerBody`, `revalidation_req_body`, `ticketStatus`, `user_id`) values ('nazmulhosenm668@gmail.com', '87657897', 'FL1736533961782', '{\"AirTravelers\":[{\"travelerId\":1,\"PassengerType\":\"ADT\",\"Gender\":\"M\",\"PassengerName\":{\"PassengerTitle\":\"MR\",\"PassengerFirstName\":\"MOHAMMED\",\"PassengerLastName\":\"MUBARAK\"},\"DateOfBirth\":\"1988-01-03T00:00:00\",\"Passport\":{\"PassportNumber\":\"Z876789\",\"ExpiryDate\":\"2025-01-03T00:00:00\",\"Country\":\"IN\"},\"PassengerNationality\":\"IN\",\"NationalID\":\"IN\"}],\"CountryCode\":\"91\",\"PhoneNumber\":\"87657897\",\"Email\":\"nazmulhosenm668@gmail.com\",\"PostCode\":\"560028\"}', 'JSON.stringify(revalidateReqBody)', 'BOOKING_IN_PROGRESS', 31) - Check constraint 'booking_info_chk_1' is violated.
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:34:57.874Z] insert into `booking_travellers` (`booking_id`, `traveller_id`) values (92, 1) - Cannot add or update a child row: a foreign key constraint fails (`cosmelic_fk`.`booking_travellers`, CONSTRAINT `booking_travellers_ibfk_2` FOREIGN KEY (`traveller_id`) REFERENCES `air_travelers` (`id`) ON DELETE CASCADE)
+Error: insert into `booking_travellers` (`booking_id`, `traveller_id`) values (92, 1) - Cannot add or update a child row: a foreign key constraint fails (`cosmelic_fk`.`booking_travellers`, CONSTRAINT `booking_travellers_ibfk_2` FOREIGN KEY (`traveller_id`) REFERENCES `air_travelers` (`id`) ON DELETE CASCADE)
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-10T18:37:15.593Z] Timed out after waiting 30000ms
+TimeoutError: Timed out after waiting 30000ms
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\common\util.js:258:19
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:3986:35
+    at OperatorSubscriber2._this._next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1055:13)
+    at Subscriber2.next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:678:16)
+    at AsyncAction2.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:4863:24)
+    at AsyncAction2._execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1974:16)
+    at AsyncAction2.execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1963:26)
+    at AsyncScheduler2.flush (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:2235:30)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2025-01-10T18:38:49.252Z] Navigation timeout of 30000 ms exceeded
+TimeoutError: Navigation timeout of 30000 ms exceeded
+    at new Deferred (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:60:34)
+    at Deferred.create (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:21:16)
+    at new LifecycleWatcher (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\LifecycleWatcher.js:69:60)
+    at CdpFrame.setContent (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:232:29)
+    at async CdpPage.setContent (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:568:13)
+    at async generatePDF (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingReq.service.js:108:5)
+    at async BookingRequestService.bookingRequest (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\bookingReq.service.js:81:35)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:26:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-10T18:40:37.827Z] Timed out after waiting 30000ms
+TimeoutError: Timed out after waiting 30000ms
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\common\util.js:258:19
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:3986:35
+    at OperatorSubscriber2._this._next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1055:13)
+    at Subscriber2.next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:678:16)
+    at AsyncAction2.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:4863:24)
+    at AsyncAction2._execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1974:16)
+    at AsyncAction2.execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1963:26)
+    at AsyncScheduler2.flush (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:2235:30)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2025-01-10T18:43:29.025Z] Timed out after waiting 30000ms
+TimeoutError: Timed out after waiting 30000ms
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\common\util.js:258:19
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:3986:35
+    at OperatorSubscriber2._this._next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1055:13)
+    at Subscriber2.next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:678:16)
+    at AsyncAction2.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:4863:24)
+    at AsyncAction2._execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1974:16)
+    at AsyncAction2.execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1963:26)
+    at AsyncScheduler2.flush (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:2235:30)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2025-01-10T18:47:03.614Z] Timed out after waiting 30000ms
+TimeoutError: Timed out after waiting 30000ms
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\common\util.js:258:19
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:3986:35
+    at OperatorSubscriber2._this._next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1055:13)
+    at Subscriber2.next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:678:16)
+    at AsyncAction2.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:4863:24)
+    at AsyncAction2._execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1974:16)
+    at AsyncAction2.execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1963:26)
+    at AsyncScheduler2.flush (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:2235:30)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2025-01-10T18:53:14.355Z] Timed out after waiting 30000ms
+TimeoutError: Timed out after waiting 30000ms
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\puppeteer\common\util.js:258:19
+    at D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:3986:35
+    at OperatorSubscriber2._this._next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1055:13)
+    at Subscriber2.next (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:678:16)
+    at AsyncAction2.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:4863:24)
+    at AsyncAction2._execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1974:16)
+    at AsyncAction2.execute (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:1963:26)
+    at AsyncScheduler2.flush (D:\PROJECTS\flight_kiya_server\node_modules\puppeteer-core\lib\cjs\third_party\rxjs\rxjs.js:2235:30)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+
+[2025-01-11T07:30:46.828Z] Revalidation failed. Please try again.
+Error: Revalidation failed. Please try again.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:69:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-11T13:32:51.020Z] select `booking_info`.`id`, `booking_info`.`orderNumber`, `booking_info`.`CountryCode`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`Email`, `booking_info`.`ticketStatus`, `booking_info`.`pnrId`, `booking_info`.`baseFare`, `booking_info`.`taxAndCharge`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`paymentAt`, `booking_info`.`revalidation_req_body`, `booking_info`.`passengerBody`, `booking_info`.`departure_datetime`, `u`.`full_name`, `u`.`username` from `booking_info` left join `users` as `u` on `u`.`user_id` = `booking_info`.`user_id` where `id` = '109' limit 1 - Unknown column 'booking_info.CountryCode' in 'field list'
+Error: select `booking_info`.`id`, `booking_info`.`orderNumber`, `booking_info`.`CountryCode`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`Email`, `booking_info`.`ticketStatus`, `booking_info`.`pnrId`, `booking_info`.`baseFare`, `booking_info`.`taxAndCharge`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`paymentAt`, `booking_info`.`revalidation_req_body`, `booking_info`.`passengerBody`, `booking_info`.`departure_datetime`, `u`.`full_name`, `u`.`username` from `booking_info` left join `users` as `u` on `u`.`user_id` = `booking_info`.`user_id` where `id` = '109' limit 1 - Unknown column 'booking_info.CountryCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T13:36:15.942Z] Passport expiry date is not valid.
+Error: Passport expiry date is not valid.
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:109:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-11T16:41:23.763Z] select `id`, `orderNumber`, `CountryCode`, `Email`, `bookingStatus`, `pnrId`, `TktTimeLimit`, `BaseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `origin`, `destination`, `airline`, `flight_no`, `departure_datetime` from `booking_info` where `user_id` = 31 - Unknown column 'CountryCode' in 'field list'
+Error: select `id`, `orderNumber`, `CountryCode`, `Email`, `bookingStatus`, `pnrId`, `TktTimeLimit`, `BaseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `origin`, `destination`, `airline`, `flight_no`, `departure_datetime` from `booking_info` where `user_id` = 31 - Unknown column 'CountryCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T16:42:08.844Z] select `id`, `orderNumber`, `Email`, `bookingStatus`, `pnrId`, `TktTimeLimit`, `BaseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `origin`, `destination`, `airline`, `flight_no`, `departure_datetime` from `booking_info` where `user_id` = 31 - Unknown column 'bookingStatus' in 'field list'
+Error: select `id`, `orderNumber`, `Email`, `bookingStatus`, `pnrId`, `TktTimeLimit`, `BaseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `origin`, `destination`, `airline`, `flight_no`, `departure_datetime` from `booking_info` where `user_id` = 31 - Unknown column 'bookingStatus' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T16:45:10.553Z] select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`CountryCode`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.CountryCode' in 'field list'
+Error: select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`CountryCode`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.CountryCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T16:45:37.023Z] select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.AreaCode' in 'field list'
+Error: select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`AreaCode`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.AreaCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T16:45:59.512Z] select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.PostCode' in 'field list'
+Error: select `booking_info`.`id`, `booking_info`.`user_id`, `users`.`user_type`, `users`.`full_name`, `users`.`email` as `user_email`, `users`.`phone_number`, `booking_info`.`orderNumber`, `booking_info`.`PhoneNumber`, `booking_info`.`PostCode`, `booking_info`.`bookingStatus`, `booking_info`.`pnrId`, `booking_info`.`TktTimeLimit`, `booking_info`.`baseFare`, `booking_info`.`discount`, `booking_info`.`appliedCoupon`, `booking_info`.`netTotal`, `booking_info`.`paymentStatus`, `booking_info`.`ticketStatus`, `booking_info`.`paymentAt`, `booking_info`.`createdAt`, `booking_info`.`TraceId` from `booking_info` left join `users` on `users`.`user_id` = `booking_info`.`user_id` order by `booking_info`.`id` desc limit 10 - Unknown column 'booking_info.PostCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T17:10:15.428Z] select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `CountryCode`, `AreaCode`, `PhoneNumber`, `b`.`Email`, `PostCode`, `bookingStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'CountryCode' in 'field list'
+Error: select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `CountryCode`, `AreaCode`, `PhoneNumber`, `b`.`Email`, `PostCode`, `bookingStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'CountryCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T17:11:11.686Z] select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `PhoneNumber`, `b`.`Email`, `PostCode`, `bookingStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'PostCode' in 'field list'
+Error: select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `PhoneNumber`, `b`.`Email`, `PostCode`, `bookingStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'PostCode' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T17:11:39.340Z] select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `PhoneNumber`, `b`.`Email`, `ticketStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'IsPriceChange' in 'field list'
+Error: select `t`.`id`, `request_type`, `reason`, `remarks`, `amount`, `status`, `admin_comments`, `t`.`created_at`, `user_type`, `full_name`, `users`.`email`, `phone_number`, `orderNumber`, `PhoneNumber`, `b`.`Email`, `ticketStatus`, `IsPriceChange`, `IsScheduleChange`, `pnrId`, `TktTimeLimit`, `baseFare`, `taxAndCharge`, `discount`, `appliedCoupon`, `netTotal`, `paymentStatus`, `ticketStatus`, `departure_datetime` from `refund_or_void_requests` as `t` left join `users` on `users`.`user_id` = `t`.`user_id` left join `booking_info` as `b` on `b`.`id` = `t`.`id` where `request_type` = 'REFUND' and `status` = 'pending' and `t`.`user_id` = 31 order by `t`.`id` desc limit 10 - Unknown column 'IsPriceChange' in 'field list'
+    at Packet.asError (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packets\packet.js:738:17)
+    at Query.execute (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\commands\command.js:29:26)
+    at Connection.handlePacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\PROJECTS\flight_kiya_server\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+
+[2025-01-11T17:13:12.774Z] Booking may be already ordered for ticket or ticketed or cancelled.
+Error: Booking may be already ordered for ticket or ticketed or cancelled.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.orderTicket (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\preBooking.services.js:36:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:31:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-11T17:40:29.531Z] Revalidation failed. Please try again.
+Error: Revalidation failed. Please try again.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:69:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-11T17:40:40.270Z] Revalidation failed. Please try again.
+Error: Revalidation failed. Please try again.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:69:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+

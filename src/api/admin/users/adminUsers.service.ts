@@ -62,6 +62,19 @@ export class AdminUsersServices extends AbstractServices {
     };
   };
 
+  // BOOKING REQUEST
+  updateBookings = async (req: Request) => {
+    const id = +req.params.id;
+    const ticketStatus = req.body.ticketStatus;
+
+    await this.db("booking_info").update({ ticketStatus }).where({ id });
+
+    return {
+      success: true,
+      message: "Booking status updated",
+    };
+  };
+
   getCancelBookingReq = async (req: Request) => {
     const conn = new B2cUsersModel(this.db);
 

@@ -1,6 +1,12 @@
 import crypto from "crypto";
+import dayjs from "dayjs";
 import { Request } from "express";
+import nodemailer from "nodemailer";
 import AbstractServices from "../../core/abstract/abstract.services";
+import {
+  passwordUpdatedTemplate,
+  resetPassTemplate,
+} from "../../core/common/emailTemplate";
 import { AdminAuthModels } from "../admin/auth/adminAuth.model";
 import { AuthModel } from "./AuthModel";
 import { IRegistration } from "./authInterfaces";
@@ -22,6 +28,7 @@ export class AuthServices extends AbstractServices {
     super();
   }
 
+  // REGISTRATION USER
   registrationUser = async (req: Request) => {
     const conn = new AuthModel(this.db);
 
@@ -68,6 +75,11 @@ export class AuthServices extends AbstractServices {
     };
   };
 
+  /**
+   * LOGIN USER
+   * @param req
+   * @returns
+   */
   loginUser = async (req: Request) => {
     const conn = new AuthModel(this.db);
 
@@ -90,7 +102,13 @@ export class AuthServices extends AbstractServices {
       throw this.throwError("Invalid email or password", 401);
     }
 
-    const token = generateToken(restData);
+    const token = generateToken({
+      user_id: user?.user_id,
+      full_name: user?.full_name,
+      username: user?.username,
+      email: user?.email,
+      account_verified: user?.account_verified,
+    });
 
     return { success: true, token, data: restData };
   };
@@ -126,6 +144,11 @@ export class AuthServices extends AbstractServices {
     };
   };
 
+  /**
+   * REFRESH TOKEN
+   * @param req
+   * @returns
+   */
   refreshToken = async (req: Request) => {
     const conn = new AuthModel(this.db);
 
@@ -133,4 +156,117 @@ export class AuthServices extends AbstractServices {
 
     return { success: true, data };
   };
+
+  // REQUEST PASSWORD RESET
+  public requestPasswordReset = async (req: Request) => {
+    const { email } = req.body;
+    const conn = new AuthModel(this.db);
+
+    const user = await conn.getUserByEmail(email);
+
+    if (!user) {
+      return {
+        success: false,
+        message: "User not found",
+      };
+    }
+
+    // Generate reset token
+    const resetToken = generateFiveDigitCode();
+    const resetExpires = Date.now() + 3600000; // 1 hour
+    const resetExpiresFormatted = toMySQLDateTime(resetExpires);
+
+    // Store the reset token and expiration time in the database
+    await conn.setVerifyToken(user.user_id, resetToken, resetExpiresFormatted);
+
+    const transporter = nodemailer.createTransport({
+      service: "Gmail", // Or another SMTP service
+      auth: {
+        user: process.env.EMAIL_SEND_EMAIL_ID,
+        pass: process.env.EMAIL_SEND_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Flight kiya" <${process.env.EMAIL_SEND_EMAIL_ID}>`,
+      to: email,
+      subject: "Password Reset Request",
+      html: resetPassTemplate(
+        user.full_name,
+        resetToken,
+        process.env.CL_BASE_URL as string
+      ),
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return {
+      success: true,
+      message: "Password reset email sent",
+    };
+  };
+
+  // RESET PASSWORD
+  public resetPassword = async (req: Request) => {
+    const { token } = req.params;
+    const { newPassword, email } = req.body;
+
+    const conn = new AuthModel(this.db);
+
+    const user = await conn.getUserByEmail(email);
+
+    // Verify token
+    const tokenInfo = await conn.getVerifyToken(user.user_id);
+
+    if (
+      !tokenInfo ||
+      tokenInfo.reset_expires < Date.now() ||
+      tokenInfo.reset_token !== token
+    ) {
+      return {
+        success: false,
+        message: "Token is invalid or expired",
+      };
+    }
+
+    const transporter = nodemailer.createTransport({
+      service: "Gmail", // Or another SMTP service
+      auth: {
+        user: process.env.EMAIL_SEND_EMAIL_ID,
+        pass: process.env.EMAIL_SEND_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Flight kiya" <${process.env.EMAIL_SEND_EMAIL_ID}>`,
+      to: email,
+      subject: "Your password has been updated",
+      html: passwordUpdatedTemplate(
+        user.full_name,
+        process.env.CL_BASE_URL as string
+      ),
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    // Hash the new password and save it
+    const password_hash = hashPassword(newPassword);
+
+    await this.db("users")
+      .update({ password_hash })
+      .where({ user_id: user?.user_id });
+
+    return {
+      success: true,
+      message: "Password reset successfully",
+    };
+  };
 }
+
+export const toMySQLDateTime = (timestamp: number): string => {
+  return dayjs(timestamp).format("YYYY-MM-DD HH:mm:ss");
+};
+
+export const generateFiveDigitCode = (): string => {
+  return Math.floor(10000 + Math.random() * 90000).toString();
+};

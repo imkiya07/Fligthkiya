@@ -78,10 +78,14 @@ export class Revalidation extends AbstractServices {
       itineraryData?.OriginDestinationOptions &&
       itineraryData?.AirItineraryPricingInfo
     ) {
-      this.cache.set(`revalidationOriginDesAirItinerary-${deviceId}`, {
-        OriginDestinationOptions: itineraryData?.OriginDestinationOptions,
-        AirItineraryPricingInfo: itineraryData?.AirItineraryPricingInfo,
-      });
+      this.cache.set(
+        `revalidationOriginDesAirItinerary-${deviceId}`,
+        {
+          OriginDestinationOptions: itineraryData?.OriginDestinationOptions,
+          AirItineraryPricingInfo: itineraryData?.AirItineraryPricingInfo,
+        },
+        "45m"
+      );
 
       const { FareSourceCode, ...data } = revalidationResponse;
 

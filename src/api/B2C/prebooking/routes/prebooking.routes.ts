@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { authMiddleware } from "../../../../middlewares/authMiddlewares";
+import {
+  authMiddleware,
+  optionalAuthMiddleware,
+} from "../../../../middlewares/authMiddlewares";
 import { PreBookingControllers } from "../controllers/preBooking.controllers";
 import { PreBookingValidator } from "../validators/preBooking.validators";
 
@@ -22,6 +25,7 @@ export class PreBookingRoutes {
 
     this.router.post(
       "/booking",
+      optionalAuthMiddleware,
       this.validator.bookingReq,
       this.controllers.bookingRequest
     );

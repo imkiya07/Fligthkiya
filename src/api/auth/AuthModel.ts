@@ -34,6 +34,37 @@ export class AuthModel {
     }
   }
 
+  setVerifyToken = async (
+    user_id: number,
+    reset_token: string,
+    reset_expires: any
+  ) => {
+    await this.db("verify_tokens")
+      .insert({
+        user_id,
+        reset_token,
+        reset_expires,
+      })
+      .onConflict("user_id")
+      .merge();
+  };
+
+  getVerifyToken = async (user_id: number) => {
+    return (await this.db("verify_tokens")
+      .select("*")
+      .where({ user_id })
+      .first()) as {
+      user_id: number;
+      reset_token: string;
+      reset_expires: any;
+    };
+  };
+
+  // Mark user profile as verified
+  public verifyUserProfile = async (user_id: number) => {
+    await this.db("users").where({ user_id }).update({ account_verified: 1 });
+  };
+
   // Login user
   async getUserByEmail(email: string) {
     try {
@@ -45,7 +76,8 @@ export class AuthModel {
           "username",
           "email",
           "phone_number",
-          "password_hash"
+          "password_hash",
+          "profile_picture"
         )
         .where({ email })
         .orWhere("username", email)
@@ -99,6 +131,7 @@ export class AuthModel {
           "social_id",
           "social_provider",
           "social_token",
+          "profile_picture",
           "account_verified"
         )
         .where({ user_id: userId })

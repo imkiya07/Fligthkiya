@@ -1,14 +1,14 @@
-import nodemailer from "nodemailer";
-
 import { Request } from "express";
+import path from "path";
 import { Stripe } from "stripe";
 import AbstractServices from "../../core/abstract/abstract.services";
+import { EmailSend } from "../../core/common/emailSender";
 import { getClassDescription } from "../B2C/postBooking/utils/postBooking.utils";
 import { BookingModels } from "../B2C/preBooking/models/booking.models";
 import { PreBookingService } from "../B2C/preBooking/services/preBooking.services";
+import { BookingPDFService } from "../B2C/preBooking/utils/bookingReqPdfSend";
 import { formatAirTravelersData } from "../B2C/preBooking/utils/preBooking.utils";
 import { IBookingResponse, ICachedRevalidation } from "./payment.interface";
-import { generateEmailTemplate } from "./payment.utils";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export class PaymentServices extends AbstractServices {
@@ -30,18 +30,17 @@ export class PaymentServices extends AbstractServices {
 
     const deviceId = req.deviceId;
 
-    const formattedData = this.cache.get<any>(`revalidation-${deviceId}`);
+    const revalidatedData = this.cache.get<any>(`revalidation-${deviceId}`);
 
-    // if (revalidationResponse.Success && formattedData) {
-    if (formattedData) {
-      const airportInfo = getFirstAndLastCity(formattedData?.flights as any);
+    if (revalidatedData) {
+      const airportInfo = getFirstAndLastCity(revalidatedData?.flights as any);
       const cabinClass = getClassDescription(
-        formattedData?.flights[0]?.flightSegments[0]?.CabinClassCode
+        revalidatedData?.flights[0]?.flightSegments[0]?.CabinClassCode
       );
 
       const unit_amount = +(
-        (Number(formattedData.TotalFare.Amount) +
-          Number(formattedData.TotalTax.Amount)) *
+        (Number(revalidatedData.TotalFare.Amount) +
+          Number(revalidatedData.TotalTax.Amount)) *
         100
       ).toFixed(2);
 
@@ -53,17 +52,17 @@ export class PaymentServices extends AbstractServices {
         line_items: [
           {
             price_data: {
-              currency: formattedData?.TotalFare.CurrencyCode,
+              currency: revalidatedData?.TotalFare.CurrencyCode,
               unit_amount,
               product_data: {
                 name: `${airportInfo?.firstDepartureCity} to ${airportInfo.lastArrivalCity}  - Flight Ticket`,
                 description: `${cabinClass} - Flight on ${dateFormat(
-                  formattedData?.DepartureDateTime
+                  revalidatedData?.DepartureDateTime
                 )}`,
                 metadata: {
                   passenger_name: user.full_name,
                   booking_reference: bookingData?.orderNumber,
-                  flight_number: formattedData?.flightNo,
+                  flight_number: revalidatedData?.flightNo,
                   departure_airport: airportInfo?.departure_airport,
                   arrival_airport: airportInfo?.arrival_airport,
                 },
@@ -79,8 +78,8 @@ export class PaymentServices extends AbstractServices {
 
       await bookingConn.updateBookingPayment(
         {
-          netTotal: Number(formattedData.TotalFare.Amount),
-          baseFare: Number(formattedData.TotalFare.Amount),
+          netTotal: Number(revalidatedData.TotalFare.Amount),
+          baseFare: Number(revalidatedData.TotalFare.Amount),
           origin: airportInfo?.firstDepartureCity,
           destination: airportInfo.lastArrivalCity,
         },
@@ -88,11 +87,11 @@ export class PaymentServices extends AbstractServices {
       );
 
       this.cache.set(`amount-set-to-${bookingId}`, {
-        amount: Number(formattedData.TotalFare.Amount),
-        currency: formattedData?.TotalFare.CurrencyCode,
+        amount: Number(revalidatedData.TotalFare.Amount),
+        currency: revalidatedData?.TotalFare.CurrencyCode,
       });
 
-      return { success: true, url: session?.url };
+      return { success: true, url: session?.url, session };
     }
   };
 
@@ -106,6 +105,7 @@ export class PaymentServices extends AbstractServices {
 
     const paymentSuccessCachedData = this.cache.get(paymentSuccessCacheKey);
 
+    // IF ALREADY PAYMENT SUCCESS
     if (paymentSuccessCachedData) {
       return {
         success: true,
@@ -159,9 +159,8 @@ export class PaymentServices extends AbstractServices {
 
       await bookingConn.updateBookingConfirm(
         {
-          bookingStatus: "TIP",
           pnrId: UniqueID,
-          ticketStatus: "BOOKED",
+          ticketStatus: "TICKET_IN_PROGRESS",
           TktTimeLimit,
           TraceId,
         },
@@ -213,6 +212,7 @@ export class PaymentServices extends AbstractServices {
 
       const data = {
         ...restBookingData,
+        ticketStatus: "TICKET_IN_PROGRESS",
         pnrId: UniqueID,
         BookingCreatedOn,
         ...restItinerary,
@@ -254,24 +254,16 @@ export class PaymentServices extends AbstractServices {
 
     await bookingConn.updateBookingPaymentStatus("SUCCESS", +bookingId);
 
-    const paymentSuccessCachedData = this.cache.get(paymentSuccessCacheKey);
-    // mail send
-    const transporter = nodemailer.createTransport({
-      service: "Gmail", // Or another SMTP service
-      auth: {
-        user: process.env.EMAIL_SEND_EMAIL_ID,
-        pass: process.env.EMAIL_SEND_PASSWORD,
-      },
-    });
+    const pdfData = this.cache.get(paymentSuccessCacheKey);
 
-    const mailOptions = {
-      from: process.env.EMAIL_SEND_EMAIL_ID, //"your-email@gmail.com",
-      to: req?.user?.email,
-      subject: "Your Flight Booking Confirmation",
-      html: generateEmailTemplate(paymentSuccessCachedData),
-    };
+    const pdfPath = path.join(__dirname, "example.pdf");
 
-    await transporter.sendMail(mailOptions);
+    await BookingPDFService.generateProfessionalPDF(pdfData, pdfPath);
+    await EmailSend.sendEmailWithPDF(
+      pdfPath,
+      req.user.email,
+      "Ticket booking request"
+    );
 
     this.cache.set(mailSendCacheKay, true);
 
@@ -287,6 +279,74 @@ export class PaymentServices extends AbstractServices {
     const bookingConn = new BookingModels(this.db);
     await bookingConn.updateBookingPaymentStatus("CANCEL", +bookingId);
     return { success: true, message: "Payment cancel" };
+  };
+
+  appsPaymentIntent = async (req: Request) => {
+    const user = req.user;
+
+    const bookingId = req.params.id;
+
+    const bookingConn = new BookingModels(this.db);
+
+    const bookingData = await bookingConn.getBookingBodyInfo(+bookingId);
+
+    const deviceId = req.deviceId;
+
+    const revalidatedData = this.cache.get<any>(`revalidation-${deviceId}`);
+
+    if (revalidatedData) {
+      const airportInfo = getFirstAndLastCity(revalidatedData?.flights as any);
+      const cabinClass = getClassDescription(
+        revalidatedData?.flights[0]?.flightSegments[0]?.CabinClassCode
+      );
+
+      const unit_amount = +(
+        (Number(revalidatedData.TotalFare.Amount) +
+          Number(revalidatedData.TotalTax.Amount)) *
+        100
+      ).toFixed(2);
+
+      // ============ STRIPE =============== //
+      const customer = await stripe.customers.create({
+        name: user.full_name,
+        email: user.email, // Include user email if available
+        metadata: {
+          booking_reference: "FL0001212",
+        },
+      });
+
+      const ephemeralKey = await stripe.ephemeralKeys.create(
+        { customer: customer.id },
+        { apiVersion: "2022-11-15" }
+      );
+
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: unit_amount,
+        currency: revalidatedData?.TotalFare.CurrencyCode,
+        customer: customer.id,
+        metadata: {
+          passenger_name: user.full_name,
+          booking_reference: bookingData?.orderNumber,
+          flight_number: revalidatedData?.flightNo,
+          departure_airport: airportInfo?.departure_airport,
+          arrival_airport: airportInfo?.arrival_airport,
+        },
+      });
+
+      return {
+        success: true,
+        paymentIntent: paymentIntent.client_secret,
+        ephemeralKey: ephemeralKey.secret,
+        customer: customer.id,
+        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+      };
+    } else {
+      return {
+        success: false,
+        message:
+          "Revalidation or booking request is required or session expired",
+      };
+    }
   };
 }
 

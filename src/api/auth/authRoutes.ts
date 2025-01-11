@@ -27,5 +27,8 @@ export class AuthRoutes {
       authMiddleware,
       this.controller.refreshToken
     );
+
+    this.router.patch("/reset-pass", this.controller.requestPasswordReset);
+    this.router.patch("/reset-pass/:token", this.controller.resetPassword);
   }
 }

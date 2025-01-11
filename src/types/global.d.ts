@@ -16,7 +16,7 @@ declare global {
       agency: number[]; // Array of agency IDs
       user_id: number; // User ID
       upFolder: string; // Upload folder path
-      imgUrl: string[]; // Array of image URLs
+      imgUrl: string; // Array of image URLs
       upFiles: string[]; // Array of uploaded file names
       deviceId: string;
       image_files: {
