@@ -142,7 +142,7 @@ export function bookingRequestTemplate(booking: any, passengers: any[]) {
 export const resetPassTemplate = (
   name: string,
   code: string,
-  baseUrl: string
+  email: string
 ) => {
   return `
     
@@ -231,7 +231,7 @@ export const resetPassTemplate = (
       <p>Dear ${name},</p>
       <p>We received a request to reset the password for your account. Please use the OTP code below or click the button to reset your password:</p>
       <div class="otp-code">${code}</div>
-      <a href="${baseUrl}/reset-password?token=${code}" class="reset-button">Reset Password</a>
+      <a href="https://adbiyastour.com/reset-password?token=${code}&email=${email}" class="reset-button">Reset Password</a>
       <p><strong>Note:</strong> This code and link are valid for 1 hour. If you did not request this, please ignore this email.</p>
     </div>
     <div class="email-footer">

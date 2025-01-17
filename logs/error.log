@@ -2306,3 +2306,24 @@ Error: Revalidation failed. Please try again.
     at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
     at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
 
+[2025-01-11T17:58:16.793Z] Invalid booking id
+Error: Invalid booking id
+    at PaymentServices.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PaymentServices.paymentSuccess (D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.service.js:94:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\payments\payment.controller.js:15:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
+[2025-01-14T17:02:37.493Z] Invalid flight id
+Error: Invalid flight id
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:23:18)
+    at D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:46
+    at D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:19
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
+    at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
+

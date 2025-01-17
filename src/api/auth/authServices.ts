@@ -191,11 +191,7 @@ export class AuthServices extends AbstractServices {
       from: `"Flight kiya" <${process.env.EMAIL_SEND_EMAIL_ID}>`,
       to: email,
       subject: "Password Reset Request",
-      html: resetPassTemplate(
-        user.full_name,
-        resetToken,
-        process.env.CL_BASE_URL as string
-      ),
+      html: resetPassTemplate(user.full_name, resetToken, email),
     };
 
     await transporter.sendMail(mailOptions);
