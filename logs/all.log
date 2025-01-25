@@ -990,3 +990,9 @@
 2025-01-14T17:00:37.433Z [info]: [2025-01-14T17:00:37.431Z] POST /api/b2c/search?filter=true
 2025-01-14T17:01:35.206Z [info]: [2025-01-14T17:01:35.206Z] GET /api/b2c/revalidated/7d1cf3b7-c384-42d6-a582-34447f3d2d41
 2025-01-14T17:02:37.483Z [info]: [2025-01-14T17:02:37.481Z] GET /api/b2c/revalidated/0ed75278-23b3-4b5a-871b-ce31fbf6a767
+2025-01-18T14:52:39.481Z [info]: [2025-01-18T14:52:39.478Z] POST /api/b2c/search?filter=true&cheapest=false&fastest=false&earliest=false
+2025-01-18T15:01:22.852Z [info]: [2025-01-18T15:01:22.850Z] POST /api/b2c/search?filter=true&cheapest=false&fastest=false&earliest=false
+2025-01-18T15:02:22.854Z [info]: [2025-01-18T15:02:22.854Z] GET /api/b2c/revalidated/9f8c6ae5-4741-4f56-ac5f-03fc90c1aab9
+2025-01-18T15:02:46.491Z [info]: [2025-01-18T15:02:46.491Z] GET /api/b2c/revalidated/1d759fe3-b2e5-424e-b890-2844c9da9741
+2025-01-25T17:35:42.315Z [info]: [2025-01-25T17:35:42.314Z] POST /api/b2c/search?filter=true&cheapest=false&fastest=false&earliest=false
+2025-01-25T17:40:24.005Z [info]: [2025-01-25T17:40:24.003Z] POST /api/b2c/search?filter=true&cheapest=false&fastest=false&earliest=false

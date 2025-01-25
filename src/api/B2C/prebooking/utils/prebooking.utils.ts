@@ -85,7 +85,6 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
     };
 
     delete fares.PassengerFare; // Remove the PassengerFare array
-    delete fares.TaxBreakUp;
 
     const penaltiesData = data?.PenaltiesInfoList?.find(
       (item: any) => item.PenaltiesInfoRef === pricedItem.PenaltiesInfoRef

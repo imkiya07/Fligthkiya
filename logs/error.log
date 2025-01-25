@@ -2327,3 +2327,11 @@ Error: Invalid flight id
     at D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:284:15
     at param (D:\PROJECTS\flight_kiya_server\node_modules\express\lib\router\index.js:365:14)
 
+[2025-01-18T15:02:32.007Z] Revalidation failed. Please try again.
+Error: Revalidation failed. Please try again.
+    at PreBookingService.throwError (D:\PROJECTS\flight_kiya_server\dist\core\abstract\abstract.services.js:21:15)
+    at PreBookingService.revalidated (D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\services\revalidation.service.js:69:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\PROJECTS\flight_kiya_server\dist\api\B2C\preBooking\controllers\preBooking.controllers.js:16:26
+    at async D:\PROJECTS\flight_kiya_server\dist\middlewares\asyncWrapper.js:34:13
+
