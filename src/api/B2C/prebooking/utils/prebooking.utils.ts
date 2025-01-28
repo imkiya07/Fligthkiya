@@ -79,7 +79,7 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
       (item: any) => item.FareRef === pricedItem.FareRef
     );
 
-    let fares = {
+    let fares: any = {
       ...fareData,
       ...fareData.PassengerFare[0], // Spread the first PassengerFare item into fares
     };
@@ -115,6 +115,13 @@ export const FormatFlightSearch = async (data: any, conn: PreBookingModels) => {
       // Add layover time to the current segment
       segments[i].LayoverTime = formattedLayoverTime;
     }
+
+    const totalTax = fares?.TaxBreakUp.reduce(
+      (sum: any, tax: any) => sum + parseFloat(tax.Amount),
+      0
+    );
+    delete fares.TaxBreakUp;
+    fares.totalTax = totalTax.toFixed(2);
 
     results.push({
       flight_id: uuidv4(),
